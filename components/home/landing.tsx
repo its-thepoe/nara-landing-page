@@ -1,5 +1,5 @@
 import React from "react";
-import { QuoteDown } from "iconsax-react";
+import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import DesktopFaq from "./faq-desktop";
 import MobileFaq from "./faq-mobile";
 
@@ -55,47 +55,95 @@ export default function Landing() {
 
       {/* Features */}
       <section id="features" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-4 md:scroll-mt-20">
-        <div className="relative mx-auto w-full rounded-[32px] bg-white">
-          <div className="px-4 md:px-20">
-            <div className="mx-auto flex max-w-[1140px] flex-col items-start gap-6 px-2 py-14 md:gap-8 md:px-6 md:py-24">
-              <p className="text-[12px] md:text-[14px] tracking-[-0.14px] text-[#015033]">FEATURES</p>
-              <div>
-                <h2 className="font-semibold text-[#101828] text-[36px] leading-[44px] tracking-[-0.02em] md:text-[60px] md:leading-[72px] md:tracking-[-1.2px]">
+        <div className="relative mx-auto w-full rounded-3xl md:rounded-[32px] bg-white border border-[#EAECF0]">
+          {/* Inner dashed wrapper */}
+          <div className="box-border mx-auto max-w-[1248px] border-x border-dashed border-[#F2F4F7] px-3 py-14 md:px-20 md:py-24">
+            <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-7 md:gap-8">
+              <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">FEATURES</p>
+              <div className="max-w-[574px] space-y-3 md:space-y-4">
+                <h2 className="font-semibold text-[#101828] text-[36px] leading-[44px] tracking-[-0.02em] md:text-[60px] md:leading-[72px]">
                   One dashboard,
                   <br />
                   everything you need
                 </h2>
-                <p className="mt-3 max-w-[640px] text-[16px] leading-[24px] tracking-[-0.16px] text-[#736f67]">
-                  Get a complete view of your client’s mental health journey—from onboarding to insights and
-                  ongoing support.
+                <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#736F67]">
+                  Get a complete view of your client’s mental health journey—from onboarding to insights and ongoing
+                  support.
                 </p>
               </div>
+
+              {/* Feature grid */}
               <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-3">
                 {[
                   {
                     title: "Patient Insights",
                     body:
-                      "Real-time data on mood, engagement, and therapy progress. Spot early signs of distress or disengagement.",
+                      "Get real-time data on mood, engagement, and therapy progress. Spot early signs of distress or disengagement.",
+                    Icon: UserSearch,
+                    frameBg: "#E5F8F1",
+                    iconColor: "#01BC77",
+                    borderColor: "rgba(1,188,119,0.1)",
                   },
                   {
                     title: "Homework Assignment",
-                    body: "Assign from templates or create custom tasks. Track completion and send reminders.",
+                    body:
+                      "Assign from templates or create custom tasks. Track completion and send reminders with ease.",
+                    Icon: TaskSquare,
+                    frameBg: "#EFF3FB",
+                    iconColor: "#0665FE",
+                    borderColor: "rgba(6,101,254,0.1)",
                   },
                   {
                     title: "AI Chat Summaries",
-                    body: "View summaries of patient interactions with Nara’s AI (with consent).",
+                    body:
+                      "View summaries of patient interactions with Nara’s AI (with consent). Stay informed between sessions.",
+                    Icon: SmsStar,
+                    frameBg: "#FFFBEB",
+                    iconColor: "#FFC800",
+                    borderColor: "rgba(255,200,0,0.1)",
                   },
-                ].map((f) => (
-                  <div key={f.title} className="flex flex-col gap-3">
-                    <div className="h-12 w-12 rounded-full bg-[#e5f8f1]" />
-                    <h3 className="text-[20px] font-medium text-[#353535]">{f.title}</h3>
-                    <p className="text-[16px] text-[#736f67]">{f.body}</p>
+                  {
+                    title: "Secure messaging",
+                    body:
+                      "Communicate safely with clients between appointments, keeping the therapeutic bond strong.",
+                    Icon: Messages2,
+                    frameBg: "#F0FBFF",
+                    iconColor: "#59D5FB",
+                    borderColor: "rgba(89,213,251,0.1)",
+                  },
+                  {
+                    title: "Smart Onboarding",
+                    body:
+                      "Manage interest lists, approve new clients, and automate follow-ups—all from one place.",
+                    Icon: Book,
+                    frameBg: "#FEF6EB",
+                    iconColor: "#F59714",
+                    borderColor: "rgba(245,151,20,0.1)",
+                  },
+                  {
+                    title: "Profile & Availability",
+                    body:
+                      "Edit your bio, update your schedule, manage insurance options, and add specialties.",
+                    Icon: UserOctagon,
+                    frameBg: "#FDF2F2",
+                    iconColor: "#D92D20",
+                    borderColor: "rgba(217,45,32,0.1)",
+                  },
+                ].map(({ title, body, Icon, frameBg, iconColor, borderColor }) => (
+                  <div key={title} className="flex flex-col items-start gap-2 py-5 md:py-6">
+                    <div
+                      className="mb-2 flex size-12 items-center justify-center rounded-full border"
+                      style={{ backgroundColor: frameBg, borderColor }}
+                    >
+                      <Icon size={24} color={iconColor} variant="Bold" />
+                    </div>
+                    <h3 className="text-[20px] font-medium leading-[30px] tracking-[-0.01em] text-[#353535]">{title}</h3>
+                    <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#736F67]">{body}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className="pointer-events-none absolute inset-0 rounded-[32px] border border-[#eaecf0]" aria-hidden />
         </div>
       </section>
 
