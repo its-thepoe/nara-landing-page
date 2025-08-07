@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Menu, CloseSquare } from "iconsax-react";
+import React, { useEffect, useState } from "react";
+import { HambergerMenu, CloseSquare } from "iconsax-react";
 
 // Figma MCP Server assets
 const IMG_LOGO =
@@ -15,6 +15,20 @@ const COLOR_GRAY_600 = "#475467";
 
 export default function NavResponsive() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleAnchorClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsOpen(false);
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        try {
+          window.history.replaceState(null, "", `#${id}`);
+        } catch {}
+      }
+    });
+  };
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -75,7 +89,7 @@ export default function NavResponsive() {
             className="relative block size-6 md:hidden"
             aria-label="Open menu"
           >
-            <Menu size="24" color="#00100A" variant="Outline" />
+            <HambergerMenu size="24" color="#00100A" variant="Outline" />
           </button>
         </div>
       </nav>
@@ -92,7 +106,7 @@ export default function NavResponsive() {
 
         {/* Panel */}
         <aside
-          className={`fixed inset-y-0 right-0 z-50 w-full max-w-[420px] transform bg-white shadow-xl transition-transform duration-200 ease-out-quart will-change-transform ${
+          className={`fixed inset-y-0 right-0 z-50 w-full transform bg-white shadow-xl transition-transform duration-200 ease-out-quart will-change-transform ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
           role="dialog"
@@ -120,19 +134,19 @@ export default function NavResponsive() {
           <nav className="px-4 pb-4 pt-2">
             <ul className="space-y-8 text-[24px] font-medium text-[#1D2939]">
               <li>
-                <Link href="#features" onClick={() => setIsOpen(false)}>
+                <a href="#features" onClick={handleAnchorClick("features")}>
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#how-it-works" onClick={() => setIsOpen(false)}>
+                <a href="#how-it-works" onClick={handleAnchorClick("how-it-works")}>
                   How it works
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#faqs" onClick={() => setIsOpen(false)}>
+                <a href="#faqs" onClick={handleAnchorClick("faqs")}>
                   FAQs
-                </Link>
+                </a>
               </li>
             </ul>
 

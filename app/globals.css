@@ -4,3 +4,6 @@
 
 /* Smooth scrolling for in-page anchors */
 html { scroll-behavior: smooth; }
+
+/* Prevent horizontal overscroll on all pages */
+html, body { max-width: 100%; overflow-x: hidden; }

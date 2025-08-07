@@ -8,8 +8,8 @@ export default function LandingMobile() {
     "http://localhost:3845/assets/782b5e614eee98d14246b1691d487d72dc3f1bd1.png";
   const imgIPadPro12 =
     "http://localhost:3845/assets/3a8f85cba1f91538cb90cde59859fc15577bbf67.png";
-  const imgPasteImageHere1 =
-    "http://localhost:3845/assets/3840e9ec35500ea505c2a9d2045a4bd62424a2fe.png";
+  // Replace the iPad screen content with the local hero mockup served from /public
+  const imgPasteImageHere1 = "/hero-section-mockup.webp";
   const imgPasteImageHere =
     "http://localhost:3845/assets/c2b89a8e085e6ec07dcb7b0763c8b489ba94ed61.svg";
   // decorative quote image replaced by Iconsax QuoteDown
@@ -21,7 +21,7 @@ export default function LandingMobile() {
   return (
     <div className="bg-[#fcfcfd] w-full">
       {/* Hero */}
-      <section className="relative px-4 pt-36 pb-12">
+      <section className="relative mx-auto max-w-[1440px] px-4 pt-36 pb-12 overflow-hidden">
         <div
           className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[881px] w-[1566px] -translate-x-1/2 opacity-40 bg-top bg-no-repeat"
           style={{ backgroundImage: `url('${imgHeroGradients27}')` }}
@@ -45,8 +45,8 @@ export default function LandingMobile() {
         {/* Mockup */}
         <div className="mt-10 overflow-hidden rounded-md w-[329px]">
           <div className="relative h-[253px] w-[329px]">
-            <div className="rotate-[270deg]">
-              <div className="relative h-[329px] w-[252.657px]">
+            <div className="rotate-[0deg]">
+              <div className="relative h-[252.657px] w-[329px]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url('${imgIPadPro12}')` }}
@@ -80,7 +80,7 @@ export default function LandingMobile() {
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-1 mt-4 rounded-3xl bg-white px-3 py-14 scroll-mt-[72px]">
+      <section id="features" className="mx-auto mt-4 max-w-[1440px] rounded-3xl bg-white px-3 py-14 scroll-mt-[72px]">
         <p className="text-[12px] text-[#015033]">FEATURES</p>
         <h2 className="mt-2 text-[36px] leading-[44px] font-semibold text-[#101828]">
           One dashboard,
@@ -118,7 +118,7 @@ export default function LandingMobile() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="mx-1 mt-4 rounded-3xl bg-[#f4fbf9] px-3 py-14 scroll-mt-[72px]">
+      <section id="how-it-works" className="mx-auto mt-4 max-w-[1440px] rounded-3xl bg-[#f4fbf9] px-3 py-14 scroll-mt-[72px]">
         <p className="text-[12px] text-[#015033]">GET STARTED</p>
         <h2 className="mt-2 text-[36px] leading-[44px] font-semibold text-[#101828]">How it works</h2>
         <p className="mt-1 text-[14px] text-[#475467]">
@@ -154,7 +154,7 @@ export default function LandingMobile() {
       </section>
 
       {/* Testimonials */}
-      <section className="mx-1 mt-4 rounded-3xl bg-gray-50 px-3 py-14">
+      <section className="mx-auto mt-4 max-w-[1440px] rounded-3xl bg-gray-50 px-3 py-14">
         <p className="text-[12px] text-[#015033]">CUSTOMER TESTIMONIALS</p>
         <h2 className="mt-2 text-[30px] font-medium text-[#101828]">
           Trusted by therapists who want more than just video calls
@@ -183,7 +183,7 @@ export default function LandingMobile() {
       </section>
 
       {/* Founder spotlight */}
-      <section className="mx-1 mt-4 rounded-3xl bg-white px-3 py-14">
+      <section className="mx-auto mt-4 max-w-[1440px] rounded-3xl bg-white px-3 py-14">
         <div
           className="h-[300px] rounded-2xl bg-cover bg-center"
           style={{ backgroundImage: `url('${imgContainer}')` }}
@@ -206,7 +206,7 @@ export default function LandingMobile() {
       </section>
 
       {/* FAQs */}
-      <section id="faqs" className="mx-1 mt-4 rounded-3xl bg-gray-50 px-3 py-14 scroll-mt-[72px]">
+      <section id="faqs" className="mx-auto mt-4 max-w-[1440px] rounded-3xl bg-gray-50 px-3 py-14 scroll-mt-[72px]">
         <h2 className="text-[36px] leading-[44px] font-semibold text-[#101828]">
           Frequently asked
           <br />

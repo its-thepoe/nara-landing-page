@@ -8,9 +8,9 @@ export default function LandingDesktop() {
   const imgHeroGradients27 =
     "http://localhost:3845/assets/782b5e614eee98d14246b1691d487d72dc3f1bd1.png";
   const imgIPadPro12 =
-    "http://localhost:3845/assets/3a8f85cba1f91538cb90cde59859fc15577bbf67.png";
-  const imgPasteImageHere1 =
-    "http://localhost:3845/assets/0083168dba7110dbe104f05586d5313d68477582.png";
+    "/Hero section mockup.webp";
+  // Replace the iPad screen content with the local hero mockup served from /public
+  const imgPasteImageHere1 = "/hero-section-mockup.webp";
   const imgPasteImageHere =
     "http://localhost:3845/assets/f07d71d508121fbc31265874ffee2f374f2146f3.svg";
   // decorative quote image replaced by Iconsax QuoteDown
@@ -24,7 +24,7 @@ export default function LandingDesktop() {
   return (
     <div className="bg-[#fcfcfd] w-full">
       {/* Hero */}
-      <section className="relative mx-auto max-w-[1440px] px-4 pt-48 pb-14">
+      <section className="relative mx-auto w-full max-w-[1440px] px-4 pt-48 pb-14 overflow-hidden">
         <div
           className="pointer-events-none absolute inset-x-1/2 -z-10 h-[1541px] w-[2739.56px] -translate-x-1/2 opacity-40 bg-top bg-no-repeat"
           style={{ backgroundImage: `url('${imgHeroGradients27}')` }}
@@ -51,8 +51,8 @@ export default function LandingDesktop() {
         <div className="mt-16 flex items-center justify-center">
           <div className="relative h-[922px] w-[1200px] overflow-hidden rounded-[24px]">
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="rotate-[270deg]">
-                <div className="relative h-[1200px] w-[921.544px]">
+              <div className="rotate-[0deg]">
+                <div className="relative h-[921.544px] w-[1200px]">
                   <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url('${imgIPadPro12}')` }}
@@ -86,8 +86,8 @@ export default function LandingDesktop() {
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
-        <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-white">
+      <section id="features" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-4 md:scroll-mt-20">
+        <div className="relative mx-auto w-full rounded-[32px] bg-white">
           <div className="px-20">
             <div className="mx-auto flex max-w-[1140px] flex-col items-start gap-8 px-6 py-24">
               <p className="text-[14px] tracking-[-0.14px] text-[#015033]">FEATURES</p>
@@ -137,8 +137,8 @@ export default function LandingDesktop() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
-        <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-[#f4fbf9]">
+      <section id="how-it-works" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-4 md:scroll-mt-20">
+        <div className="relative mx-auto w-full rounded-[32px] bg-[#f4fbf9]">
           <div className="px-20">
             <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-8 px-6 py-24 text-center">
               <p className="text-[14px] tracking-[-0.14px] text-[#015033]">GET STARTED</p>
@@ -184,8 +184,8 @@ export default function LandingDesktop() {
       </section>
 
       {/* Testimonials (3 cards) */}
-      <section className="mx-4 my-6">
-        <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-gray-50">
+      <section className="mx-auto my-6 w-full max-w-[1440px] px-4">
+        <div className="relative mx-auto w-full rounded-[32px] bg-gray-50">
           <div className="px-20">
             <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-8 px-6 py-24">
               <div className="max-w-[750px] text-center">
@@ -230,8 +230,8 @@ export default function LandingDesktop() {
       </section>
 
       {/* Founder spotlight (image + text) */}
-      <section className="mx-4 my-6">
-        <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-white">
+      <section className="mx-auto my-6 w-full max-w-[1440px] px-4">
+        <div className="relative mx-auto w-full rounded-[32px] bg-white">
           <div className="mx-auto flex max-w-[1140px] flex-row-reverse items-center gap-4 px-12 py-24">
             <div
               className="order-2 size-[580px] rounded-2xl bg-cover bg-center"
@@ -274,8 +274,8 @@ export default function LandingDesktop() {
       </section>
 
       {/* FAQs (compact) */}
-      <section id="faqs" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
-        <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-gray-50">
+      <section id="faqs" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-4 md:scroll-mt-20">
+        <div className="relative mx-auto w-full rounded-[32px] bg-gray-50">
           <div className="mx-auto grid max-w-[1140px] grid-cols-2 items-start gap-8 px-20 py-24">
             <div>
               <h2 className="text-[48px] leading-[60px] font-semibold text-[#101828]">
