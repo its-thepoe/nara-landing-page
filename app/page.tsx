@@ -1,5 +1,4 @@
-import LandingDesktop from "@/components/home/landing-desktop";
-import LandingMobile from "@/components/home/landing-mobile";
+import Landing from "@/components/home/landing";
 import NavResponsive from "@/components/layout/nav-responsive";
 
 export default function Page() {
@@ -8,12 +7,7 @@ export default function Page() {
       <NavResponsive />
       {/* push content below fixed nav: 72px on mobile per Figma, 80px on md+ */}
       <div className="h-[72px] md:h-20" />
-      <div className="hidden md:block">
-        <LandingDesktop />
-      </div>
-      <div className="md:hidden">
-        <LandingMobile />
-      </div>
+      <Landing />
     </div>
   );
 }

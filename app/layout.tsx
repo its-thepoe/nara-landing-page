@@ -1,6 +1,6 @@
 import "./globals.css";
 import cx from "classnames";
-import { sfPro, inter } from "./fonts";
+import { inter } from "./fonts";
 // Footer and Navbar are not used for the custom landing right now
 // import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
@@ -21,7 +21,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable)}>
+      <body className={cx(inter.variable, "font-sans") }>
         {/* Remove default gradient + nav/footer so landing spans full width */}
         <main className="min-h-screen w-full">{children}</main>
         <VercelAnalytics />
