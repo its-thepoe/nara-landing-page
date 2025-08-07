@@ -1,4 +1,6 @@
 import React from "react";
+import { QuoteDown } from "iconsax-react";
+import MobileFaq from "./faq-mobile";
 
 // Mobile landing (trimmed from Figma)
 export default function LandingMobile() {
@@ -10,8 +12,7 @@ export default function LandingMobile() {
     "http://localhost:3845/assets/3840e9ec35500ea505c2a9d2045a4bd62424a2fe.png";
   const imgPasteImageHere =
     "http://localhost:3845/assets/c2b89a8e085e6ec07dcb7b0763c8b489ba94ed61.svg";
-  const img27 =
-    "http://localhost:3845/assets/71e831c8fb5538670d4378ec7ffb9adb7ecc421a.svg";
+  // decorative quote image replaced by Iconsax QuoteDown
   const imgContainer =
     "http://localhost:3845/assets/6ccd6fef682f0627592637ddeb500abcb5a4829b.png";
   const img67Eb90 =
@@ -79,7 +80,7 @@ export default function LandingMobile() {
       </section>
 
       {/* Features */}
-      <section className="mx-1 mt-4 rounded-3xl bg-white px-3 py-14">
+      <section id="features" className="mx-1 mt-4 rounded-3xl bg-white px-3 py-14 scroll-mt-[72px]">
         <p className="text-[12px] text-[#015033]">FEATURES</p>
         <h2 className="mt-2 text-[36px] leading-[44px] font-semibold text-[#101828]">
           One dashboard,
@@ -117,7 +118,7 @@ export default function LandingMobile() {
       </section>
 
       {/* How it works */}
-      <section className="mx-1 mt-4 rounded-3xl bg-[#f4fbf9] px-3 py-14">
+      <section id="how-it-works" className="mx-1 mt-4 rounded-3xl bg-[#f4fbf9] px-3 py-14 scroll-mt-[72px]">
         <p className="text-[12px] text-[#015033]">GET STARTED</p>
         <h2 className="mt-2 text-[36px] leading-[44px] font-semibold text-[#101828]">How it works</h2>
         <p className="mt-1 text-[14px] text-[#475467]">
@@ -160,8 +161,8 @@ export default function LandingMobile() {
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-3">
           <div className="relative h-80 rounded-lg bg-white p-5">
-            <div className="absolute right-5 top-5 h-20 w-24">
-              <img src={img27} alt="quote" className="h-full w-full" />
+            <div className="absolute right-5 top-5">
+              <QuoteDown size="48" color="#EAECF0" variant="Bold" />
             </div>
             <p className="text-[20px] leading-[30px] text-[#344054]">
               I spend less time on admin and more time helping clients. Nara keeps me
@@ -188,9 +189,9 @@ export default function LandingMobile() {
           style={{ backgroundImage: `url('${imgContainer}')` }}
         />
         <div className="relative mt-4 rounded-lg border border-[#f2f4f7] bg-white p-4">
-          <div className="absolute right-5 top-5 h-20 w-24">
-            <img src={img27} alt="quote" className="h-full w-full" />
-          </div>
+            <div className="absolute right-5 top-5">
+              <QuoteDown size="48" color="#EAECF0" variant="Bold" />
+            </div>
           <div className="space-y-4 text-[16px] text-[#59557b]">
             <p>
               Artemis is honestly the best tool for Excel integration and Excel is
@@ -205,7 +206,7 @@ export default function LandingMobile() {
       </section>
 
       {/* FAQs */}
-      <section className="mx-1 mt-4 rounded-3xl bg-gray-50 px-3 py-14">
+      <section id="faqs" className="mx-1 mt-4 rounded-3xl bg-gray-50 px-3 py-14 scroll-mt-[72px]">
         <h2 className="text-[36px] leading-[44px] font-semibold text-[#101828]">
           Frequently asked
           <br />
@@ -214,19 +215,7 @@ export default function LandingMobile() {
         <p className="mt-2 text-[14px] text-[#475467]">
           Got questions? We’ve got answers. Chat with our support team anytime.
         </p>
-        <div className="mt-3 space-y-3">
-          {[
-            "Is there a cost to join as a provider?",
-            "How is patient privacy handled?",
-            "Can I customise the homework assignments?",
-            "What does AI chat visibility look like?",
-            "Can I use my own intake forms?",
-          ].map((q) => (
-            <div key={q} className="rounded-lg border border-[#d0d5dd] bg-white p-3">
-              <p className="text-[14px] font-medium text-[#101828]">{q}</p>
-            </div>
-          ))}
-        </div>
+        <MobileFaq />
       </section>
 
       {/* Bottom gradient */}

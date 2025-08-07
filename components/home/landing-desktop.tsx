@@ -1,4 +1,6 @@
 import React from "react";
+import { QuoteDown } from "iconsax-react";
+import DesktopFaq from "./faq-desktop";
 
 // Desktop landing (trimmed from Figma)
 export default function LandingDesktop() {
@@ -11,8 +13,7 @@ export default function LandingDesktop() {
     "http://localhost:3845/assets/0083168dba7110dbe104f05586d5313d68477582.png";
   const imgPasteImageHere =
     "http://localhost:3845/assets/f07d71d508121fbc31265874ffee2f374f2146f3.svg";
-  const img27 =
-    "http://localhost:3845/assets/71e831c8fb5538670d4378ec7ffb9adb7ecc421a.svg";
+  // decorative quote image replaced by Iconsax QuoteDown
   const imgContainer =
     "http://localhost:3845/assets/6ccd6fef682f0627592637ddeb500abcb5a4829b.png";
   const img67Eb90 =
@@ -85,7 +86,7 @@ export default function LandingDesktop() {
       </section>
 
       {/* Features */}
-      <section className="mx-4 my-6">
+      <section id="features" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
         <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-white">
           <div className="px-20">
             <div className="mx-auto flex max-w-[1140px] flex-col items-start gap-8 px-6 py-24">
@@ -136,7 +137,7 @@ export default function LandingDesktop() {
       </section>
 
       {/* How it works */}
-      <section className="mx-4 my-6">
+      <section id="how-it-works" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
         <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-[#f4fbf9]">
           <div className="px-20">
             <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-8 px-6 py-24 text-center">
@@ -200,8 +201,8 @@ export default function LandingDesktop() {
                   "Seeing mood trends helps me personalise care. I’ve caught early signs of relapse thanks to Nara.",
                 ].map((quote, i) => (
                   <div key={i} className="relative h-[440px] rounded-lg bg-white p-12">
-                    <div className="absolute right-12 top-12 h-[118px] w-[142px]">
-                      <img src={img27} alt="quote" className="h-full w-full" />
+                    <div className="absolute right-12 top-12">
+                      <QuoteDown size="64" color="#EAECF0" variant="Bold" />
                     </div>
                     <p className="text-[30px] leading-[44px] text-[#344054]">{quote}</p>
                     <div className="absolute inset-x-12 bottom-8 border-t border-[#eaecf0] pt-4">
@@ -237,8 +238,8 @@ export default function LandingDesktop() {
               style={{ backgroundImage: `url('${imgContainer}')` }}
             />
             <div className="order-1 relative flex-1 rounded-2xl bg-white p-12">
-              <div className="absolute right-12 top-12 h-[118px] w-[142px]">
-                <img src={img27} alt="quote" className="h-full w-full" />
+              <div className="absolute right-12 top-12">
+                <QuoteDown size="64" color="#EAECF0" variant="Bold" />
               </div>
               <div className="space-y-5 text-[16px] tracking-[-0.16px] text-[#59557b]">
                 <p>
@@ -273,7 +274,7 @@ export default function LandingDesktop() {
       </section>
 
       {/* FAQs (compact) */}
-      <section className="mx-4 my-6">
+      <section id="faqs" className="mx-4 my-6 scroll-mt-[72px] md:scroll-mt-20">
         <div className="relative mx-auto w-full max-w-[1440px] rounded-[32px] bg-gray-50">
           <div className="mx-auto grid max-w-[1140px] grid-cols-2 items-start gap-8 px-20 py-24">
             <div>
@@ -287,26 +288,7 @@ export default function LandingDesktop() {
                 {" "}team anytime.
               </p>
             </div>
-            <div className="max-w-[640px] space-y-3">
-              {[
-                {
-                  q: "Is there a cost to join as a provider?",
-                  a: "No. Nara is completely free for therapists. There are no sign-up or subscription fees.",
-                },
-                { q: "How is patient privacy handled?" },
-                { q: "Can I customise the homework assignments?" },
-                { q: "What does AI chat visibility look like?" },
-                { q: "Can I use my own intake forms?" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-lg border border-[#d0d5dd] bg-white p-5">
-                  <div className="flex items-center gap-3">
-                    <p className="flex-1 text-[18px] font-medium text-[#101828]">{item.q}</p>
-                    <span className="rotate-90 text-[#667085]">›</span>
-                  </div>
-                  {item.a && <p className="mt-3 text-[16px] text-[#667085]">{item.a}</p>}
-                </div>
-              ))}
-            </div>
+            <DesktopFaq />
           </div>
           <div className="pointer-events-none absolute inset-0 rounded-[32px] border border-[#eaecf0]" />
         </div>

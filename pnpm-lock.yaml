@@ -50,6 +50,9 @@ importers:
       framer-motion:
         specifier: ^8.5.5
         version: 8.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      iconsax-react:
+        specifier: ^0.0.8
+        version: 0.0.8(react@18.3.1)
       lucide-react:
         specifier: 0.105.0-alpha.4
         version: 0.105.0-alpha.4(react@18.3.1)
@@ -1349,6 +1352,11 @@ packages:
 
   hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
+
+  iconsax-react@0.0.8:
+    resolution: {integrity: sha512-l3dVk4zGtkkJHgvNYqAf0wDKqnKxXykee5/DoESGo2JvSYwaxajJUHSX2YrPRXSov8Hd8ClGFwJxCEaEjrFD1Q==}
+    peerDependencies:
+      react: '*'
 
   ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
@@ -3789,6 +3797,11 @@ snapshots:
   hast-util-whitespace@2.0.1: {}
 
   hey-listen@1.0.8: {}
+
+  iconsax-react@0.0.8(react@18.3.1):
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
 
   ignore@5.2.4: {}
 
