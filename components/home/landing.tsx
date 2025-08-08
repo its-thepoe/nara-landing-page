@@ -1,8 +1,7 @@
 import React from "react";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "./testimonials";
-import DesktopFaq from "./faq-desktop";
-import MobileFaq from "./faq-mobile";
+import Faq from "./faq";
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
@@ -287,10 +286,7 @@ export default function Landing() {
                   Got questions? We’ve got answers. Chat with our <span className="underline">support</span> team anytime.
                 </p>
               </div>
-              <div className="max-w-[640px]">
-                <div className="hidden md:block"><DesktopFaq /></div>
-                <div className="md:hidden"><MobileFaq /></div>
-              </div>
+              <div className="max-w-[640px]"><Faq /></div>
             </div>
           </div>
         </div>
