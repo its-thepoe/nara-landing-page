@@ -147,46 +147,67 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works (spec-driven) */}
       <section id="how-it-works" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-4 md:scroll-mt-20">
-        <div className="relative mx-auto w-full rounded-[32px] bg-[#f4fbf9]">
-          <div className="px-4 md:px-20">
-            <div className="mx-auto flex max-w-[1140px] flex-col items-center gap-6 px-2 py-14 text-center md:gap-8 md:px-6 md:py-24">
-              <p className="text-[12px] md:text-[14px] tracking-[-0.14px] text-[#015033]">GET STARTED</p>
-              <h2 className="font-semibold text-[#070611] text-[36px] leading-[44px] md:text-[48px] md:leading-[60px]">
-                How it works
-              </h2>
-              <p className="max-w-[428px] text-[14px] md:text-[16px] tracking-[-0.16px] text-[#475467]">
-                Built with therapists, for therapists. Every feature is shaped by real feedback and real needs.
-              </p>
-              <div className="grid w-full grid-cols-1 gap-4 text-left md:grid-cols-3">
+        <div className="relative mx-auto w-full rounded-3xl md:rounded-[32px] bg-[#F4FBF9] border border-[#B9DFD1]">
+          {/* Dashed inner wrapper: mobile 56px 12px, desktop 96px 24px */}
+          <div className="box-border mx-auto max-w-[1248px] border-x border-dashed border-[#D1EAE1] px-3 py-14 md:px-6 md:py-24">
+            <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-12">
+              {/* Header */}
+              <div className="flex w-full max-w-[428px] flex-col items-center gap-4 text-center">
+                <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">GET STARTED</p>
+                <div className="flex w-full flex-col items-center gap-3">
+                  <h2 className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-semibold tracking-[-0.02em] text-[#070611]">
+                    How it works
+                  </h2>
+                  <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
+                    Built with therapists, for therapists. Every feature is shaped by real feedback and real needs.
+                  </p>
+                </div>
+              </div>
+
+              {/* Steps grid: mobile column, desktop 3 columns, 16px gap */}
+              <div className="grid w-full max-w-[1200px] grid-cols-1 gap-4 text-left md:grid-cols-3">
                 {[
                   { step: "STEP 1", title: "Apply Today", body: "Sign up, verify your credentials, and customise your profile." },
                   { step: "STEP 2", title: "Get Connected", body: "Invite your clients, sync your availability, and review their onboarding info." },
                   { step: "STEP 3", title: "Track & Support", body: "Assign homework, monitor insights, and follow AI summaries (with consent)." },
                 ].map((s) => (
-                  <div key={s.step}>
-                    <div className="inline-block rounded-t-lg bg-[#01bc77] px-2 py-1 text-[12px] text-white">{s.step}</div>
-                    <div className="relative rounded-[20px] bg-white p-5 md:p-8">
-                      <h3 className="mb-2 text-[20px] md:text-[24px] font-medium text-[#222]">{s.title}</h3>
-                      <p className="text-[14px] md:text-[16px] text-[#475467]">{s.body}</p>
-                      <div className="pointer-events-none absolute inset-0 rounded-[20px] border border-[#edf9f5]" />
+                  <div key={s.step} className="flex flex-col">
+                    <div className="mx-5 md:mx-8 inline-flex w-fit items-center justify-center rounded-t-md bg-[#01BC77] px-2 py-1 text-[12px] font-medium text-white">
+                      {s.step}
+                    </div>
+                    <div className="relative rounded-[16px] md:rounded-[20px] bg-white p-6 md:p-8">
+                      <h3 className="mb-2 text-[20px] leading-[30px] md:text-[24px] md:leading-[32px] font-medium text-[#222]">
+                        {s.title}
+                      </h3>
+                      <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
+                        {s.body}
+                      </p>
+                      <div className="pointer-events-none absolute inset-0 rounded-[16px] md:rounded-[20px] border border-[#EDF9F5]" />
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-2 flex flex-col gap-3 md:flex-row">
-                <a className="rounded bg-[#015033] px-5 py-3 text-center text-[16px] text-white" href="#get-started">
+
+              {/* CTAs */}
+              <div className="flex w-full max-w-[1200px] flex-col items-center gap-[12px] md:flex-row md:justify-center">
+                <a
+                  href="#get-started"
+                  className="w-full md:w-auto rounded-[4px] bg-[#015033] px-5 py-3 text-center text-[16px] text-white"
+                >
                   Get started - for free
                 </a>
-                <a className="relative rounded px-5 py-3 text-center text-[16px] text-[#015033]" href="#book-demo">
-                  <span className="pointer-events-none absolute inset-0 rounded border border-[#015033]" />
+                <a
+                  href="#book-demo"
+                  className="w-full md:w-auto rounded-[4px] px-5 py-3 text-center text-[16px] text-[#015033]"
+                  style={{ borderColor: "#015033", borderWidth: 1 }}
+                >
                   Book a demo
                 </a>
               </div>
             </div>
           </div>
-          <div className="pointer-events-none absolute inset-0 rounded-[32px] border border-[#b9dfd1]" aria-hidden />
         </div>
       </section>
 
