@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 
 export type Testimonial = {
@@ -77,7 +78,15 @@ export default function Testimonials({
               <div className="hidden w-full md:flex md:flex-col md:items-center md:gap-10">
                 <div className="flex w-full max-w-[1140px] justify-center gap-4">
                   {desktopSlides.map((t, i) => (
-                    <Card key={i} t={t} />
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-50px" }}
+                    >
+                      <Card t={t} />
+                    </motion.div>
                   ))}
                 </div>
                 {showArrows && (
@@ -104,7 +113,14 @@ export default function Testimonials({
                   >
                     {testimonials.map((t, i) => (
                       <div key={i} className="flex justify-center shrink-0 px-1.5" style={{ width: `${100 / testimonials.length}%` }}>
-                        <Card t={t} mobile />
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-50px" }}
+                        >
+                          <Card t={t} mobile />
+                        </motion.div>
                       </div>
                     ))}
                   </div>

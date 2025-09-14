@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 interface FounderSpotlightProps {
   quoteIconSrc?: string;
@@ -32,17 +35,27 @@ That experience shaped my life's mission: to help others find peace and healing 
             <div className="lg:px-6 px-3 w-full">
               <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-end md:gap-4">
                 {/* Image Column */}
-                <div className="flex flex-col w-full md:w-[580px] md:shrink-0">
+                <motion.div 
+                  className="flex flex-col w-full md:w-[580px] md:shrink-0"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
                   <div
                     className="h-[300px] w-full rounded-[16px] bg-cover bg-center md:h-[580px]"
                     style={{ backgroundImage: `url('${imageSrc}')` }}
                   />
-                </div>
+                </motion.div>
 
                 {/* Quote card */}
-                <div
+                <motion.div
                   className="relative isolate w-full rounded-[16px] bg-white md:flex-1 md:h-[580px] flex flex-col justify-between md:items-start md:pt-12 md:px-12 md:pb-8"
                   style={{ borderColor: "#F2F4F7", borderWidth: "0.5px", boxShadow: "0px 1px 2px rgba(198,236,223,0.1)" }}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
                 >
                   {/* decorative quote */}
                   <div className="absolute right-5 top-5 h-20 w-24 opacity-80 md:right-12 md:top-12 md:h-[118.81px] md:w-[142.95px] z-0">
@@ -76,7 +89,7 @@ That experience shaped my life's mission: to help others find peace and healing 
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

@@ -7,8 +7,8 @@ import Faq from "./faq";
 import FounderSpotlight from "../shared/founder-spotlight";
 import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 
-// Single responsive landing built from the desktop version and adapted down to mobile
-export default function Landing() {
+// Client homepage - duplicated from landing page as boilerplate
+export default function ClientHomepage() {
   const heroMockup = "/Hero section mockup.webp";
 
   return (
