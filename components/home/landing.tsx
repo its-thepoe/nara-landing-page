@@ -69,7 +69,8 @@ export default function Landing() {
       <div id="features" className="lg:px-6 lg:py-0 px-1 py-4">
         <section className="py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 px-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+              <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
               <div className="flex flex-col gap-7 lg:gap-8">
                 <p className="text-[#015033] text-sm">FEATURES</p>
                 <p className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold">
@@ -240,6 +241,7 @@ export default function Landing() {
                     <p className="text-[#353535] text-xl font-medium">AI Notes</p>
                     <p className="text-[#736F67] leading-6 text-base">Manage interest lists, approve new clients, and automate follow-ups—all from one place.</p>
                   </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,10 +253,10 @@ export default function Landing() {
       <div id="how-it-works" className="lg:px-6 lg:py-0 px-1 py-4">
         <section className="py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#B9DFD1] bg-[#F4FBF9]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 px-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
-              <div className="flex flex-col items-center gap-12">
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+              <div className="flex flex-col items-center gap-12 lg:px-6 px-3 w-full">
               {/* Header */}
-              <div className="flex w-full max-w-[428px] flex-col items-center gap-4 text-center">
+              <div className="flex w-full flex-col items-center gap-4 text-center">
                 <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">GET STARTED</p>
                 <div className="flex w-full flex-col items-center gap-3">
                   <h2 className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-semibold tracking-[-0.02em] text-[#070611]">
@@ -267,7 +269,7 @@ export default function Landing() {
               </div>
 
               {/* Steps grid: mobile column, desktop 3 columns, 16px gap */}
-              <div className="grid w-full max-w-[1200px] grid-cols-1 gap-4 text-left md:grid-cols-3">
+              <div className="grid w-full grid-cols-1 gap-4 text-left md:grid-cols-3">
                   <div className="flex flex-col">
                     <div className="mx-5 md:mx-8 inline-flex w-fit items-center justify-center rounded-t-md bg-[#01BC77] px-2 py-1 text-[12px] font-medium text-white">
                       STEP 1
@@ -313,7 +315,7 @@ export default function Landing() {
               </div>
 
               {/* CTAs */}
-              <div className="flex w-full max-w-[1200px] flex-col items-center gap-[12px] md:flex-row md:justify-center">
+              <div className="flex w-full flex-col items-center gap-[12px] md:flex-row md:justify-center">
                 <a
                   href="#get-started"
                   className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-lg px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
@@ -340,8 +342,9 @@ export default function Landing() {
       <div className="lg:px-6 lg:py-0 px-1 py-4">
         <section className="py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 px-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
-              <div className="flex w-full max-w-[1200px] flex-col items-center gap-4 md:flex-row md:items-center md:justify-end md:gap-4">
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+              <div className="lg:px-6 px-3 w-full">
+              <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-end md:gap-4">
               {/* Image Column */}
               <div className="flex flex-col w-full md:w-[580px] md:shrink-0">
                 <div
@@ -373,7 +376,7 @@ export default function Landing() {
                       That experience shaped my life's mission: to help others find peace and healing through mental health. Therapy isn't just something we do once a week—it's a journey we live every day.
                     </p>
                   </div>
-                </div>
+                  </div>
 
                 {/* Author section */}
                 <div className="px-4 pb-4 md:px-12 md:pb-8 relative z-10">
@@ -386,6 +389,7 @@ export default function Landing() {
                       <p className="text-[12px] md:text-[14px] text-[#101828]">Perez Willie-Nwobu</p>
                       <p className="text-[11px] md:text-[12px] text-[#667085]">CEO, Nara Therapy</p>
                     </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -395,34 +399,36 @@ export default function Landing() {
       </section>
       </div>
 
-      {/* FAQs (spec-driven) */}
-      <section id="faqs" className="mx-auto my-6 w-full max-w-[1440px] scroll-mt-[72px] px-1 py-4 md:scroll-mt-20">
-        <div className="relative mx-auto w-full rounded-[24px] lg:rounded-[32px] border border-[#EAECF0] bg-[#F9FAFB]">
-          {/* Dashed wrapper */}
-          <div className="box-border mx-auto max-w-[1248px] border-x border-dashed border-[#EAECF0] px-3 py-14 md:px-6 md:py-24">
-            <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="flex flex-col gap-3 md:gap-4">
-                <h2 className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-semibold tracking-[-0.02em] text-[#101828]">
-                  Frequently asked
-                  <br />
-                  questions
-                </h2>
-                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
-                  Got questions? We've got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">support</span> team anytime.
-                </p>
+      {/* FAQs */}
+      <div className="lg:px-6 lg:py-0 px-1 py-4">
+        <section className="py-6">
+          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB]">
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+              <div className="lg:px-6 px-3 w-full">
+                <div className="flex flex-col gap-8 lg:flex-row lg:gap-8 w-full">
+                  {/* Left Column - Title */}
+                  <div className="flex flex-col gap-4 w-full lg:w-1/2">
+                    <h2 className="text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.02em] text-[#101828]">
+                      Frequently asked
+                      <br />
+                      questions
+                    </h2>
+                    <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
+                      Got questions? We've got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">support</span> team anytime.
+                    </p>
+                  </div>
+                  
+                  {/* Right Column - FAQ Items */}
+                  <div className="flex flex-col gap-3 w-full lg:w-1/2">
+                    <Faq />
+                  </div>
+                </div>
               </div>
-              <div className="max-w-[640px]"><Faq /></div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Decorative footer gradient */}
-      <div className="w-full">
-        <div className="flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100a] px-10 md:px-36">
-          <div className="h-[69px] w-full max-w-[1152px] bg-cover bg-center md:h-[210.938px]" style={{ backgroundImage: `url('${imgFooterGrad}')` }} />
-        </div>
+        </section>
       </div>
+
     </div>
   );
 }

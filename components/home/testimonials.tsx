@@ -69,8 +69,9 @@ export default function Testimonials() {
     <div className="lg:px-6 lg:py-0 px-1 py-4">
       <section className="py-6 ">
         <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB] overflow-hidden">
-          <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 px-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
-            <div className="flex w-full max-w-[1200px] flex-col items-center gap-8">
+          <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+            <div className="lg:px-6 px-3 w-full">
+            <div className="flex w-full flex-col items-center gap-8">
               <div className="flex w-full max-w-[750px] flex-col items-center gap-4 text-center">
                 <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">
                   CUSTOMER TESTIMONIALS
@@ -120,6 +121,7 @@ export default function Testimonials() {
                   </GhostButton>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
