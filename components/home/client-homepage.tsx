@@ -84,7 +84,7 @@ export default function ClientHomepage() {
         <section className="py-6 lg:py-8">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
-              <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
+              <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-8">
                 <div className="flex flex-col gap-6 lg:gap-8 text-left lg:text-center">
                   <p className="text-[#015033] text-sm">FEATURES</p>
                   <p className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold">
@@ -97,7 +97,7 @@ export default function ClientHomepage() {
 
               {/* Mobile Layout - Single Column */}
                 <motion.div 
-                  className="flex flex-col gap-12 lg:hidden"
+                  className="flex flex-col gap-[80px] lg:hidden w-full"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -105,7 +105,7 @@ export default function ClientHomepage() {
                 >
                   {/* Self Care Feature - Horizontal Layout */}
                   <motion.div 
-                    className="flex flex-col gap-6 py-6 h-[280px]"
+                    className="flex flex-col gap-6 py-6"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
@@ -118,19 +118,21 @@ export default function ClientHomepage() {
                     
                     <div className="flex items-center gap-6">
                       <div className="flex-1">
-                        <div className="size-12 rounded-full flex items-center justify-center bg-[#E5F8F1] mb-4">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#01BC77"/>
+                        <div className="size-12 rounded-full flex items-center justify-center mb-4 w-fit">
+                          <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1"/>
+                            <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5"/>
+                            <path d="M24 35.353C29.9371 35.353 34.75 30.5401 34.75 24.603C34.75 18.666 29.9371 13.853 24 13.853C18.0629 13.853 13.25 18.666 13.25 24.603C13.25 30.5401 18.0629 35.353 24 35.353ZM22.2373 23.3149C21.9312 23.417 21.5941 23.3113 21.4004 23.0532C20.9504 22.4532 20.0496 22.4532 19.5996 23.0532C19.351 23.3843 18.8811 23.4511 18.5498 23.2026C18.2187 22.954 18.1519 22.4841 18.4004 22.1528C18.9124 21.4704 19.6737 21.1209 20.4414 21.104C20.177 20.8095 20.1865 20.3559 20.4697 20.0728C20.7626 19.7799 21.2374 19.7799 21.5303 20.0728C21.564 20.1089 21.6711 20.223 21.7256 20.2866C21.8339 20.4129 21.9784 20.5936 22.124 20.812C22.3989 21.2244 22.75 21.8776 22.75 22.603C22.75 22.9259 22.5436 23.2129 22.2373 23.3149ZM26.5996 23.0532C26.4059 23.3113 26.0688 23.417 25.7627 23.3149C25.4564 23.2129 25.25 22.9259 25.25 22.603C25.25 21.8776 25.6011 21.2244 25.876 20.812C26.0216 20.5936 26.1661 20.4129 26.2744 20.2866C26.3289 20.223 26.436 20.1089 26.4697 20.0728C26.7626 19.7799 27.2374 19.7799 27.5303 20.0728C27.8135 20.3559 27.823 20.8095 27.5586 21.104C28.3263 21.1209 29.0876 21.4704 29.5996 22.1528C29.8481 22.4841 29.7813 22.954 29.4502 23.2026C29.1189 23.4511 28.649 23.3843 28.4004 23.0532C27.9504 22.4532 27.0496 22.4532 26.5996 23.0532ZM24 30.353C22.1185 30.353 20.4481 29.4481 19.4004 28.0532C19.1517 27.722 19.2186 27.2521 19.5498 27.0034C19.881 26.7547 20.3509 26.8216 20.5996 27.1528C21.3762 28.1867 22.6103 28.853 24 28.853C25.3897 28.853 26.6238 28.1867 27.4004 27.1528C27.6491 26.8217 28.119 26.7548 28.4502 27.0034C28.7814 27.2522 28.8483 27.722 28.5996 28.0532C27.5519 29.4481 25.8816 30.353 24 30.353Z" fill="#01BC77"/>
                           </svg>
                         </div>
                         <h3 className="text-[#353535] text-xl font-medium mb-3">Self Care</h3>
                         <p className="text-[#736F67] text-sm leading-5 mb-4">Personalize your self-care with mood check-ins, gratitude, journaling, sharing love & much more</p>
-                        <button className="px-4 py-2 bg-[#015033] text-white rounded-md text-sm font-medium">
-                          Start Self Care
-                        </button>
+                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                        Start Self Care
+                      </button>
                       </div>
                       <div className="flex-1">
-                        <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <div className="w-full h-[280px] bg-gray-200 rounded-lg flex items-center justify-center">
                           <span className="text-gray-500 text-sm">iPhone Mockup</span>
                         </div>
                       </div>
@@ -151,9 +153,13 @@ export default function ClientHomepage() {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#EFF3FB]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#0665FE"/>
+                      <div className="size-12 rounded-full flex items-center justify-center w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#EFF3FB"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#0665FE" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M34 20.413V25.103H29.92C29.8 25.093 29.54 24.943 29.48 24.833L28.44 22.863C28.03 22.083 27.32 21.643 26.56 21.683C25.8 21.723 25.15 22.233 24.82 23.063L23.44 26.523L23.24 26.003C22.75 24.733 21.35 23.773 19.97 23.773L14 23.803V20.413C14 16.773 16.17 14.603 19.81 14.603H28.19C31.83 14.603 34 16.773 34 20.413Z" fill="#0665FE"/>
+                          <path d="M34 28.7929V26.6029H29.92C29.25 26.6029 28.46 26.1229 28.15 25.5329L27.11 23.5629C26.83 23.0329 26.43 23.0629 26.21 23.6129L23.91 29.4229C23.66 30.0729 23.24 30.0729 22.98 29.4229L21.84 26.5429C21.57 25.8429 20.73 25.2729 19.98 25.2729L14 25.3029V28.7929C14 32.3729 16.1 34.5329 19.63 34.5929C19.74 34.6029 19.86 34.6029 19.97 34.6029H27.97C28.12 34.6029 28.27 34.6029 28.41 34.5929C31.92 34.5129 34 32.3629 34 28.7929Z" fill="#0665FE"/>
+                          <path d="M13.9988 25.303V28.613C13.9787 28.293 13.9688 27.953 13.9688 27.603V25.303H13.9988Z" fill="#0665FE"/>
                         </svg>
                       </div>
                       <div className="flex flex-col gap-2">
@@ -161,7 +167,7 @@ export default function ClientHomepage() {
                         <p className="text-[#736F67] text-base leading-6">Match with the right therapist for you, eliminating guesswork and awkward mismatches</p>
                       </div>
                     </div>
-                    <button className="w-fit px-5 py-3 bg-[#015033] text-white rounded-md text-sm font-medium">
+                    <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                       Find a Therapist
                     </button>
                   </motion.div>
@@ -180,9 +186,12 @@ export default function ClientHomepage() {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#FDF2F2]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#D92D20"/>
+                      <div className="size-12 rounded-full flex items-center justify-center w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#FEF6EB"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#F59714" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M31.4812 15.423L31.7612 15.993C31.9012 16.273 32.2512 16.533 32.5612 16.593L32.9412 16.653C34.0812 16.843 34.3512 17.683 33.5312 18.513L33.1812 18.863C32.9512 19.103 32.8212 19.563 32.8912 19.883L32.9412 20.093C33.2512 21.473 32.5212 22.003 31.3212 21.283L31.0612 21.133C30.7512 20.953 30.2512 20.953 29.9412 21.133L29.6812 21.283C28.4712 22.013 27.7412 21.473 28.0612 20.093L28.1112 19.883C28.1812 19.563 28.0512 19.103 27.8212 18.863L27.4712 18.503C26.6512 17.673 26.9212 16.833 28.0612 16.643L28.4412 16.583C28.7412 16.533 29.1012 16.263 29.2412 15.983L29.5212 15.413C30.0612 14.333 30.9412 14.333 31.4812 15.423Z" fill="#F59714"/>
+                          <path d="M33.57 22.693C33.21 22.953 32.2 23.433 30.76 22.693C30.6 22.613 30.4 22.603 30.24 22.693C29.67 22.983 29.15 23.103 28.74 23.103C28.1 23.103 27.65 22.853 27.43 22.693C27.06 22.423 26.28 21.653 26.55 20.023C26.58 19.853 26.53 19.683 26.42 19.553C25.73 18.763 25.35 17.703 25.62 16.873C25.72 16.543 25.51 16.103 25.17 16.103H19C16 16.103 14 17.603 14 21.103V28.103C14 31.603 16 33.103 19 33.103H29C32 33.103 34 31.603 34 28.103V22.873C34 22.683 33.73 22.583 33.57 22.693ZM26.34 24.693C25.68 25.223 24.84 25.483 24 25.483C23.16 25.483 22.31 25.223 21.66 24.693L18.53 22.193C18.21 21.933 18.16 21.453 18.41 21.133C18.67 20.813 19.14 20.753 19.46 21.013L22.59 23.513C23.35 24.123 24.64 24.123 25.4 23.513C25.72 23.253 26.19 23.303 26.45 23.633C26.72 23.953 26.67 24.433 26.34 24.693Z" fill="#F59714"/>
                         </svg>
                       </div>
                       <div className="flex flex-col gap-2">
@@ -190,7 +199,7 @@ export default function ClientHomepage() {
                         <p className="text-[#736F67] text-base leading-6">Engage with Nara AI for 24/7 personalized mental health support anytime, anywhere.</p>
                       </div>
                     </div>
-                    <button className="w-fit px-5 py-3 bg-[#015033] text-white rounded-md text-sm font-medium">
+                    <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                       Start a chat
                     </button>
                   </motion.div>
@@ -209,9 +218,12 @@ export default function ClientHomepage() {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#F0F9FF]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#0EA5E9"/>
+                      <div className="size-12 rounded-full flex items-center justify-center w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#F0FBFF"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#59D5FB" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M26.75 16.603C26.75 15.0842 25.5188 13.853 24 13.853C22.4812 13.853 21.25 15.0842 21.25 16.603C21.25 18.1218 22.4812 19.353 24 19.353C25.5188 19.353 26.75 18.1218 26.75 16.603Z" fill="#59D5FB"/>
+                          <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB"/>
                         </svg>
                       </div>
                       <div className="flex flex-col gap-2">
@@ -219,7 +231,7 @@ export default function ClientHomepage() {
                         <p className="text-[#736F67] text-base leading-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
                       </div>
                     </div>
-                    <button className="w-fit px-5 py-3 bg-[#015033] text-white rounded-md text-sm font-medium">
+                    <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                       Find your inner peace
                     </button>
                   </motion.div>
@@ -228,7 +240,7 @@ export default function ClientHomepage() {
 
               {/* Desktop Layout - 1x1 Single Column - Full Width */}
               <motion.div 
-                className="hidden lg:flex flex-col space-y-16 w-full"
+                className="hidden lg:flex flex-col space-y-[120px] w-full"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -236,21 +248,23 @@ export default function ClientHomepage() {
               >
                   {/* Self Care (Image Left, Text Right) */}
                   <motion.div 
-                    className="flex items-start gap-12 w-full py-8 h-[480px]"
+                    className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="flex-1">
-                      <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <div className="w-[560px] flex-shrink-0">
+                      <div className="w-full h-[480px] bg-gray-200 rounded-lg flex items-center justify-center">
                         <span className="text-gray-500">iPhone Mockup</span>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#E5F8F1] mb-6">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#01BC77"/>
+                    <div className="flex-1 pl-8 min-w-[300px]">
+                      <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M24 35.353C29.9371 35.353 34.75 30.5401 34.75 24.603C34.75 18.666 29.9371 13.853 24 13.853C18.0629 13.853 13.25 18.666 13.25 24.603C13.25 30.5401 18.0629 35.353 24 35.353ZM22.2373 23.3149C21.9312 23.417 21.5941 23.3113 21.4004 23.0532C20.9504 22.4532 20.0496 22.4532 19.5996 23.0532C19.351 23.3843 18.8811 23.4511 18.5498 23.2026C18.2187 22.954 18.1519 22.4841 18.4004 22.1528C18.9124 21.4704 19.6737 21.1209 20.4414 21.104C20.177 20.8095 20.1865 20.3559 20.4697 20.0728C20.7626 19.7799 21.2374 19.7799 21.5303 20.0728C21.564 20.1089 21.6711 20.223 21.7256 20.2866C21.8339 20.4129 21.9784 20.5936 22.124 20.812C22.3989 21.2244 22.75 21.8776 22.75 22.603C22.75 22.9259 22.5436 23.2129 22.2373 23.3149ZM26.5996 23.0532C26.4059 23.3113 26.0688 23.417 25.7627 23.3149C25.4564 23.2129 25.25 22.9259 25.25 22.603C25.25 21.8776 25.6011 21.2244 25.876 20.812C26.0216 20.5936 26.1661 20.4129 26.2744 20.2866C26.3289 20.223 26.436 20.1089 26.4697 20.0728C26.7626 19.7799 27.2374 19.7799 27.5303 20.0728C27.8135 20.3559 27.823 20.8095 27.5586 21.104C28.3263 21.1209 29.0876 21.4704 29.5996 22.1528C29.8481 22.4841 29.7813 22.954 29.4502 23.2026C29.1189 23.4511 28.649 23.3843 28.4004 23.0532C27.9504 22.4532 27.0496 22.4532 26.5996 23.0532ZM24 30.353C22.1185 30.353 20.4481 29.4481 19.4004 28.0532C19.1517 27.722 19.2186 27.2521 19.5498 27.0034C19.881 26.7547 20.3509 26.8216 20.5996 27.1528C21.3762 28.1867 22.6103 28.853 24 28.853C25.3897 28.853 26.6238 28.1867 27.4004 27.1528C27.6491 26.8217 28.119 26.7548 28.4502 27.0034C28.7814 27.2522 28.8483 27.722 28.5996 28.0532C27.5519 29.4481 25.8816 30.353 24 30.353Z" fill="#01BC77"/>
                         </svg>
                       </div>
                       <h3 className="text-[#353535] text-2xl font-medium mb-4">Self Care</h3>
@@ -263,16 +277,20 @@ export default function ClientHomepage() {
 
                   {/* Therapy (Text Left, Image Right) */}
                   <motion.div 
-                    className="flex items-start gap-12 w-full py-8 h-[480px]"
+                    className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="flex-1">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#EFF3FB] mb-6">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#0665FE"/>
+                    <div className="flex-1 pr-8 min-w-[300px]">
+                      <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#EFF3FB"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#0665FE" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M34 20.413V25.103H29.92C29.8 25.093 29.54 24.943 29.48 24.833L28.44 22.863C28.03 22.083 27.32 21.643 26.56 21.683C25.8 21.723 25.15 22.233 24.82 23.063L23.44 26.523L23.24 26.003C22.75 24.733 21.35 23.773 19.97 23.773L14 23.803V20.413C14 16.773 16.17 14.603 19.81 14.603H28.19C31.83 14.603 34 16.773 34 20.413Z" fill="#0665FE"/>
+                          <path d="M34 28.7929V26.6029H29.92C29.25 26.6029 28.46 26.1229 28.15 25.5329L27.11 23.5629C26.83 23.0329 26.43 23.0629 26.21 23.6129L23.91 29.4229C23.66 30.0729 23.24 30.0729 22.98 29.4229L21.84 26.5429C21.57 25.8429 20.73 25.2729 19.98 25.2729L14 25.3029V28.7929C14 32.3729 16.1 34.5329 19.63 34.5929C19.74 34.6029 19.86 34.6029 19.97 34.6029H27.97C28.12 34.6029 28.27 34.6029 28.41 34.5929C31.92 34.5129 34 32.3629 34 28.7929Z" fill="#0665FE"/>
+                          <path d="M13.9988 25.303V28.613C13.9787 28.293 13.9688 27.953 13.9688 27.603V25.303H13.9988Z" fill="#0665FE"/>
                         </svg>
                       </div>
                       <h3 className="text-[#353535] text-2xl font-medium mb-4">Therapy</h3>
@@ -281,8 +299,8 @@ export default function ClientHomepage() {
                         Find a Therapist
                       </button>
                     </div>
-                    <div className="flex-1">
-                      <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <div className="w-[560px] flex-shrink-0">
+                      <div className="w-full h-[480px] bg-gray-200 rounded-lg flex items-center justify-center">
                         <span className="text-gray-500">iPhone Mockup</span>
                       </div>
                     </div>
@@ -290,21 +308,24 @@ export default function ClientHomepage() {
 
                   {/* AI Therapy (Image Left, Text Right) */}
                   <motion.div 
-                    className="flex items-start gap-12 w-full py-8 h-[480px]"
+                    className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="flex-1">
-                      <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <div className="w-[560px] flex-shrink-0">
+                      <div className="w-full h-[480px] bg-gray-200 rounded-lg flex items-center justify-center">
                         <span className="text-gray-500">iPhone Mockup</span>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#FDF2F2] mb-6">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#D92D20"/>
+                    <div className="flex-1 pl-8 min-w-[300px]">
+                      <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#FEF6EB"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#F59714" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M31.4812 15.423L31.7612 15.993C31.9012 16.273 32.2512 16.533 32.5612 16.593L32.9412 16.653C34.0812 16.843 34.3512 17.683 33.5312 18.513L33.1812 18.863C32.9512 19.103 32.8212 19.563 32.8912 19.883L32.9412 20.093C33.2512 21.473 32.5212 22.003 31.3212 21.283L31.0612 21.133C30.7512 20.953 30.2512 20.953 29.9412 21.133L29.6812 21.283C28.4712 22.013 27.7412 21.473 28.0612 20.093L28.1112 19.883C28.1812 19.563 28.0512 19.103 27.8212 18.863L27.4712 18.503C26.6512 17.673 26.9212 16.833 28.0612 16.643L28.4412 16.583C28.7412 16.533 29.1012 16.263 29.2412 15.983L29.5212 15.413C30.0612 14.333 30.9412 14.333 31.4812 15.423Z" fill="#F59714"/>
+                          <path d="M33.57 22.693C33.21 22.953 32.2 23.433 30.76 22.693C30.6 22.613 30.4 22.603 30.24 22.693C29.67 22.983 29.15 23.103 28.74 23.103C28.1 23.103 27.65 22.853 27.43 22.693C27.06 22.423 26.28 21.653 26.55 20.023C26.58 19.853 26.53 19.683 26.42 19.553C25.73 18.763 25.35 17.703 25.62 16.873C25.72 16.543 25.51 16.103 25.17 16.103H19C16 16.103 14 17.603 14 21.103V28.103C14 31.603 16 33.103 19 33.103H29C32 33.103 34 31.603 34 28.103V22.873C34 22.683 33.73 22.583 33.57 22.693ZM26.34 24.693C25.68 25.223 24.84 25.483 24 25.483C23.16 25.483 22.31 25.223 21.66 24.693L18.53 22.193C18.21 21.933 18.16 21.453 18.41 21.133C18.67 20.813 19.14 20.753 19.46 21.013L22.59 23.513C23.35 24.123 24.64 24.123 25.4 23.513C25.72 23.253 26.19 23.303 26.45 23.633C26.72 23.953 26.67 24.433 26.34 24.693Z" fill="#F59714"/>
                         </svg>
                       </div>
                       <h3 className="text-[#353535] text-2xl font-medium mb-4">AI Therapy</h3>
@@ -317,26 +338,29 @@ export default function ClientHomepage() {
 
                   {/* Meditation (Text Left, Image Right) */}
                   <motion.div 
-                    className="flex items-start gap-12 w-full py-8 h-[480px]"
+                    className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="flex-1">
-                      <div className="size-12 rounded-full flex items-center justify-center bg-[#F0F9FF] mb-6">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z" fill="#0EA5E9"/>
+                    <div className="flex-1 pr-8 min-w-[300px]">
+                      <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">
+                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect y="0.603027" width="48" height="48" rx="24" fill="#F0FBFF"/>
+                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#59D5FB" strokeOpacity="0.1" strokeWidth="0.5"/>
+                          <path d="M26.75 16.603C26.75 15.0842 25.5188 13.853 24 13.853C22.4812 13.853 21.25 15.0842 21.25 16.603C21.25 18.1218 22.4812 19.353 24 19.353C25.5188 19.353 26.75 18.1218 26.75 16.603Z" fill="#59D5FB"/>
+                          <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB"/>
                         </svg>
                       </div>
                       <h3 className="text-[#353535] text-2xl font-medium mb-4">Meditation</h3>
                       <p className="text-[#736F67] leading-6 text-base mb-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
-                      <button className="px-5 py-3 bg-[#015033] text-white rounded-md text-sm font-medium">
+                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Find your inner peace
                       </button>
                     </div>
-                    <div className="flex-1">
-                      <div className="w-full h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <div className="w-[560px] flex-shrink-0">
+                      <div className="w-full h-[480px] bg-gray-200 rounded-lg flex items-center justify-center">
                         <span className="text-gray-500">iPhone Mockup</span>
                       </div>
                     </div>
@@ -353,7 +377,7 @@ export default function ClientHomepage() {
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#B9DFD1] bg-[#F4FBF9]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
-              <div className="flex flex-col items-center gap-12 lg:px-6 px-3 w-full">
+              <div className="flex flex-col items-center gap-12 lg:px-6 px-3 max-w-[1440px] mx-auto w-full">
               {/* Header */}
               <div className="flex w-full flex-col items-center gap-4 text-center">
                 <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">GET STARTED</p>
