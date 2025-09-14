@@ -10,7 +10,7 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 export const metadata = {
   title: "Nara Therapy",
   description:
-    "Nara Therapy is the all-in-one solution for your therapy practice.",
+    "Nara combines traditional therapy with AI-assisted support to deliver 24/7 mental health support.",
   metadataBase: new URL("https://joinnara.com"),
 };
 
