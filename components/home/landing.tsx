@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "../shared/testimonials";
 import Faq from "./faq";
@@ -64,15 +65,41 @@ export default function Landing() {
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
               <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
-              <div className="flex flex-col gap-6 lg:gap-8">
-                <p className="text-[#015033] text-sm">FEATURES</p>
-                <p className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold">
+              <motion.div 
+                className="flex flex-col gap-6 lg:gap-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <motion.p 
+                  className="text-[#015033] text-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  FEATURES
+                </motion.p>
+                <motion.p 
+                  className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   One dashboard,<br className="hidden lg:flex" /> everything you need
-                </p>
-                <p className="text-base text-[#736F67] leading-[24px] mb-4">
+                </motion.p>
+                <motion.p 
+                  className="text-base text-[#736F67] leading-[24px] mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   Get a complete view of your client's mental health journey—from onboarding <br className="hidden lg:flex" /> to insights and ongoing support.
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
 
               {/* Mobile Layout - Single Column */}
                 <div className="flex flex-col gap-8 lg:hidden">
@@ -167,7 +194,7 @@ export default function Landing() {
 
               {/* Desktop Layout - Grid */}
               <div className="hidden lg:grid grid-cols-3 gap-8">
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#E5F8F1"/>
@@ -181,7 +208,7 @@ export default function Landing() {
                     <p className="text-[#736F67] leading-6 text-base">Get real-time data on mood, engagement, and therapy progress.</p>
                   </div>
                 </div>
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#EFF3FB"/>
@@ -194,7 +221,7 @@ export default function Landing() {
                     <p className="text-[#736F67] leading-6 text-base">Keep clients engaged between sessions with tailored assignments—track progress effortlessly and send timely reminders.</p>
                   </div>
                 </div>
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#FDF2F2"/>
@@ -207,7 +234,7 @@ export default function Landing() {
                     <p className="text-[#736F67] leading-6 text-base">Identify early signs of high-risk patients through assessments, mood check-ins, AI-powered conversations, and other integrated tools.</p>
                   </div>
                 </div>
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#FFFBEB"/>
@@ -221,7 +248,7 @@ export default function Landing() {
                     <p className="text-[#736F67] leading-6 text-base">View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.</p>
                   </div>
                 </div>
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#F0FBFF"/>
@@ -235,7 +262,7 @@ export default function Landing() {
                     <p className="text-[#736F67] leading-6 text-base">Communicate safely with clients between appointments, keeping the therapeutic bond strong.</p>
                   </div>
                 </div>
-                  <div className="flex flex-col gap-8 py-6">
+                  <div className="flex flex-col gap-8 py-6 h-[244px]">
                     <div className="size-12 rounded-full flex items-center justify-start">
                       <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.174316" width="48" height="48" rx="24" fill="#FEF6EB"/>

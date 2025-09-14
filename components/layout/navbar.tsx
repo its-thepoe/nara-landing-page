@@ -53,14 +53,17 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden items-center gap-6 md:flex">
-            <Link href="#features" className="text-[16px] tracking-[-0.01em]" style={{ color: COLOR_GRAY_600 }}>
+            <Link href="#features" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
               Features
+              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
-            <Link href="#how-it-works" className="text-[16px] tracking-[-0.01em]" style={{ color: COLOR_GRAY_600 }}>
+            <Link href="#how-it-works" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
               How it works
+              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
-            <Link href="#faqs" className="text-[16px] tracking-[-0.01em]" style={{ color: COLOR_GRAY_600 }}>
+            <Link href="#faqs" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
               FAQs
+              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
           </div>
 
