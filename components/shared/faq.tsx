@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Money, ShieldTick, DocumentText, SmsStar, UserOctagon, Messages2, Book } from "iconsax-react";
 
 export type FaqItem = { 
@@ -89,17 +90,34 @@ export default function Faq({
               
               {/* Arrow */}
               <div className="flex h-6 w-6 md:h-8 md:w-8 items-center justify-center">
-                <div className={`transition-transform duration-200 ${open ? 'rotate-90' : ''}`}>
+                <motion.div
+                  animate={{ rotate: open ? 90 : 0 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
                   <ArrowRight size={18} color="#667085" className="md:hidden" />
                   <ArrowRight size={20} color="#667085" className="hidden md:block" />
-                </div>
+                </motion.div>
               </div>
             </button>
-            {open && item.a && (
-              <div className="px-3 md:px-5 pb-4 md:pb-5 pt-0">
-                <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#667085]">{item.a}</p>
-              </div>
-            )}
+            <AnimatePresence>
+              {open && item.a && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ 
+                    duration: 0.3, 
+                    ease: "easeOut",
+                    opacity: { duration: 0.2 }
+                  }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-3 md:px-5 pb-4 md:pb-5 pt-0">
+                    <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#667085]">{item.a}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         );
       })}

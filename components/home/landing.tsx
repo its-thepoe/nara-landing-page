@@ -7,16 +7,7 @@ import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
-  // Figma MCP/local assets
-  const imgHeroGradients27 =
-    "http://localhost:3845/assets/782b5e614eee98d14246b1691d487d72dc3f1bd1.png";
   const heroMockup = "/Hero section mockup.webp";
-  const imgContainer =
-    "http://localhost:3845/assets/6ccd6fef682f0627592637ddeb500abcb5a4829b.png";
-  const img67Eb90 =
-    "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png";
-  const imgFooterGrad =
-    "http://localhost:3845/assets/fa660c84c18525d61ab8ceea3b74b54e1a86dcba.png";
 
   return (
     <div className="relative z-10 w-full bg-white">
@@ -36,11 +27,11 @@ export default function Landing() {
                 </p>
                 <div className="mt-8 flex lg:flex-row flex-col justify-center w-full gap-3">
                   <a href="#get-started">
-                    <div className="bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-lg flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
+                    <div className="bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
                       <p className="text-center text-base text-white">Get started - for free</p>
                     </div>
                   </a>
-                  <div className="border border-[#015033] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
+                  <div className="border border-[#015033] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
                     <p className="text-center text-base text-[#015033]">Book a demo</p>
           </div>
         </div>
@@ -334,13 +325,13 @@ export default function Landing() {
               <div className="flex w-full flex-col items-center gap-[12px] md:flex-row md:justify-center">
                 <a
                   href="#get-started"
-                  className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-lg px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
+                  className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
                 >
                   Get started - for free
                 </a>
                 <a
                   href="#book-demo"
-                  className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-lg px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out"
+                  className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out"
                   style={{ borderColor: "#015033", borderWidth: 1 }}
                 >
                   Book a demo

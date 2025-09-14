@@ -10,8 +10,12 @@ export default function Footer() {
           {/* Inner Container */}
           <div className="flex w-full max-w-[1152px] flex-col items-start gap-8 pt-4">
             {/* Logo Container */}
-            <div className="flex h-16 w-16 items-center justify-center">
-              <div className="h-16 w-16 rounded-full bg-white"></div>
+            <div className="flex h-24 w-24 items-center justify-center">
+              <img 
+                src="/naralogowhite.webp" 
+                alt="Nara Logo" 
+                className="h-24 w-24 object-contain"
+              />
             </div>
 
             {/* Navigation Links Container - Desktop: horizontal, Mobile: vertical columns */}
@@ -24,21 +28,24 @@ export default function Footer() {
                 <div className="flex flex-col items-start gap-3">
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Sign up
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Login
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Book a Demo
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                 </div>
               </div>
@@ -51,15 +58,17 @@ export default function Footer() {
                 <div className="flex flex-col items-start gap-3">
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      For Clients
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      For Therapists
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                 </div>
               </div>
@@ -72,21 +81,24 @@ export default function Footer() {
                 <div className="flex flex-col items-start gap-3">
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Privacy Policy
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Terms of Service
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                    <a
                      href="#"
-                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white hover:underline"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >
                      Compliance
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                    </a>
                 </div>
               </div>
