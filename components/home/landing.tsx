@@ -6,6 +6,7 @@ import Testimonials from "../shared/testimonials";
 import Faq from "./faq";
 import FounderSpotlight from "../shared/founder-spotlight";
 import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
+import Image from "next/image";
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
@@ -44,20 +45,11 @@ export default function Landing() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <img
+                  <Image
                     alt="nara-dash"
                     src={heroMockup}
-                    className="absolute object-fill"
-                    style={{
-                      position: "absolute",
-                      height: "100%",
-                      width: "100%",
-                      left: 0,
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      color: "transparent"
-                    }}
+                    fill
+                    className="object-fill"
                   />
                 </motion.div>
               </div>
@@ -78,7 +70,7 @@ export default function Landing() {
                     One dashboard,<br className="hidden lg:flex" /> everything you need
                   </p>
                   <p className="text-base text-[#736F67] leading-[24px] mb-4">
-                    Get a complete view of your client's mental health journey—from onboarding <br className="hidden lg:flex" /> to insights and ongoing support.
+                    Get a complete view of your client&apos;s mental health journey—from onboarding <br className="hidden lg:flex" /> to insights and ongoing support.
                   </p>
                 </div>
 
@@ -168,7 +160,7 @@ export default function Landing() {
                     </div>
                     <div className="flex flex-col gap-2">
                       <p className="text-[#353535] text-xl font-medium">AI Chat Summaries</p>
-                      <p className="text-[#736F67] text-base leading-6">View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.</p>
+                      <p className="text-[#736F67] text-base leading-6">View summaries of patient interactions with Nara&apos;s AI (with consent). Stay informed between sessions.</p>
                     </div>
                   </motion.div>
 
@@ -298,7 +290,7 @@ export default function Landing() {
                     </div>
                     <div className="flex flex-col gap-2">
                       <p className="text-[#353535] text-xl font-medium">AI Chat Summaries</p>
-                      <p className="text-[#736F67] leading-6 text-base">View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.</p>
+                      <p className="text-[#736F67] leading-6 text-base">View summaries of patient interactions with Nara&apos;s AI (with consent). Stay informed between sessions.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -497,7 +489,7 @@ export default function Landing() {
                   questions
                 </h2>
                     <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
-                      Got questions? We've got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">support</span> team anytime.
+                      Got questions? We&apos;ve got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">&quot;support&quot;</span> team anytime.
                 </p>
               </div>
                   
