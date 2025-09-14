@@ -65,17 +65,38 @@ export const CLIENT_TESTIMONIALS_CONFIG = {
   testimonials: [
     {
       quote:
-        "The app helps me stay connected with my therapist between sessions.",
-      author: "Sarah M.",
-      role: "Client",
-      avatarUrl: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+        "With just four sessions through Nara's therapist, I discovered new ways to cope with stress, and I've felt ten times happier ever since!",
+      author: "Morgan",
+      role: "Seattle, Washington",
+      avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
     },
     {
       quote:
-        "I feel more supported knowing my therapist can see my progress.",
-      author: "John D.",
-      role: "Client",
+        "I was able to find and schedule a session with my therapist in under 24 hours.",
+      author: "Alex",
+      role: "Austin, Texas",
       avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "Nara took my therapy costs from $200 per session to just $20 per session. Game changer!",
+      author: "Halie",
+      role: "Buffalo, NY",
+      avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "Nara's daily mood checking and gratitude prompts have become essential parts of my routine. They keep me grounded and positive every day.",
+      author: "Chioma",
+      role: "Atlanta, Georgia",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "Incorporating Nara's 'share love' task into my daily life has strengthened my relationships and boosted my overall happiness. It's amazing!",
+      author: "Jake",
+      role: "Denver, Colorado",
+      avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
     },
   ],
 };

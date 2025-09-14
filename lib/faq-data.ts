@@ -55,24 +55,39 @@ export const THERAPIST_FAQ_ITEMS: FaqItemData[] = [
 // Client-focused FAQ items
 export const CLIENT_FAQ_ITEMS: FaqItemData[] = [
   {
-    q: "Is Nara a replacement for my therapist?",
-    a: "No, Nara is designed to support and enhance your therapy sessions, not replace them. It helps you stay connected with your therapeutic work between appointments.",
+    q: "Can I connect with a licensed therapist through Nara?",
+    a: "Of course, you can. We match you with the best therapist from our pool of experts based on your needs.",
     icon: "UserOctagon",
   },
   {
-    q: "How does the AI chat feature work?",
-    a: "Our AI provides supportive conversations and exercises based on therapeutic principles. Your therapist can see summaries (with your permission) to better understand your progress.",
-    icon: "SmsStar",
+    q: "How much does a therapy session cost on Nara?",
+    a: "Therapy sessions through Nara are significantly more affordable than traditional therapy, with costs starting at just $20 per session compared to $200+ elsewhere.",
+    icon: "Money",
   },
   {
-    q: "Is my data private and secure?",
+    q: "Who is Nara Therapy designed for?",
+    a: "Nara is designed for anyone seeking mental health support, whether you're new to therapy or looking to enhance your existing therapeutic journey.",
+    icon: "UserOctagon",
+  },
+  {
+    q: "Is my information safe and confidential on Nara?",
     a: "Yes, your data is encrypted and HIPAA-compliant. Only you and your therapist (with your permission) can access your information.",
     icon: "ShieldTick",
   },
   {
-    q: "Can I use Nara on my phone?",
-    a: "Yes! Nara is available as a mobile app for both iOS and Android, so you can access your homework, mood tracking, and AI support anywhere.",
-    icon: "DocumentText",
+    q: "Is Nara Therapy backed by research and evidence-based practices?",
+    a: "Absolutely. Nara's features are built on evidence-based therapeutic practices and are continuously validated through research and clinical studies.",
+    icon: "Book",
+  },
+  {
+    q: "How does Nara support me between therapy sessions?",
+    a: "Nara provides daily mood tracking, AI-powered support conversations, homework assignments, and gratitude prompts to keep you engaged with your mental health journey.",
+    icon: "Messages2",
+  },
+  {
+    q: "Do I need previous therapy experience to use Nara?",
+    a: "No previous therapy experience is required. Nara is designed to be accessible to everyone, whether you're new to mental health support or have been in therapy for years.",
+    icon: "UserOctagon",
   },
 ];
 

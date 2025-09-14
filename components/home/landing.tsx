@@ -9,7 +9,7 @@ import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
-  const heroMockup = "/Hero section mockup.webp";
+  const heroMockup = "/providerdashboardmockup.webp";
 
   return (
     <div className="relative z-10 w-full bg-white">

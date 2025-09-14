@@ -12,7 +12,7 @@ const COLOR_PRIMARY_600 = "#01432B";
 const COLOR_PRIMARY_500 = "#015033";
 const COLOR_GRAY_600 = "#475467";
 
-export default function Navbar() {
+export default function ClientNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleAnchorClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -53,16 +53,16 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden items-center gap-6 md:flex">
-            <Link href="/clients" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              For Clients
+            <Link href="/" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
+              For Providers
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
             <Link href="#features" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
               Features
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
-            <Link href="#how-it-works" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              How it works
+            <Link href="#pricing" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
+              Pricing
               <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
             </Link>
             <Link href="#faqs" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
@@ -131,8 +131,8 @@ export default function Navbar() {
           <nav className="px-4 pb-4 pt-2">
             <ul className="space-y-8 text-[24px] font-medium text-[#1D2939]">
               <li>
-                <Link href="/clients" onClick={() => setIsOpen(false)}>
-                  For Clients
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  For Providers
                 </Link>
               </li>
               <li>
@@ -141,8 +141,8 @@ export default function Navbar() {
                 </a>
               </li>
               <li>
-                <a href="#how-it-works" onClick={handleAnchorClick("how-it-works")}>
-                  How it works
+                <a href="#pricing" onClick={handleAnchorClick("pricing")}>
+                  Pricing
                 </a>
               </li>
               <li>
@@ -156,74 +156,61 @@ export default function Navbar() {
 
             <div className="grid grid-cols-2 gap-8 px-1 pb-8">
               <div>
-                <p className="mb-4 text-xs font-semibold tracking-wider text-[#667085]">
-                  SOLUTIONS
-                </p>
-                <ul className="space-y-4 text-[20px] text-[#344054]">
+                <h3 className="text-[14px] font-semibold text-[#344054] mb-4">Product</h3>
+                <ul className="space-y-4 text-[14px] text-[#667085]">
                   <li>
-                    <Link href="#for-clients" onClick={() => setIsOpen(false)}>
-                      For Clients
-                    </Link>
+                    <a href="#features" onClick={handleAnchorClick("features")}>
+                      Features
+                    </a>
                   </li>
                   <li>
-                    <Link href="#for-therapists" onClick={() => setIsOpen(false)}>
-                      For Therapists
-                    </Link>
+                    <a href="#pricing" onClick={handleAnchorClick("pricing")}>
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#faqs" onClick={handleAnchorClick("faqs")}>
+                      FAQs
+                    </a>
                   </li>
                 </ul>
               </div>
+
               <div>
-                <p className="mb-4 text-xs font-semibold tracking-wider text-[#667085]">LEGAL</p>
-                <ul className="space-y-4 text-[20px] text-[#344054]">
+                <h3 className="text-[14px] font-semibold text-[#344054] mb-4">Support</h3>
+                <ul className="space-y-4 text-[14px] text-[#667085]">
                   <li>
-                    <Link href="#privacy" onClick={() => setIsOpen(false)}>
-                      Privacy Policy
-                    </Link>
+                    <a href="mailto:support@nara.com" className="hover:text-[#015033] transition-colors duration-200">
+                      Contact us
+                    </a>
                   </li>
                   <li>
-                    <Link href="#terms" onClick={() => setIsOpen(false)}>
-                      Terms of Service
-                    </Link>
+                    <a href="#" className="hover:text-[#015033] transition-colors duration-200">
+                      Help center
+                    </a>
                   </li>
                   <li>
-                    <Link href="#compliance" onClick={() => setIsOpen(false)}>
-                      Compliance
-                    </Link>
+                    <a href="#" className="hover:text-[#015033] transition-colors duration-200">
+                      Privacy policy
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="space-y-4 px-1 pb-8">
+            <div className="px-1">
               <Link
                 href="#get-started"
-                onClick={() => setIsOpen(false)}
-                className="block rounded-md px-5 py-4 text-center text-[18px] text-white transition-[transform,opacity] duration-200 ease-out-cubic"
+                onClick={handleAnchorClick("get-started")}
+                className="block w-full rounded-md px-5 py-3 text-center text-[16px] font-medium text-white transition-[transform,opacity] duration-200 ease-out-cubic"
                 style={{ backgroundColor: COLOR_PRIMARY_500 }}
               >
-                Get started – for free
-              </Link>
-              <Link
-                href="#book-demo"
-                onClick={() => setIsOpen(false)}
-                className="block rounded-md px-5 py-4 text-center text-[18px]"
-                style={{ color: COLOR_PRIMARY_600, borderColor: COLOR_PRIMARY_600, borderWidth: 1 }}
-              >
-                Book a demo
+                Get started - for free
               </Link>
             </div>
           </nav>
         </aside>
       </div>
-
-      {/* Reduce motion accessibility */}
-      <style jsx global>{`
-        @media (prefers-reduced-motion: reduce) {
-          aside[role="dialog"] { transition: none !important; transform: none !important; }
-        }
-      `}</style>
     </>
   );
 }
-
-

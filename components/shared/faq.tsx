@@ -15,6 +15,7 @@ interface FaqProps {
   defaultOpenIndex?: number;
   allowMultipleOpen?: boolean;
   className?: string;
+  showIcons?: boolean;
 }
 
 // Icon mapping
@@ -32,7 +33,8 @@ export default function Faq({
   items, 
   defaultOpenIndex = 0, 
   allowMultipleOpen = false,
-  className = "" 
+  className = "",
+  showIcons = true
 }: FaqProps) {
   const [openIndexes, setOpenIndexes] = useState<Set<number>>(
     new Set(defaultOpenIndex !== -1 ? [defaultOpenIndex] : [])
@@ -74,14 +76,16 @@ export default function Faq({
               aria-expanded={open}
             >
               {/* Icon - Visible on both mobile and desktop */}
-              <div className="flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded border border-[#F2F4F7] p-1 md:p-1.5">
-                {IconComponent && (
-                  <>
-                    <IconComponent size={16} color="#667085" variant="Outline" strokeWidth={1.2} className="md:hidden" />
-                    <IconComponent size={20} color="#667085" variant="Outline" strokeWidth={1.2} className="hidden md:block" />
-                  </>
-                )}
-              </div>
+              {showIcons && (
+                <div className="flex h-6 w-6 md:h-8 md:w-8 items-center justify-center rounded border border-[#F2F4F7] p-1 md:p-1.5">
+                  {IconComponent && (
+                    <>
+                      <IconComponent size={16} color="#667085" variant="Outline" strokeWidth={1.2} className="md:hidden" />
+                      <IconComponent size={20} color="#667085" variant="Outline" strokeWidth={1.2} className="hidden md:block" />
+                    </>
+                  )}
+                </div>
+              )}
               
               {/* Question */}
               <p className="flex-1 text-[14px] md:text-[18px] leading-[20px] md:leading-[28px] font-medium text-[#101828]">

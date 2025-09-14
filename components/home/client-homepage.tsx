@@ -3,29 +3,42 @@ import React from "react";
 import { motion } from "framer-motion";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "../shared/testimonials";
-import Faq from "./faq";
+import Faq from "../shared/faq";
+import { CLIENT_FAQ_ITEMS } from "@/lib/faq-data";
 import FounderSpotlight from "../shared/founder-spotlight";
-import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
+import ClientNavbar from "../layout/client-navbar";
+import Footer from "../layout/footer";
+import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 
 // Client homepage - duplicated from landing page as boilerplate
 export default function ClientHomepage() {
-  const heroMockup = "/Hero section mockup.webp";
+  const heroMockup = "/clientmockup.webp";
 
   return (
-    <div className="relative z-10 w-full bg-white">
+    <div className="w-full">
+      <ClientNavbar />
+      <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
       <div className="relative z-10 lg:px-6 px-3">
-        <div className="lg:px-20 lg:pb-3 p-4 bg-gradient-to-b from-[#f7fefb] to-[#e7fef6] shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden">
+        <div 
+          className="lg:px-20 lg:pb-3 p-4 shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden"
+          style={{
+            background: `
+              linear-gradient(to bottom, #e5f8f1 40.238%, rgba(229,248,241,0) 100%),
+              url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 1408 1468\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(119.75 3.492e-13 -8.7539e-14 95.54 704 733.99)\\'><stop stop-color=\\'rgba(1,80,51,0)\\' offset=\\'0.3\\'/><stop stop-color=\\'rgba(1,134,85,0.5)\\' offset=\\'0.49635\\'/><stop stop-color=\\'rgba(1,188,119,1)\\' offset=\\'0.6927\\'/><stop stop-color=\\'rgba(17,192,128,1)\\' offset=\\'0.71191\\'/><stop stop-color=\\'rgba(33,196,136,1)\\' offset=\\'0.73111\\'/><stop stop-color=\\'rgba(64,205,153,1)\\' offset=\\'0.76953\\'/><stop stop-color=\\'rgba(96,213,170,1)\\' offset=\\'0.80794\\'/><stop stop-color=\\'rgba(128,221,187,1)\\' offset=\\'0.84635\\'/><stop stop-color=\\'rgba(191,238,221,1)\\' offset=\\'0.92318\\'/><stop stop-color=\\'rgba(255,255,255,1)\\' offset=\\'1\\'/></radialGradient></defs></svg>')
+            `
+          }}
+        >
           <div className="flex flex-col">
             <div className="pt-20 lg:pt-48">
               <div className="flex flex-col items-center justify-center lg:text-center">
                 <p className="text-[#101828] font-semibold text-[36px] lg:text-[60px] lg:leading-[72px] leading-[44px]">
-                  Managing all your patients <br className="lg:flex hidden" />
-                  has never been this easy
+                Your everyday app for <br className="lg:flex hidden" />
+                mental wellness 
                 </p>
                 <p className="text-[20px] font-normal lg:text-xl leading-[30px] text-[#475467] mt-4">
-                  Save time with our smart dashboard that helps you track progress, <br className="lg:flex hidden" />
-                  and stay connected between sessions.
+                Nara combines traditional therapy with AI-assisted support <br className="lg:flex hidden" />
+                to deliver 24/7 mental health support.
                 </p>
                 <div className="mt-8 flex lg:flex-row flex-col justify-center w-full gap-3">
                   <a href="#get-started">
@@ -47,7 +60,7 @@ export default function ClientHomepage() {
                   <img
                     alt="nara-dash"
                     src={heroMockup}
-                    className="absolute object-fill"
+                    className="absolute object-contain"
                     style={{
                       position: "absolute",
                       height: "100%",
@@ -75,10 +88,10 @@ export default function ClientHomepage() {
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <p className="text-[#015033] text-sm">FEATURES</p>
                   <p className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold">
-                    One dashboard,<br className="hidden lg:flex" /> everything you need
+                    Everything you need for<br className="hidden lg:flex" /> mental wellness
                   </p>
                   <p className="text-base text-[#736F67] leading-[24px] mb-4">
-                    Get a complete view of your client's mental health journey—from onboarding <br className="hidden lg:flex" /> to insights and ongoing support.
+                    Access therapy, AI support, and wellness tools—all in one place <br className="hidden lg:flex" /> to support your mental health journey.
                   </p>
                 </div>
 
@@ -106,8 +119,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Remote Patient Monitoring</p>
-                      <p className="text-[#736F67] text-base leading-6">Get real-time data on mood, engagement, and therapy progress.</p>
+                      <p className="text-[#353535] text-xl font-medium">24/7 AI Support</p>
+                      <p className="text-[#736F67] text-base leading-6">Get instant support and guidance whenever you need it with our AI-powered mental health assistant.</p>
                     </div>
                   </motion.div>
 
@@ -126,8 +139,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Assignments</p>
-                      <p className="text-[#736F67] text-base leading-6">Keep clients engaged between sessions with tailored assignments—track progress effortlessly and send timely reminders.</p>
+                      <p className="text-[#353535] text-xl font-medium">Daily Wellness Tasks</p>
+                      <p className="text-[#736F67] text-base leading-6">Complete personalized daily tasks like mood check-ins, gratitude exercises, and mindfulness activities to build healthy habits.</p>
                     </div>
                   </motion.div>
 
@@ -146,8 +159,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">High Risk Detection</p>
-                      <p className="text-[#736F67] text-base leading-6">Identify early signs of high-risk patients through assessments, mood check-ins, AI-powered conversations, and other integrated tools.</p>
+                      <p className="text-[#353535] text-xl font-medium">Mood Tracking</p>
+                      <p className="text-[#736F67] text-base leading-6">Track your daily mood and emotional patterns to better understand your mental health journey and share insights with your therapist.</p>
                     </div>
                   </motion.div>
 
@@ -167,8 +180,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">AI Chat Summaries</p>
-                      <p className="text-[#736F67] text-base leading-6">View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.</p>
+                      <p className="text-[#353535] text-xl font-medium">Personalized Therapy</p>
+                      <p className="text-[#736F67] text-base leading-6">Connect with licensed therapists who understand your needs and provide personalized care tailored to your mental health goals.</p>
                     </div>
                   </motion.div>
 
@@ -188,8 +201,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Secure messaging</p>
-                      <p className="text-[#736F67] text-base leading-6">Communicate safely with clients between appointments, keeping the therapeutic bond strong.</p>
+                      <p className="text-[#353535] text-xl font-medium">Secure Messaging</p>
+                      <p className="text-[#736F67] text-base leading-6">Communicate safely and privately with your therapist between sessions, keeping your therapeutic relationship strong.</p>
                     </div>
                   </motion.div>
 
@@ -209,8 +222,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">AI Notes</p>
-                      <p className="text-[#736F67] text-base leading-6">Manage interest lists, approve new clients, and automate follow-ups—all from one place.</p>
+                      <p className="text-[#353535] text-xl font-medium">Progress Insights</p>
+                      <p className="text-[#736F67] text-base leading-6">Track your mental health progress with detailed insights and analytics to celebrate your growth and identify areas for improvement.</p>
                     </div>
                   </motion.div>
               </motion.div>
@@ -239,8 +252,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Remote Patient Monitoring</p>
-                      <p className="text-[#736F67] leading-6 text-base">Get real-time data on mood, engagement, and therapy progress.</p>
+                      <p className="text-[#353535] text-xl font-medium">24/7 AI Support</p>
+                      <p className="text-[#736F67] leading-6 text-base">Get instant support and guidance whenever you need it with our AI-powered mental health assistant.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -258,8 +271,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Assignments</p>
-                      <p className="text-[#736F67] leading-6 text-base">Keep clients engaged between sessions with tailored assignments—track progress effortlessly and send timely reminders.</p>
+                      <p className="text-[#353535] text-xl font-medium">Daily Wellness Tasks</p>
+                      <p className="text-[#736F67] leading-6 text-base">Complete personalized daily tasks like mood check-ins, gratitude exercises, and mindfulness activities to build healthy habits.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -277,8 +290,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">High Risk Detection</p>
-                      <p className="text-[#736F67] leading-6 text-base">Identify early signs of high-risk patients through assessments, mood check-ins, AI-powered conversations, and other integrated tools.</p>
+                      <p className="text-[#353535] text-xl font-medium">Mood Tracking</p>
+                      <p className="text-[#736F67] leading-6 text-base">Track your daily mood and emotional patterns to better understand your mental health journey and share insights with your therapist.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -297,8 +310,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">AI Chat Summaries</p>
-                      <p className="text-[#736F67] leading-6 text-base">View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.</p>
+                      <p className="text-[#353535] text-xl font-medium">Personalized Therapy</p>
+                      <p className="text-[#736F67] leading-6 text-base">Connect with licensed therapists who understand your needs and provide personalized care tailored to your mental health goals.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -317,8 +330,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">Secure messaging</p>
-                      <p className="text-[#736F67] leading-6 text-base">Communicate safely with clients between appointments, keeping the therapeutic bond strong.</p>
+                      <p className="text-[#353535] text-xl font-medium">Secure Messaging</p>
+                      <p className="text-[#736F67] leading-6 text-base">Communicate safely and privately with your therapist between sessions, keeping your therapeutic relationship strong.</p>
                     </div>
                   </motion.div>
                   <motion.div 
@@ -337,8 +350,8 @@ export default function ClientHomepage() {
                       </svg>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="text-[#353535] text-xl font-medium">AI Notes</p>
-                      <p className="text-[#736F67] leading-6 text-base">Manage interest lists, approve new clients, and automate follow-ups—all from one place.</p>
+                      <p className="text-[#353535] text-xl font-medium">Progress Insights</p>
+                      <p className="text-[#736F67] leading-6 text-base">Track your mental health progress with detailed insights and analytics to celebrate your growth and identify areas for improvement.</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -473,9 +486,9 @@ export default function ClientHomepage() {
 
       <div className="relative z-10">
         <Testimonials 
-          testimonials={THERAPIST_TESTIMONIALS_CONFIG.testimonials}
-          title={THERAPIST_TESTIMONIALS_CONFIG.title}
-          subtitle={THERAPIST_TESTIMONIALS_CONFIG.subtitle}
+          testimonials={CLIENT_TESTIMONIALS_CONFIG.testimonials}
+          title="CUSTOMER TESTIMONIALS"
+          subtitle="What Our Users Are Saying"
         />
       </div>
 
@@ -497,13 +510,13 @@ export default function ClientHomepage() {
                   questions
                 </h2>
                     <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
-                      Got questions? We've got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">support</span> team anytime.
+                      Still got more questions? <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">View all FAQs</span>
                 </p>
               </div>
                   
                   {/* Right Column - FAQ Items */}
                   <div className="flex flex-col gap-3 w-full lg:w-1/2">
-                    <Faq />
+                    <Faq items={CLIENT_FAQ_ITEMS} defaultOpenIndex={0} showIcons={false} />
                   </div>
                 </div>
             </div>
@@ -511,7 +524,27 @@ export default function ClientHomepage() {
         </div>
       </section>
       </div>
+      </div>
 
+      <Footer />
+      
+      {/* Post-Footer - Fixed Background Image Container */}
+      <div className="fixed bottom-0 left-0 right-0 z-[-1] flex w-full items-center justify-center px-4 py-0 lg:px-36 bg-gradient-to-b from-[#080808] to-[#00100A]">
+        {/* Desktop Background */}
+        <div 
+          className="hidden lg:block h-[210.938px] w-[1152px] bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('/footerlogo-desktop.webp')" 
+          }}
+        />
+        {/* Mobile Background */}
+        <div 
+          className="block lg:hidden h-[69px] w-full max-w-[343px] bg-contain bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('/footerlogo-mobile.webp')" 
+          }}
+        />
+      </div>
     </div>
   );
 }
