@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "../shared/testimonials";
 import Faq from "../shared/faq";
@@ -9,6 +9,7 @@ import FounderSpotlight from "../shared/founder-spotlight";
 import ClientNavbar from "../layout/client-navbar";
 import Footer from "../layout/footer";
 import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
+import RollingNumber from "../shared/rolling-number";
 
 // Client homepage - duplicated from landing page as boilerplate
 export default function ClientHomepage() {
@@ -311,15 +312,15 @@ export default function ClientHomepage() {
                           <rect y="0.603027" width="48" height="48" rx="24" fill="#EFF3FB"/>
                           <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#0665FE" strokeOpacity="0.1" strokeWidth="0.5"/>
                           <path d="M34 20.413V25.103H29.92C29.8 25.093 29.54 24.943 29.48 24.833L28.44 22.863C28.03 22.083 27.32 21.643 26.56 21.683C25.8 21.723 25.15 22.233 24.82 23.063L23.44 26.523L23.24 26.003C22.75 24.733 21.35 23.773 19.97 23.773L14 23.803V20.413C14 16.773 16.17 14.603 19.81 14.603H28.19C31.83 14.603 34 16.773 34 20.413Z" fill="#0665FE"/>
-                          <path d="M34 28.7929V26.6029H29.92C29.25 26.6029 28.46 26.1229 28.15 25.5329L27.11 23.5629C26.83 23.0329 26.43 23.0629 26.21 23.6129L23.91 29.4229C23.66 30.0729 23.24 30.0729 22.98 29.4229L21.84 26.5429C21.57 25.8429 20.73 25.2729 19.98 25.2729L14 25.3029V28.7929C14 32.3729 16.1 34.5329 19.63 34.5929C19.74 34.6029 19.86 34.6029 19.97 34.6029H27.97C28.12 34.6029 28.27 34.6029 28.41 34.5929C31.92 34.5129 34 32.3629 34 28.7929Z" fill="#0665FE"/>
-                          <path d="M13.9988 25.303V28.613C13.9787 28.293 13.9688 27.953 13.9688 27.603V25.303H13.9988Z" fill="#0665FE"/>
-                        </svg>
-                      </div>
-                      <h3 className="text-[#353535] text-2xl lg:text-[46px] lg:leading-[44px] lg:tracking-[-0.02em] font-medium mb-4">Therapy</h3>
-                      <p className="text-[#736F67] leading-6 text-base lg:text-[18px] mb-6">Match with the right therapist for you, eliminating guesswork and awkward mismatches</p>
-                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
-                        Find a Therapist
-                      </button>
+                            <path d="M34 28.7929V26.6029H29.92C29.25 26.6029 28.46 26.1229 28.15 25.5329L27.11 23.5629C26.83 23.0329 26.43 23.0629 26.21 23.6129L23.91 29.4229C23.66 30.0729 23.24 30.0729 22.98 29.4229L21.84 26.5429C21.57 25.8429 20.73 25.2729 19.98 25.2729L14 25.3029V28.7929C14 32.3729 16.1 34.5329 19.63 34.5929C19.74 34.6029 19.86 34.6029 19.97 34.6029H27.97C28.12 34.6029 28.27 34.6029 28.41 34.5929C31.92 34.5129 34 32.3629 34 28.7929Z" fill="#0665FE"/>
+                            <path d="M13.9988 25.303V28.613C13.9787 28.293 13.9688 27.953 13.9688 27.603V25.303H13.9988Z" fill="#0665FE"/>
+                          </svg>
+                        </div>
+                        <h3 className="text-[#353535] text-2xl lg:text-[46px] lg:leading-[44px] lg:tracking-[-0.02em] font-medium mb-4">Therapy</h3>
+                        <p className="text-[#736F67] leading-6 text-base lg:text-[18px] mb-6">Match with the right therapist for you, eliminating guesswork and awkward mismatches</p>
+                        <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                          Find a Therapist
+                        </button>
                     </div>
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
@@ -355,7 +356,7 @@ export default function ClientHomepage() {
                           <rect y="0.603027" width="48" height="48" rx="24" fill="#FEF6EB"/>
                           <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#F59714" strokeOpacity="0.1" strokeWidth="0.5"/>
                           <path d="M31.4812 15.423L31.7612 15.993C31.9012 16.273 32.2512 16.533 32.5612 16.593L32.9412 16.653C34.0812 16.843 34.3512 17.683 33.5312 18.513L33.1812 18.863C32.9512 19.103 32.8212 19.563 32.8912 19.883L32.9412 20.093C33.2512 21.473 32.5212 22.003 31.3212 21.283L31.0612 21.133C30.7512 20.953 30.2512 20.953 29.9412 21.133L29.6812 21.283C28.4712 22.013 27.7412 21.473 28.0612 20.093L28.1112 19.883C28.1812 19.563 28.0512 19.103 27.8212 18.863L27.4712 18.503C26.6512 17.673 26.9212 16.833 28.0612 16.643L28.4412 16.583C28.7412 16.533 29.1012 16.263 29.2412 15.983L29.5212 15.413C30.0612 14.333 30.9412 14.333 31.4812 15.423Z" fill="#F59714"/>
-                          <path d="M33.57 22.693C33.21 22.953 32.2 23.433 30.76 22.693C30.6 22.613 30.4 22.603 30.24 22.693C29.67 22.983 29.15 23.103 28.74 23.103C28.1 23.103 27.65 22.853 27.43 22.693C27.06 22.423 26.28 21.653 26.55 20.023C26.58 19.853 26.53 19.683 26.42 19.553C25.73 18.763 25.35 17.703 25.62 16.873C25.72 16.543 25.51 16.103 25.17 16.103H19C16 16.103 14 17.603 14 21.103V28.103C14 31.603 16 33.103 19 33.103H29C32 33.103 34 31.603 34 28.103V22.873C34 22.683 33.73 22.583 33.57 22.693ZM26.34 24.693C25.68 25.223 24.84 25.483 24 25.483C23.16 25.483 22.31 25.223 21.66 24.693L18.53 22.193C18.21 21.933 18.16 21.453 18.41 21.133C18.67 20.813 19.14 20.753 19.46 21.013L22.59 23.513C23.35 24.123 24.64 24.123 25.4 23.513C25.72 23.253 26.19 23.303 26.45 23.633C26.72 23.953 26.67 24.433 26.34 24.693Z" fill="#F59714"/>
+                            <path d="M33.57 22.693C33.21 22.953 32.2 23.433 30.76 22.693C30.6 22.613 30.4 22.603 30.24 22.693C29.67 22.983 29.15 23.103 28.74 23.103C28.1 23.103 27.65 22.853 27.43 22.693C27.06 22.423 26.28 21.653 26.55 20.023C26.58 19.853 26.53 19.683 26.42 19.553C25.73 18.763 25.35 17.703 25.62 16.873C25.72 16.543 25.51 16.103 25.17 16.103H19C16 16.103 14 17.603 14 21.103V28.103C14 31.603 16 33.103 19 33.103H29C32 33.103 34 31.603 34 28.103V22.873C34 22.683 33.73 22.583 33.57 22.693ZM26.34 24.693C25.68 25.223 24.84 25.483 24 25.483C23.16 25.483 22.31 25.223 21.66 24.693L18.53 22.193C18.21 21.933 18.16 21.453 18.41 21.133C18.67 20.813 19.14 20.753 19.46 21.013L22.59 23.513C23.35 24.123 24.64 24.123 25.4 23.513C25.72 23.253 26.19 23.303 26.45 23.633C26.72 23.953 26.67 24.433 26.34 24.693Z" fill="#F59714"/>
                         </svg>
                       </div>
                       <h3 className="text-[#353535] text-2xl lg:text-[46px] lg:leading-[44px] lg:tracking-[-0.02em] font-medium mb-4">AI Therapy</h3>
@@ -419,45 +420,49 @@ export default function ClientHomepage() {
       <div id="pricing" className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
-              <div className="flex flex-col items-center gap-8 lg:gap-16 max-w-[750px] mx-auto w-full">
-                {/* Header */}
-                <div className="flex flex-col items-center gap-4 text-center w-full">
-                  <p className="text-[#015033] text-[14px] leading-[20px] tracking-[-0.14px]">PRICING</p>
-                  <div className="flex flex-col gap-4 items-center w-full">
-                    <h2 className="text-[#101828] text-[36px] leading-[44px] lg:text-[60px] lg:leading-[72px] font-semibold tracking-[-0.72px] lg:tracking-[-1.2px]">
-                      Plans and Pricing
-                    </h2>
-                    <p className="text-[#344054] text-[16px] leading-[24px] tracking-[-0.16px]">
-                      Flexible plans and options tailored according to your needs.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Toggle Switch */}
-                <div className="flex gap-1.5 items-center justify-center">
-                  <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${!isYearly ? 'text-black' : 'text-[#667085]'}`}>
-                    Monthly
-                  </p>
-                  <button 
-                    onClick={() => setIsYearly(!isYearly)}
-                    className="relative focus:outline-none"
-                  >
-                    <div className="bg-[#F2F4F7] h-6 w-11 rounded-[12px] p-[2px] flex items-center transition-colors duration-200">
-                      <div className={`w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-200 ${isYearly ? 'translate-x-5' : 'translate-x-0'}`}></div>
+            <div className="custom-dashed-border flex flex-col gap-8 lg:gap-16 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+              {/* Header Section */}
+              <div className="lg:px-6 px-3 w-full">
+                <div className="flex flex-col items-center gap-8 max-w-[750px] mx-auto w-full">
+                  {/* Header */}
+                  <div className="flex flex-col items-center gap-4 text-center w-full">
+                    <p className="text-[#015033] text-[14px] leading-[20px] tracking-[-0.14px]">PRICING</p>
+                    <div className="flex flex-col gap-4 items-center w-full">
+                      <h2 className="text-[#101828] text-[36px] leading-[44px] lg:text-[60px] lg:leading-[72px] font-semibold tracking-[-0.72px] lg:tracking-[-1.2px]">
+                        Plans and Pricing
+                      </h2>
+                      <p className="text-[#344054] text-[16px] leading-[24px] tracking-[-0.16px]">
+                        Flexible plans and options tailored according to your needs.
+                      </p>
                     </div>
-                  </button>
-                  <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${isYearly ? 'text-black' : 'text-[#667085]'}`}>
-                    Yearly
-                  </p>
-                  <div className="bg-[#ECFDF3] px-2 py-0.5 rounded-[16px]">
-                    <p className="text-[#027A48] text-[12px] leading-[18px] text-center font-medium">Save 20%</p>
+                  </div>
+
+                  {/* Toggle Switch */}
+                  <div className="flex gap-1.5 items-center justify-center">
+                    <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${!isYearly ? 'text-black' : 'text-[#667085]'}`}>
+                      Monthly
+                    </p>
+                    <button 
+                      onClick={() => setIsYearly(!isYearly)}
+                      className="relative focus:outline-none"
+                    >
+                      <div className={`h-6 w-11 rounded-[12px] p-[2px] flex items-center transition-colors duration-200 ${isYearly ? 'bg-[#015033]' : 'bg-[#F2F4F7]'}`}>
+                        <div className={`w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-200 ${isYearly ? 'translate-x-5' : 'translate-x-0'}`}></div>
+                      </div>
+                    </button>
+                    <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${isYearly ? 'text-black' : 'text-[#667085]'}`}>
+                      Yearly
+                    </p>
+                    <div className="bg-[#ECFDF3] px-2 py-0.5 rounded-[16px]">
+                      <p className="text-[#027A48] text-[12px] leading-[18px] text-center font-medium">Save 20%</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Pricing Cards */}
-              <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-center w-full">
+              <div className="lg:px-6 px-3 w-full">
+                <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-center max-w-[1200px] w-full mx-auto">
                 {/* Basic Plan */}
                 <div className="bg-gray-50 rounded-[20px] p-4 lg:p-5 w-full lg:flex-1">
                   <div className="flex flex-col gap-10 w-full">
@@ -535,12 +540,21 @@ export default function ClientHomepage() {
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-2">
                         <div className="flex items-end justify-center lg:justify-start gap-1">
-                          <span className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
-                            {isYearly ? '$149.99' : '$19.99'}
-                          </span>
-                          <span className="text-[#101828] text-[16px] leading-[24px] tracking-[-0.16px]">
-                            {isYearly ? '/year' : '/month'}
-                          </span>
+                          <div className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
+                            $<RollingNumber value={isYearly ? 149.99 : 19.99} />
+                          </div>
+                          <AnimatePresence mode="wait">
+                            <motion.span 
+                              key={isYearly ? 'year' : 'month'}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              transition={{ duration: 0.3, ease: "easeOut" }}
+                              className="text-[#101828] text-[16px] leading-[24px] tracking-[-0.16px]"
+                            >
+                              {isYearly ? '/year' : '/month'}
+                            </motion.span>
+                          </AnimatePresence>
                         </div>
                         <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-center lg:text-left">
                           Unlimited access
@@ -615,6 +629,7 @@ export default function ClientHomepage() {
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
