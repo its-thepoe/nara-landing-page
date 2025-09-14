@@ -183,7 +183,7 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
 
         <div className="px-5 pt-5 relative z-10">
           <p className="mx-auto text-[20px] leading-[30px] tracking-[-0.01em] text-[#344054]">
-            {t.quote}
+            "{t.quote}"
           </p>
         </div>
         
@@ -236,7 +236,7 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
 
       <div className="px-12 pt-12">
         <p className="mx-auto w-[444px] text-[30px] leading-[44px] tracking-[-0.01em] text-[#344054]">
-          {t.quote}
+          "{t.quote}"
         </p>
       </div>
       

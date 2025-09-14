@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "../shared/testimonials";
@@ -13,6 +13,7 @@ import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 // Client homepage - duplicated from landing page as boilerplate
 export default function ClientHomepage() {
   const heroMockup = "/clientmockup.webp";
+  const [isYearly, setIsYearly] = useState(false);
 
   return (
     <div className="w-full">
@@ -405,128 +406,6 @@ export default function ClientHomepage() {
         </section>
       </div>
 
-      {/* How it works */}
-      <div id="how-it-works" className="relative z-10 lg:px-6 lg:py-0 px-1">
-        <section className="py-4 lg:py-6">
-          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#B9DFD1] bg-[#F4FBF9]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
-              <div className="flex flex-col items-center gap-12 lg:px-6 px-3 max-w-[1440px] mx-auto w-full">
-              {/* Header */}
-              <div className="flex w-full flex-col items-center gap-4 text-center">
-                <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">GET STARTED</p>
-                <div className="flex w-full flex-col items-center gap-3">
-                  <h2 className="text-[36px] leading-[44px] md:text-[48px] md:leading-[60px] font-semibold tracking-[-0.02em] text-[#070611]">
-                    How it works
-                  </h2>
-                  <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
-                    Built with therapists, for therapists. Every feature is shaped by real feedback and real needs.
-                  </p>
-                </div>
-              </div>
-
-              {/* Steps grid: mobile column, desktop 3 columns, 16px gap */}
-              <motion.div 
-                className="grid w-full grid-cols-1 gap-4 text-left md:grid-cols-3"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                  <motion.div 
-                    className="flex flex-col"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileHover={{ y: -4 }}
-                    style={{ transition: "transform 0.2s ease-out" }}
-                  >
-                    <div className="mx-5 md:mx-8 inline-flex w-fit items-center justify-center rounded-t-md bg-[#01BC77] px-2 py-1 text-[12px] font-medium text-white">
-                      STEP 1
-                    </div>
-                    <div className="relative rounded-[16px] md:rounded-[20px] bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                      <h3 className="mb-2 text-[20px] leading-[30px] md:text-[24px] md:leading-[32px] font-medium text-[#222]">
-                        Apply Today
-                      </h3>
-                      <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
-                        Sign up, verify your credentials, and customise your profile.
-                      </p>
-                      <div className="pointer-events-none absolute inset-0 rounded-[16px] md:rounded-[20px] border border-[#EDF9F5]" />
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    className="flex flex-col"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileHover={{ y: -4 }}
-                    style={{ transition: "transform 0.2s ease-out" }}
-                  >
-                    <div className="mx-5 md:mx-8 inline-flex w-fit items-center justify-center rounded-t-md bg-[#01BC77] px-2 py-1 text-[12px] font-medium text-white">
-                      STEP 2
-                    </div>
-                    <div className="relative rounded-[16px] md:rounded-[20px] bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                      <h3 className="mb-2 text-[20px] leading-[30px] md:text-[24px] md:leading-[32px] font-medium text-[#222]">
-                        Get Connected
-                      </h3>
-                      <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
-                        Invite your clients, sync your availability, and review their onboarding info.
-                      </p>
-                      <div className="pointer-events-none absolute inset-0 rounded-[16px] md:rounded-[20px] border border-[#EDF9F5]" />
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    className="flex flex-col"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileHover={{ y: -4 }}
-                    style={{ transition: "transform 0.2s ease-out" }}
-                  >
-                    <div className="mx-5 md:mx-8 inline-flex w-fit items-center justify-center rounded-t-md bg-[#01BC77] px-2 py-1 text-[12px] font-medium text-white">
-                      STEP 3
-                    </div>
-                    <div className="relative rounded-[16px] md:rounded-[20px] bg-white p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                      <h3 className="mb-2 text-[20px] leading-[30px] md:text-[24px] md:leading-[32px] font-medium text-[#222]">
-                        Track & Support
-                      </h3>
-                      <p className="text-[14px] leading-[20px] md:text-[16px] md:leading-[24px] tracking-[-0.01em] text-[#475467]">
-                        Assign homework, monitor insights, and follow AI summaries (with consent).
-                      </p>
-                      <div className="pointer-events-none absolute inset-0 rounded-[16px] md:rounded-[20px] border border-[#EDF9F5]" />
-                    </div>
-                  </motion.div>
-              </motion.div>
-
-              {/* CTAs */}
-              <motion.div 
-                className="flex w-full flex-col items-center gap-[12px] md:flex-row md:justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <a
-                  href="#get-started"
-                  className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
-                >
-                  Get started - for free
-                </a>
-                <a
-                  href="#book-demo"
-                  className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out"
-                  style={{ borderColor: "#015033", borderWidth: 1 }}
-                >
-                  Book a demo
-                </a>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
 
       <div className="relative z-10">
         <Testimonials 
@@ -534,6 +413,213 @@ export default function ClientHomepage() {
           title="CUSTOMER TESTIMONIALS"
           subtitle="What Our Users Are Saying"
         />
+      </div>
+
+      {/* Plans and Pricing */}
+      <div id="pricing" className="relative z-10 lg:px-6 lg:py-0 px-1">
+        <section className="py-4 lg:py-6">
+          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+              <div className="flex flex-col items-center gap-8 lg:gap-16 max-w-[750px] mx-auto w-full">
+                {/* Header */}
+                <div className="flex flex-col items-center gap-4 text-center w-full">
+                  <p className="text-[#015033] text-[14px] leading-[20px] tracking-[-0.14px]">PRICING</p>
+                  <div className="flex flex-col gap-4 items-center w-full">
+                    <h2 className="text-[#101828] text-[36px] leading-[44px] lg:text-[60px] lg:leading-[72px] font-semibold tracking-[-0.72px] lg:tracking-[-1.2px]">
+                      Plans and Pricing
+                    </h2>
+                    <p className="text-[#344054] text-[16px] leading-[24px] tracking-[-0.16px]">
+                      Flexible plans and options tailored according to your needs.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Toggle Switch */}
+                <div className="flex gap-1.5 items-center justify-center">
+                  <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${!isYearly ? 'text-black' : 'text-[#667085]'}`}>
+                    Monthly
+                  </p>
+                  <button 
+                    onClick={() => setIsYearly(!isYearly)}
+                    className="relative focus:outline-none"
+                  >
+                    <div className="bg-[#F2F4F7] h-6 w-11 rounded-[12px] p-[2px] flex items-center transition-colors duration-200">
+                      <div className={`w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-200 ${isYearly ? 'translate-x-5' : 'translate-x-0'}`}></div>
+                    </div>
+                  </button>
+                  <p className={`text-[14px] leading-[20px] tracking-[-0.14px] font-medium transition-colors duration-200 ${isYearly ? 'text-black' : 'text-[#667085]'}`}>
+                    Yearly
+                  </p>
+                  <div className="bg-[#ECFDF3] px-2 py-0.5 rounded-[16px]">
+                    <p className="text-[#027A48] text-[12px] leading-[18px] text-center font-medium">Save 20%</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Cards */}
+              <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-center w-full">
+                {/* Basic Plan */}
+                <div className="bg-gray-50 rounded-[20px] p-4 lg:p-5 w-full lg:flex-1">
+                  <div className="flex flex-col gap-10 w-full">
+                    <h3 className="text-[#101828] text-[20px] leading-[30px] lg:text-[24px] lg:leading-[32px] font-semibold tracking-[-0.2px] lg:tracking-[-0.24px]">
+                      Basic
+                    </h3>
+                    
+                    <div className="flex flex-col gap-5">
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-end justify-center lg:justify-start gap-1">
+                          <span className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
+                            Free
+                          </span>
+                        </div>
+                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-center lg:text-left">
+                          All essential features
+                        </p>
+                      </div>
+                      
+                      <button className="w-full border border-[#015033] rounded-[4px] px-4 py-3 text-[#015033] text-[16px] leading-[24px] tracking-[-0.16px] hover:bg-gray-50 transition-colors duration-200">
+                        Start free plan
+                      </button>
+                    </div>
+
+                    <div className="flex flex-col gap-6 lg:gap-8">
+                      <h4 className="text-[#101828] text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-medium tracking-[-0.16px] lg:tracking-[-0.18px]">
+                        Free includes:
+                      </h4>
+                      
+                      <div className="flex flex-col gap-3">
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Limited AI therapy conversations
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Mood check-ins
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Provider matchings
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Plus Plan */}
+                <div className="bg-gray-50 rounded-[20px] p-4 lg:p-5 w-full lg:flex-1">
+                  <div className="flex flex-col gap-10 w-full">
+                    <h3 className="text-[#101828] text-[20px] leading-[30px] lg:text-[24px] lg:leading-[32px] font-semibold tracking-[-0.2px] lg:tracking-[-0.24px]">
+                      Plus
+                    </h3>
+                    
+                    <div className="flex flex-col gap-5">
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-end justify-center lg:justify-start gap-1">
+                          <span className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
+                            {isYearly ? '$149.99' : '$19.99'}
+                          </span>
+                          <span className="text-[#101828] text-[16px] leading-[24px] tracking-[-0.16px]">
+                            {isYearly ? '/year' : '/month'}
+                          </span>
+                        </div>
+                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-center lg:text-left">
+                          Unlimited access
+                        </p>
+                      </div>
+                      
+                      <button className="w-full bg-[#015033] rounded-[4px] px-4 py-3 text-white text-[16px] leading-[24px] tracking-[-0.16px] hover:bg-[#013d26] transition-colors duration-200">
+                        Try free for 7 days
+                      </button>
+                    </div>
+
+                    <div className="flex flex-col gap-6 lg:gap-8">
+                      <h4 className="text-[#101828] text-[16px] leading-[24px] lg:text-[18px] lg:leading-[28px] font-medium tracking-[-0.16px] lg:tracking-[-0.18px]">
+                        Everything in Basic, plus:
+                      </h4>
+                      
+                      <div className="flex flex-col gap-3">
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Unlimited AI therapy conversations
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Access to full self-care tools
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Unlimited guided meditations
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Priority provider matchings
+                          </p>
+                        </div>
+                        
+                        <div className="flex gap-1 items-center">
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="#015033" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="text-[#1D2939] text-[16px] leading-[24px] tracking-[-0.16px] flex-1">
+                            Advanced AI insights
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       {/* Founder spotlight */}
