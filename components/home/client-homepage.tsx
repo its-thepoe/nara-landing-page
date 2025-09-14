@@ -44,22 +44,41 @@ export default function ClientHomepage() {
                 Nara combines traditional therapy with AI-assisted support <br className="lg:flex hidden" />
                 to deliver 24/7 mental health support.
                 </p>
-                <div className="mt-8 flex lg:flex-row flex-col justify-center w-full gap-3">
-                  <a href="#get-started">
-                    <div className="bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
-                      <p className="text-center text-base text-white">Get started - for free</p>
-                    </div>
+                <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-3 w-full lg:w-auto">
+                  <a
+                    href="https://apps.apple.com/us/app/nara-therapy/id6504929821"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#00100a] flex items-center justify-center h-12 px-4 rounded-[4px] transition-all duration-200 hover:scale-105 w-full lg:w-auto"
+                  >
+                    <Image
+                      src="/appstorebadge-black.svg"
+                      alt="Download on the App Store"
+                      width={120}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
                   </a>
-                  <div className="border border-[#015033] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
-                    <p className="text-center text-base text-[#015033]">Book a demo</p>
-                  </div>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.naratherapy.naramobile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#00100a] flex items-center justify-center h-12 px-4 rounded-[4px] transition-all duration-200 hover:scale-105 w-full lg:w-auto"
+                  >
+                    <Image
+                      src="/playstorebadge-black.svg"
+                      alt="Get it on Google Play"
+                      width={135}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
+                  </a>
                 </div>
                 <motion.div 
-                  className="w-full lg:w-[90%] lg:max-w-[1200px] relative h-[250px] lg:h-[921px] lg:max-h-screen mt-[64px] lg:mb-[56px] mb-[48px] rounded-[24px] lg:rounded-[32px overflow-hidden"
-                  initial={{ opacity: 1, y: 40, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  className="w-full lg:w-[90%] lg:max-w-[1200px] relative h-[250px] lg:h-[921px] lg:max-h-screen mt-[64px] lg:mb-[56px] mb-[48px] rounded-[24px] lg:rounded-[32px] overflow-hidden"
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                 >
                   <Image
                     alt="nara-dash"
@@ -96,18 +115,15 @@ export default function ClientHomepage() {
                 <motion.div 
                   className="flex flex-col gap-8 lg:hidden w-full"
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 >
                   {/* Self Care Feature - Image Above Description */}
                   <motion.div 
                     className="flex flex-col gap-6 py-6"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                    
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
@@ -143,9 +159,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex flex-col gap-6 py-6"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
@@ -183,9 +198,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex flex-col gap-6 py-6"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
@@ -222,9 +236,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex flex-col gap-6 py-6"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
@@ -263,17 +276,15 @@ export default function ClientHomepage() {
               <motion.div 
                 className="hidden lg:flex flex-col space-y-[64px] w-full"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-100px" }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               >
                   {/* Self Care (Image Left, Text Right) */}
                   <motion.div 
                     className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
@@ -306,9 +317,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                   >
                     <div className="flex-1 pr-8 min-w-[300px]">
                       <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">
@@ -343,9 +353,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
@@ -379,9 +388,8 @@ export default function ClientHomepage() {
                   <motion.div 
                     className="flex items-start gap-12 w-full py-8 min-w-[800px]"
                     initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0, ease: "easeOut" }}
                   >
                     <div className="flex-1 pr-8 min-w-[300px]">
                       <div className="size-12 rounded-full flex items-center justify-center mb-6 w-fit">

@@ -13,7 +13,7 @@ export default function FounderSpotlight({
   quoteIconSrc = "/testimonialquotes.svg",
   className = "",
 }: FounderSpotlightProps) {
-  const imageSrc = "/Perez+Nara.webp";
+  const imageSrc = "/perez+nara.webp";
   const imageAlt = "Perez Willie-Nwobu with Nara";
   const quote = `At 18, I arrived in the U.S. for college, chasing big dreams. But life took an unexpected turn—I found out I was going to be a dad, and at the same time, I faced the threat of deportation. With no family around and nowhere to turn, I sank into a deep depression.
 

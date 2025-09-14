@@ -185,13 +185,13 @@ export default function Navbar({
                 </p>
                 <ul className="space-y-4 text-[20px] text-[#344054]">
                   <li>
-                    <Link href="#for-clients" onClick={() => setIsOpen(false)}>
+                    <Link href="/clients" onClick={() => setIsOpen(false)}>
                       For Clients
                     </Link>
                   </li>
                   <li>
-                    <Link href="#for-therapists" onClick={() => setIsOpen(false)}>
-                      For Therapists
+                    <Link href="/" onClick={() => setIsOpen(false)}>
+                      For Providers
                     </Link>
                   </li>
                 </ul>

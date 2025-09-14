@@ -112,8 +112,10 @@ export default function Footer() {
               {/* Store Buttons - Spans 2 columns on desktop */}
               <div className="flex items-center gap-4 col-span-2">
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.naratherapy.naramobile"
                   className="transition-all duration-200 hover:scale-105"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src="/playstorebadge.svg"
@@ -124,8 +126,10 @@ export default function Footer() {
                   />
                 </a>
                 <a
-                  href="#"
+                  href="https://apps.apple.com/us/app/nara-therapy/id6504929821"
                   className="transition-all duration-200 hover:scale-105"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src="/appstorebadge.svg"

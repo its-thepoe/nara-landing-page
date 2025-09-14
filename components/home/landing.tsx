@@ -42,8 +42,38 @@ export default function Landing() {
                     <p className="text-center text-base text-[#015033]">Book a demo</p>
                   </div>
                 </div>
+                <div className="mt-8 flex items-center justify-center gap-4">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.naratherapy.naramobile"
+                    className="transition-all duration-200 hover:scale-105 block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/playstorebadge.svg"
+                      alt="Get it on Google Play"
+                      width={135}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
+                  </a>
+                  <a
+                    href="https://apps.apple.com/us/app/nara-therapy/id6504929821"
+                    className="transition-all duration-200 hover:scale-105 block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src="/appstorebadge.svg"
+                      alt="Download on the App Store"
+                      width={120}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
+                  </a>
+                </div>
                 <motion.div 
-                  className="w-full lg:w-[90%] lg:max-w-[1200px] relative h-[250px] lg:h-[921px] lg:max-h-screen mt-[64px] lg:mb-[56px] mb-[48px] rounded-[24px] lg:rounded-[32px overflow-hidden"
+                  className="w-full lg:w-[90%] lg:max-w-[1200px] relative h-[250px] lg:h-[921px] lg:max-h-screen mt-[64px] lg:mb-[56px] mb-[48px] rounded-[24px] lg:rounded-[32px] overflow-hidden"
                   initial={{ opacity: 1, y: 40, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
