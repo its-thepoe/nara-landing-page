@@ -8,10 +8,10 @@ import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 // import Navbar from "@/components/layout/navbar";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "Nara Therapy",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-  metadataBase: new URL("https://precedent.dev"),
+    "Nara Therapy is the all-in-one solution for your therapy practice.",
+  metadataBase: new URL("https://joinnara.com"),
 };
 
 export default async function RootLayout({

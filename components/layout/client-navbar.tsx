@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HambergerMenu, CloseSquare } from "iconsax-react";
 import Image from "next/image";
+import useScroll from "@/lib/hooks/use-scroll";
 
 // Local logo asset
 const IMG_LOGO = "/naralogo.svg"; // nara logo
@@ -15,6 +16,7 @@ const COLOR_GRAY_600 = "#475467";
 
 export default function ClientNavbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const scrolled = useScroll(20); // Trigger background after 20px scroll
 
   const handleAnchorClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -44,8 +46,12 @@ export default function ClientNavbar() {
 
   return (
     <>
-      {/* Fixed, white top bar */}
-      <nav className="fixed inset-x-0 top-0 z-50 bg-white">
+      {/* Fixed navbar with scroll-triggered background */}
+      <nav className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ease-out ${
+        scrolled 
+          ? "bg-white/95 backdrop-blur-sm shadow-sm" 
+          : "bg-transparent"
+      }`}>
         <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
           {/* Logo */}
           <Link href="#" className="flex items-center" aria-label="Nara home">
