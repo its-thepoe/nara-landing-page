@@ -6,7 +6,8 @@ import Testimonials from "../shared/testimonials";
 import Faq from "../shared/faq";
 import { CLIENT_FAQ_ITEMS } from "@/lib/faq-data";
 import FounderSpotlight from "../shared/founder-spotlight";
-import ClientNavbar from "../layout/client-navbar";
+import Navbar from "../layout/navbar";
+import { CLIENT_NAV_CONFIG } from "@/lib/navigation-config";
 import Footer from "../layout/footer";
 import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 import RollingDigit from "../shared/rolling-digit";
@@ -19,7 +20,7 @@ export default function ClientHomepage() {
 
   return (
     <div className="w-full">
-      <ClientNavbar />
+      <Navbar {...CLIENT_NAV_CONFIG} />
       <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
       <div className="relative z-10 lg:px-6 px-3">
@@ -93,7 +94,7 @@ export default function ClientHomepage() {
 
               {/* Mobile Layout - Single Column */}
                 <motion.div 
-                  className="flex flex-col gap-12 lg:hidden w-full"
+                  className="flex flex-col gap-8 lg:hidden w-full"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -109,7 +110,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
+                    <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
                       <Image 
                         src="/selfcaremockup.webp" 
                         alt="Self Care App Mockup" 
@@ -147,7 +148,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
+                    <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
                       <Image 
                         src="/therapymockup.webp" 
                         alt="Therapy App Mockup" 
@@ -187,7 +188,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
+                    <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
                       <Image 
                         src="/aitherapymockup.webp" 
                         alt="AI Therapy App Mockup" 
@@ -226,7 +227,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
+                    <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden group transition-all duration-300 ease-out">
                       <Image 
                         src="/meditationmockup.webp" 
                         alt="Meditation App Mockup" 
@@ -260,7 +261,7 @@ export default function ClientHomepage() {
 
               {/* Desktop Layout - 1x1 Single Column - Full Width */}
               <motion.div 
-                className="hidden lg:flex flex-col space-y-[120px] w-full"
+                className="hidden lg:flex flex-col space-y-[64px] w-full"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -275,7 +276,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
-                      <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
+                      <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
                         <Image 
                           src="/selfcaremockup.webp" 
                           alt="Self Care App Mockup" 
@@ -326,7 +327,7 @@ export default function ClientHomepage() {
                         </button>
                     </div>
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
-                      <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
+                      <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
                         <Image 
                           src="/therapymockup.webp" 
                           alt="Therapy App Mockup" 
@@ -347,7 +348,7 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
-                      <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
+                      <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
                         <Image 
                           src="/aitherapymockup.webp" 
                           alt="AI Therapy App Mockup" 
@@ -398,7 +399,7 @@ export default function ClientHomepage() {
                       </button>
                     </div>
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
-                      <div className="w-full h-[480px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
+                      <div className="w-full h-[480px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative transition-all duration-300 ease-out">
                         <Image 
                           src="/meditationmockup.webp" 
                           alt="Meditation App Mockup" 
@@ -429,12 +430,12 @@ export default function ClientHomepage() {
       <div id="pricing" className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:gap-16 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+            <div className="custom-dashed-border flex flex-col gap-8 lg:gap-16 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
               {/* Header Section */}
               <div className="lg:px-6 px-3 w-full">
-                <div className="flex flex-col items-center gap-8 max-w-[750px] mx-auto w-full">
+                <div className="flex flex-col items-center lg:items-center gap-8 max-w-[750px] mx-auto w-full">
                   {/* Header */}
-                  <div className="flex flex-col items-center gap-4 text-center w-full">
+                  <div className="flex flex-col items-center lg:items-center gap-4 text-left lg:text-center w-full">
                     <p className="text-[#015033] text-[14px] leading-[20px] tracking-[-0.14px]">PRICING</p>
                     <div className="flex flex-col gap-4 items-center w-full">
                       <h2 className="text-[#101828] text-[36px] leading-[44px] lg:text-[60px] lg:leading-[72px] font-semibold tracking-[-0.72px] lg:tracking-[-1.2px]">
@@ -481,12 +482,12 @@ export default function ClientHomepage() {
                     
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-2">
-                        <div className="flex items-end justify-center lg:justify-start gap-1">
+                        <div className="flex items-end justify-start gap-1">
                           <span className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
                             Free
                           </span>
                         </div>
-                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-center lg:text-left">
+                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-left">
                           All essential features
                         </p>
                       </div>
@@ -548,7 +549,7 @@ export default function ClientHomepage() {
                     
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-2">
-                        <div className="flex items-end justify-center lg:justify-start">
+                        <div className="flex items-end justify-start">
                           <div className="text-[#101828] text-[36px] leading-[1em] lg:text-[48px] lg:leading-[1em] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px] flex items-center">
                             $
                             <div className="flex">
@@ -593,7 +594,7 @@ export default function ClientHomepage() {
                             </motion.span>
                           </AnimatePresence>
                         </div>
-                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-center lg:text-left">
+                        <p className="text-[#475467] text-[14px] leading-[20px] lg:text-[16px] lg:leading-[24px] tracking-[-0.14px] lg:tracking-[-0.16px] text-left">
                           Unlimited access
                         </p>
                       </div>
@@ -681,7 +682,7 @@ export default function ClientHomepage() {
       <div id="faqs" className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
               <div className="lg:px-6 px-3 w-full">
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-8 w-full">
                   {/* Left Column - Title */}

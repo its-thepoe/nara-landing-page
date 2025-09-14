@@ -26,6 +26,7 @@ export default async function RootLayout({
         <main className="min-h-screen w-full">{children}</main>
         <VercelAnalytics />
       </body>
+      
     </html>
   );
 }

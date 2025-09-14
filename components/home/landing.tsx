@@ -7,13 +7,17 @@ import Faq from "./faq";
 import FounderSpotlight from "../shared/founder-spotlight";
 import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 import Image from "next/image";
+import Navbar from "../layout/navbar";
+import { PROVIDER_NAV_CONFIG } from "@/lib/navigation-config";
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
   const heroMockup = "/providerdashboardmockup.webp";
 
   return (
-    <div className="relative z-10 w-full bg-white">
+    <>
+      <Navbar {...PROVIDER_NAV_CONFIG} />
+      <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
       <div className="relative z-10 lg:px-6 px-3">
         <div className="lg:px-20 lg:pb-3 p-4 bg-gradient-to-b from-[#f7fefb] to-[#e7fef6] shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden">
@@ -505,6 +509,7 @@ export default function Landing() {
       </div>
 
     </div>
+    </>
   );
 }
 

@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HambergerMenu, CloseSquare } from "iconsax-react";
 import Image from "next/image";
-import useScroll from "@/lib/hooks/use-scroll";
 
 // Local logo asset
 const IMG_LOGO = "/naralogo.svg"; // nara logo
@@ -14,9 +13,30 @@ const COLOR_PRIMARY_600 = "#01432B";
 const COLOR_PRIMARY_500 = "#015033";
 const COLOR_GRAY_600 = "#475467";
 
-export default function Navbar() {
+// Navigation link type
+interface NavLink {
+  label: string;
+  href: string;
+  isAnchor?: boolean;
+}
+
+// Props interface
+interface NavbarProps {
+  navLinks: NavLink[];
+  ctaText?: string;
+  ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+}
+
+export default function Navbar({ 
+  navLinks, 
+  ctaText = "Get started - for free", 
+  ctaHref = "#get-started",
+  secondaryCtaText = "Book a demo",
+  secondaryCtaHref = "#book-demo"
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const scrolled = useScroll(20); // Trigger background after 20px scroll
 
   const handleAnchorClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -46,12 +66,8 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Fixed navbar with scroll-triggered background */}
-      <nav className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ease-out ${
-        scrolled 
-          ? "bg-white/95 backdrop-blur-sm shadow-sm" 
-          : "bg-transparent"
-      }`}>
+      {/* Fixed navbar with white background */}
+      <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm">
         <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
           {/* Logo */}
           <Link href="#" className="flex items-center" aria-label="Nara home">
@@ -60,32 +76,40 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden items-center gap-6 md:flex">
-            <Link href="/clients" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              For Clients
-              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
-            </Link>
-            <Link href="#features" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              Features
-              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
-            </Link>
-            <Link href="#how-it-works" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              How it works
-              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
-            </Link>
-            <Link href="#faqs" className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]" style={{ color: COLOR_GRAY_600 }}>
-              FAQs
-              <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
-            </Link>
+            {navLinks.map((link, index) => (
+              link.isAnchor ? (
+                <a
+                  key={index}
+                  href={link.href}
+                  onClick={handleAnchorClick(link.href.replace('#', ''))}
+                  className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]"
+                  style={{ color: COLOR_GRAY_600 }}
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
+                </a>
+              ) : (
+                <Link
+                  key={index}
+                  href={link.href}
+                  className="text-[16px] tracking-[-0.01em] relative group transition-all duration-200 hover:text-[#015033]"
+                  style={{ color: COLOR_GRAY_600 }}
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-px transition-all duration-300 ease-out group-hover:w-full" style={{ backgroundColor: COLOR_GRAY_600 }}></span>
+                </Link>
+              )
+            ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="#get-started"
+              href={ctaHref}
               className="rounded-md px-5 py-3 text-[16px] text-white transition-[transform,opacity] duration-200 ease-out-cubic"
               style={{ backgroundColor: COLOR_PRIMARY_500 }}
             >
-              Get started - for free
+              {ctaText}
             </Link>
           </div>
 
@@ -137,26 +161,19 @@ export default function Navbar() {
 
           <nav className="px-4 pb-4 pt-2">
             <ul className="space-y-8 text-[24px] font-medium text-[#1D2939]">
-              <li>
-                <Link href="/clients" onClick={() => setIsOpen(false)}>
-                  For Clients
-                </Link>
-              </li>
-              <li>
-                <a href="#features" onClick={handleAnchorClick("features")}>
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#how-it-works" onClick={handleAnchorClick("how-it-works")}>
-                  How it works
-                </a>
-              </li>
-              <li>
-                <a href="#faqs" onClick={handleAnchorClick("faqs")}>
-                  FAQs
-                </a>
-              </li>
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  {link.isAnchor ? (
+                    <a href={link.href} onClick={handleAnchorClick(link.href.replace('#', ''))}>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href} onClick={() => setIsOpen(false)}>
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
 
             <div className="my-8 h-px w-full bg-gray-200" />
@@ -203,20 +220,20 @@ export default function Navbar() {
 
             <div className="space-y-4 px-1 pb-8">
               <Link
-                href="#get-started"
+                href={ctaHref}
                 onClick={() => setIsOpen(false)}
                 className="block rounded-md px-5 py-4 text-center text-[18px] text-white transition-[transform,opacity] duration-200 ease-out-cubic"
                 style={{ backgroundColor: COLOR_PRIMARY_500 }}
               >
-                Get started – for free
+                {ctaText}
               </Link>
               <Link
-                href="#book-demo"
+                href={secondaryCtaHref}
                 onClick={() => setIsOpen(false)}
                 className="block rounded-md px-5 py-4 text-center text-[18px]"
                 style={{ color: COLOR_PRIMARY_600, borderColor: COLOR_PRIMARY_600, borderWidth: 1 }}
               >
-                Book a demo
+                {secondaryCtaText}
               </Link>
             </div>
           </nav>
