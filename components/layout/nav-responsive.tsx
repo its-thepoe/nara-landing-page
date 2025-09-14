@@ -4,9 +4,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HambergerMenu, CloseSquare } from "iconsax-react";
 
-// Figma MCP Server assets
-const IMG_LOGO =
-  "http://localhost:3845/assets/19591e929b156ef31c9ee03435ea5fb15c0d1200.png"; // nara moon logo
+// Local logo asset
+const IMG_LOGO = "/naralogo.svg"; // nara logo
 
 // Colors from Figma variables
 const COLOR_PRIMARY_600 = "#01432B";
@@ -44,18 +43,12 @@ export default function NavResponsive() {
 
   return (
     <>
-      {/* Fixed, transparent top bar */}
-      <nav className="fixed inset-x-0 top-0 z-40 bg-transparent">
+      {/* Fixed, white top bar */}
+      <nav className="fixed inset-x-0 top-0 z-40 bg-white">
         <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2" aria-label="Nara home">
-            <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-[42px]" />
-            <span
-              className="text-[28px] font-semibold leading-[14px]"
-              style={{ color: COLOR_PRIMARY_600 }}
-            >
-              Nara
-            </span>
+          <Link href="#" className="flex items-center" aria-label="Nara home">
+            <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-auto" />
           </Link>
 
           {/* Desktop links */}
@@ -114,11 +107,8 @@ export default function NavResponsive() {
           aria-label="Mobile menu"
         >
           <div className="flex items-center justify-between px-4 py-4">
-            <div className="flex items-center gap-2">
-              <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-[42px]" />
-              <span className="text-[28px] font-semibold" style={{ color: COLOR_PRIMARY_600 }}>
-                Nara
-              </span>
+            <div className="flex items-center">
+              <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-auto" />
             </div>
 
             <button
