@@ -85,19 +85,21 @@ export default function ClientHomepage() {
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
               <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-8">
-                <div className="flex flex-col gap-6 lg:gap-8 text-left lg:text-center">
-                  <p className="text-[#015033] text-sm">FEATURES</p>
-                  <p className="text-[#101828] text-[36px] leading-[44px] tracking-[-0.02em] lg:text-[60px] lg:leading-[72px] font-semibold">
-                    What We Offer
-                  </p>
-                  <p className="text-base text-[#736F67] leading-[24px] mb-4">
-                    Tools and guidance to help you feel and live better.
-                  </p>
+                <div className="flex flex-col gap-7 text-left lg:text-center">
+                  <p className="text-[#015033] text-[12px] leading-[18px] tracking-[-0.12px]">FEATURES</p>
+                  <div className="flex flex-col gap-3">
+                    <p className="text-[#101828] text-[36px] leading-[44px] tracking-[-0.72px] lg:text-[60px] lg:leading-[72px] font-semibold">
+                      What We Offer
+                    </p>
+                    <p className="text-[#475467] text-[16px] leading-[24px] tracking-[-0.16px]">
+                      Tools and guidance to help you feel and live better.
+                    </p>
+                  </div>
                 </div>
 
               {/* Mobile Layout - Single Column */}
                 <motion.div 
-                  className="flex flex-col gap-[80px] lg:hidden w-full"
+                  className="flex flex-col gap-12 lg:hidden w-full"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -112,26 +114,28 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
                       <img 
                         src="/selfcaremockup.webp" 
                         alt="Self Care App Mockup" 
-                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[24px] h-auto"
+                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
                     
                     {/* Content Below */}
-                    <div className="flex flex-col gap-4">
-                      <div className="size-12 rounded-full flex items-center justify-center mb-4 w-fit">
-                        <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1"/>
-                          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5"/>
-                          <path d="M24 35.353C29.9371 35.353 34.75 30.5401 34.75 24.603C34.75 18.666 29.9371 13.853 24 13.853C18.0629 13.853 13.25 18.666 13.25 24.603C13.25 30.5401 18.0629 35.353 24 35.353ZM22.2373 23.3149C21.9312 23.417 21.5941 23.3113 21.4004 23.0532C20.9504 22.4532 20.0496 22.4532 19.5996 23.0532C19.351 23.3843 18.8811 23.4511 18.5498 23.2026C18.2187 22.954 18.1519 22.4841 18.4004 22.1528C18.9124 21.4704 19.6737 21.1209 20.4414 21.104C20.177 20.8095 20.1865 20.3559 20.4697 20.0728C20.7626 19.7799 21.2374 19.7799 21.5303 20.0728C21.564 20.1089 21.6711 20.223 21.7256 20.2866C21.8339 20.4129 21.9784 20.5936 22.124 20.812C22.3989 21.2244 22.75 21.8776 22.75 22.603C22.75 22.9259 22.5436 23.2129 22.2373 23.3149ZM26.5996 23.0532C26.4059 23.3113 26.0688 23.417 25.7627 23.3149C25.4564 23.2129 25.25 22.9259 25.25 22.603C25.25 21.8776 25.6011 21.2244 25.876 20.812C26.0216 20.5936 26.1661 20.4129 26.2744 20.2866C26.3289 20.223 26.436 20.1089 26.4697 20.0728C26.7626 19.7799 27.2374 19.7799 27.5303 20.0728C27.8135 20.3559 27.823 20.8095 27.5586 21.104C28.3263 21.1209 29.0876 21.4704 29.5996 22.1528C29.8481 22.4841 29.7813 22.954 29.4502 23.2026C29.1189 23.4511 28.649 23.3843 28.4004 23.0532C27.9504 22.4532 27.0496 22.4532 26.5996 23.0532ZM24 30.353C22.1185 30.353 20.4481 29.4481 19.4004 28.0532C19.1517 27.722 19.2186 27.2521 19.5498 27.0034C19.881 26.7547 20.3509 26.8216 20.5996 27.1528C21.3762 28.1867 22.6103 28.853 24 28.853C25.3897 28.853 26.6238 28.1867 27.4004 27.1528C27.6491 26.8217 28.119 26.7548 28.4502 27.0034C28.7814 27.2522 28.8483 27.722 28.5996 28.0532C27.5519 29.4481 25.8816 30.353 24 30.353Z" fill="#01BC77"/>
-                        </svg>
+                    <div className="flex flex-col gap-4 w-full">
+                      <div className="flex flex-col gap-2 w-full">
+                        <div className="size-12 rounded-full flex items-center justify-center w-fit">
+                          <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1"/>
+                            <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5"/>
+                            <path d="M24 35.353C29.9371 35.353 34.75 30.5401 34.75 24.603C34.75 18.666 29.9371 13.853 24 13.853C18.0629 13.853 13.25 18.666 13.25 24.603C13.25 30.5401 18.0629 35.353 24 35.353ZM22.2373 23.3149C21.9312 23.417 21.5941 23.3113 21.4004 23.0532C20.9504 22.4532 20.0496 22.4532 19.5996 23.0532C19.351 23.3843 18.8811 23.4511 18.5498 23.2026C18.2187 22.954 18.1519 22.4841 18.4004 22.1528C18.9124 21.4704 19.6737 21.1209 20.4414 21.104C20.177 20.8095 20.1865 20.3559 20.4697 20.0728C20.7626 19.7799 21.2374 19.7799 21.5303 20.0728C21.564 20.1089 21.6711 20.223 21.7256 20.2866C21.8339 20.4129 21.9784 20.5936 22.124 20.812C22.3989 21.2244 22.75 21.8776 22.75 22.603C22.75 22.9259 22.5436 23.2129 22.2373 23.3149ZM26.5996 23.0532C26.4059 23.3113 26.0688 23.417 25.7627 23.3149C25.4564 23.2129 25.25 22.9259 25.25 22.603C25.25 21.8776 25.6011 21.2244 25.876 20.812C26.0216 20.5936 26.1661 20.4129 26.2744 20.2866C26.3289 20.223 26.436 20.1089 26.4697 20.0728C26.7626 19.7799 27.2374 19.7799 27.5303 20.0728C27.8135 20.3559 27.823 20.8095 27.5586 21.104C28.3263 21.1209 29.0876 21.4704 29.5996 22.1528C29.8481 22.4841 29.7813 22.954 29.4502 23.2026C29.1189 23.4511 28.649 23.3843 28.4004 23.0532C27.9504 22.4532 27.0496 22.4532 26.5996 23.0532ZM24 30.353C22.1185 30.353 20.4481 29.4481 19.4004 28.0532C19.1517 27.722 19.2186 27.2521 19.5498 27.0034C19.881 26.7547 20.3509 26.8216 20.5996 27.1528C21.3762 28.1867 22.6103 28.853 24 28.853C25.3897 28.853 26.6238 28.1867 27.4004 27.1528C27.6491 26.8217 28.119 26.7548 28.4502 27.0034C28.7814 27.2522 28.8483 27.722 28.5996 28.0532C27.5519 29.4481 25.8816 30.353 24 30.353Z" fill="#01BC77"/>
+                          </svg>
+                        </div>
+                        <h3 className="text-[#353535] text-2xl font-semibold">Self Care</h3>
+                        <p className="text-[#475467] text-base leading-6">Personalize your self-care with mood check-ins, gratitude, journaling, sharing love & much more</p>
                       </div>
-                      <h3 className="text-[#353535] text-xl font-medium mb-3">Self Care</h3>
-                      <p className="text-[#736F67] text-sm leading-5 mb-4">Personalize your self-care with mood check-ins, gratitude, journaling, sharing love & much more</p>
-                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                      <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Start Self Care
                       </button>
                     </div>
@@ -146,17 +150,17 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
                       <img 
                         src="/therapymockup.webp" 
                         alt="Therapy App Mockup" 
-                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[24px] h-auto"
+                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
                     
                     {/* Content Below */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-4 w-full">
+                      <div className="flex flex-col gap-2 w-full">
                         <div className="size-12 rounded-full flex items-center justify-center w-fit">
                           <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.603027" width="48" height="48" rx="24" fill="#EFF3FB"/>
@@ -166,12 +170,10 @@ export default function ClientHomepage() {
                             <path d="M13.9988 25.303V28.613C13.9787 28.293 13.9688 27.953 13.9688 27.603V25.303H13.9988Z" fill="#0665FE"/>
                           </svg>
                         </div>
-                        <div className="flex flex-col gap-2">
-                          <h3 className="text-[#353535] text-xl font-medium">Therapy</h3>
-                          <p className="text-[#736F67] text-base leading-6">Match with the right therapist for you, eliminating guesswork and awkward mismatches</p>
-                        </div>
+                        <h3 className="text-[#353535] text-2xl font-semibold">Therapy</h3>
+                        <p className="text-[#475467] text-base leading-6">Match with the right therapist for you, eliminating guesswork and awkward mismatches</p>
                       </div>
-                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                      <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Find a Therapist
                       </button>
                     </div>
@@ -186,17 +188,17 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
                       <img 
                         src="/aitherapymockup.webp" 
                         alt="AI Therapy App Mockup" 
-                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[24px] h-auto"
+                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
                     
                     {/* Content Below */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-4 w-full">
+                      <div className="flex flex-col gap-2 w-full">
                         <div className="size-12 rounded-full flex items-center justify-center w-fit">
                           <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.603027" width="48" height="48" rx="24" fill="#FEF6EB"/>
@@ -205,12 +207,10 @@ export default function ClientHomepage() {
                             <path d="M33.57 22.693C33.21 22.953 32.2 23.433 30.76 22.693C30.6 22.613 30.4 22.603 30.24 22.693C29.67 22.983 29.15 23.103 28.74 23.103C28.1 23.103 27.65 22.853 27.43 22.693C27.06 22.423 26.28 21.653 26.55 20.023C26.58 19.853 26.53 19.683 26.42 19.553C25.73 18.763 25.35 17.703 25.62 16.873C25.72 16.543 25.51 16.103 25.17 16.103H19C16 16.103 14 17.603 14 21.103V28.103C14 31.603 16 33.103 19 33.103H29C32 33.103 34 31.603 34 28.103V22.873C34 22.683 33.73 22.583 33.57 22.693ZM26.34 24.693C25.68 25.223 24.84 25.483 24 25.483C23.16 25.483 22.31 25.223 21.66 24.693L18.53 22.193C18.21 21.933 18.16 21.453 18.41 21.133C18.67 20.813 19.14 20.753 19.46 21.013L22.59 23.513C23.35 24.123 24.64 24.123 25.4 23.513C25.72 23.253 26.19 23.303 26.45 23.633C26.72 23.953 26.67 24.433 26.34 24.693Z" fill="#F59714"/>
                           </svg>
                         </div>
-                        <div className="flex flex-col gap-2">
-                          <h3 className="text-[#353535] text-xl font-medium">AI Therapy</h3>
-                          <p className="text-[#736F67] text-base leading-6">Engage with Nara AI for 24/7 personalized mental health support anytime, anywhere.</p>
-                        </div>
+                        <h3 className="text-[#353535] text-2xl font-semibold">AI Therapy</h3>
+                        <p className="text-[#475467] text-base leading-6">Engage with Nara AI for 24/7 personalized mental health support anytime, anywhere.</p>
                       </div>
-                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                      <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Start a chat
                       </button>
                     </div>
@@ -225,17 +225,17 @@ export default function ClientHomepage() {
                     viewport={{ once: true, margin: "-50px" }}
                   >
                     {/* Image Above */}
-                    <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden">
+                    <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
                       <img 
                         src="/meditationmockup.webp" 
                         alt="Meditation App Mockup" 
-                        className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[24px] h-auto"
+                        className="absolute bottom-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:translate-y-4 group-active:translate-y-4 transition-all duration-300 ease-out"
                       />
                     </div>
                     
                     {/* Content Below */}
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-4">
+                    <div className="flex flex-col gap-4 w-full">
+                      <div className="flex flex-col gap-2 w-full">
                         <div className="size-12 rounded-full flex items-center justify-center w-fit">
                           <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.603027" width="48" height="48" rx="24" fill="#F0FBFF"/>
@@ -244,12 +244,10 @@ export default function ClientHomepage() {
                             <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB"/>
                           </svg>
                         </div>
-                        <div className="flex flex-col gap-2">
-                          <h3 className="text-[#353535] text-xl font-medium">Meditation</h3>
-                          <p className="text-[#736F67] text-base leading-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
-                        </div>
+                        <h3 className="text-[#353535] text-2xl font-semibold">Meditation</h3>
+                        <p className="text-[#475467] text-base leading-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
                       </div>
-                      <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
+                      <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Find your inner peace
                       </button>
                     </div>
@@ -273,12 +271,12 @@ export default function ClientHomepage() {
                     transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="w-[560px] flex-shrink-0 overflow-hidden">
-                      <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative">
+                    <div className="w-[560px] flex-shrink-0 overflow-hidden group">
+                      <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
                         <img 
                           src="/selfcaremockup.webp" 
                           alt="Self Care App Mockup" 
-                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto"
+                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
                     </div>
@@ -322,12 +320,12 @@ export default function ClientHomepage() {
                         Find a Therapist
                       </button>
                     </div>
-                    <div className="w-[560px] flex-shrink-0 overflow-hidden">
-                      <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative">
+                    <div className="w-[560px] flex-shrink-0 overflow-hidden group">
+                      <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
                         <img 
                           src="/therapymockup.webp" 
                           alt="Therapy App Mockup" 
-                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto"
+                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
                     </div>
@@ -341,12 +339,12 @@ export default function ClientHomepage() {
                     transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-50px" }}
                   >
-                    <div className="w-[560px] flex-shrink-0 overflow-hidden">
-                      <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative">
+                    <div className="w-[560px] flex-shrink-0 overflow-hidden group">
+                      <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
                         <img 
                           src="/aitherapymockup.webp" 
                           alt="AI Therapy App Mockup" 
-                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto"
+                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
                     </div>
@@ -390,12 +388,12 @@ export default function ClientHomepage() {
                         Find your inner peace
                       </button>
                     </div>
-                    <div className="w-[560px] flex-shrink-0 overflow-hidden">
-                      <div className="w-full h-[480px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative">
+                    <div className="w-[560px] flex-shrink-0 overflow-hidden group">
+                      <div className="w-full h-[480px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
                         <img 
                           src="/meditationmockup.webp" 
                           alt="Meditation App Mockup" 
-                          className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[240px] lg:w-[400px] h-auto"
+                          className="absolute bottom-[48px] lg:bottom-[80px] left-1/2 transform -translate-x-1/2 w-[240px] lg:w-[400px] h-auto group-hover:translate-y-4 transition-all duration-300 ease-out"
                         />
                       </div>
                     </div>
