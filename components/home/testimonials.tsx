@@ -16,40 +16,35 @@ const SLIDES: Testimonial[] = [
       "Assigning and tracking homework is finally easy. Clients are more engaged now.",
     author: "Kyle Cai",
     role: "Defiance Capital",
-    avatarUrl:
-      "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png",
+    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
   },
   {
     quote:
       "I spend less time on admin and more time helping clients. Nara keeps me updated even between sessions.",
     author: "Kyle Cai",
     role: "Defiance Capital",
-    avatarUrl:
-      "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png",
+    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
   {
     quote:
       "Seeing mood trends helps me personalise care. I've caught early signs of relapse thanks to Nara.",
     author: "Kyle Cai",
     role: "Defiance Capital",
-    avatarUrl:
-      "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png",
+    avatarUrl: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
   },
   {
     quote:
       "The AI insights have transformed how I approach treatment planning. My clients feel more supported between sessions.",
     author: "Dr. Sarah Johnson",
     role: "Mindful Therapy Group",
-    avatarUrl:
-      "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png",
+    avatarUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
   },
   {
     quote:
       "Nara's dashboard gives me real-time visibility into my clients' progress. It's like having a co-therapist that never sleeps.",
     author: "Dr. Michael Chen",
     role: "Wellness Center",
-    avatarUrl:
-      "http://localhost:3845/assets/3908204892c1b7e1bea8585535a6122a0a0eac4f.png",
+    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
   },
 ];
 
@@ -71,10 +66,10 @@ export default function Testimonials() {
   }, [index]);
 
   return (
-    <div className="lg:px-6 lg:py-0 p-4">
+    <div className="lg:px-6 lg:py-0 px-1 py-4">
       <section className="py-6 ">
-        <div className="rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB] overflow-hidden">
-          <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 p-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+        <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB] overflow-hidden">
+          <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] lg:px-6 px-3 max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
             <div className="flex w-full max-w-[1200px] flex-col items-center gap-8">
               <div className="flex w-full max-w-[750px] flex-col items-center gap-4 text-center">
                 <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">
