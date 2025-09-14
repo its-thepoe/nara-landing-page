@@ -1,4 +1,5 @@
 import { Twitter, LinkedIn, Instagram } from "../shared/icons";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,9 +12,11 @@ export default function Footer() {
           <div className="flex w-full max-w-[1152px] flex-col items-start gap-8 pt-4">
             {/* Logo Container */}
             <div className="flex h-24 w-24 items-center justify-center">
-              <img 
+              <Image 
                 src="/naralogowhite.webp" 
                 alt="Nara Logo" 
+                width={96}
+                height={96}
                 className="h-24 w-24 object-contain"
               />
             </div>
@@ -112,9 +115,11 @@ export default function Footer() {
                   href="#"
                   className="transition-all duration-200 hover:scale-105"
                 >
-                  <img
+                  <Image
                     src="/playstorebadge.svg"
                     alt="Get it on Google Play"
+                    width={135}
+                    height={40}
                     className="h-10 w-[135px]"
                   />
                 </a>
@@ -122,18 +127,22 @@ export default function Footer() {
                   href="#"
                   className="transition-all duration-200 hover:scale-105"
                 >
-                  <img
+                  <Image
                     src="/appstorebadge.svg"
                     alt="Download on the App Store"
+                    width={120}
+                    height={40}
                     className="h-10 w-[120px]"
                   />
                 </a>
               </div>
               {/* HIPAA Badge - Column 3 */}
               <div className="col-span-1 flex justify-start lg:justify-end">
-                <img
+                <Image
                   src="/hippabadge.svg"
                   alt="HIPAA Compliant"
+                  width={107}
+                  height={80}
                   className="h-20 w-[107px]"
                 />
               </div>

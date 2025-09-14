@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
+import Image from "next/image";
 
 export type Testimonial = {
   quote: string;
@@ -52,7 +53,7 @@ export default function Testimonials({
     
     const interval = setInterval(next, autoPlayInterval);
     return () => clearInterval(interval);
-  }, [autoPlay, autoPlayInterval, testimonials.length]);
+  }, [autoPlay, autoPlayInterval, testimonials.length, next]);
 
   if (testimonials.length === 0) {
     return null;
@@ -174,16 +175,17 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
       >
         {/* decorative quote SVG */}
         <div className="absolute right-5 top-5 h-20 w-24 opacity-60 -z-10">
-          <img 
+          <Image 
             src="/testimonialquotes.svg" 
             alt="" 
+            fill
             className="h-full w-full object-contain"
           />
         </div>
 
         <div className="px-5 pt-5 relative z-10">
           <p className="mx-auto text-[20px] leading-[30px] tracking-[-0.01em] text-[#344054]">
-            "{t.quote}"
+            &quot;{t.quote}&quot;
           </p>
         </div>
         
@@ -192,11 +194,12 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
             <div className="flex flex-col items-start gap-4 w-full">
               <div className="h-px w-full bg-[#EAECF0]" />
               <div className="flex items-center gap-2 w-full">
-                <div className="w-11 h-11 rounded-full bg-[#E5F8F1] flex items-center justify-center overflow-hidden">
+                <div className="w-11 h-11 rounded-full bg-[#E5F8F1] flex items-center justify-center overflow-hidden relative">
                   {t.avatarUrl ? (
-                    <img
+                    <Image
                       src={t.avatarUrl}
                       alt={t.author}
+                      fill
                       className="w-11 h-11 rounded-full object-cover"
                     />
                   ) : (
@@ -227,16 +230,17 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
     >
       {/* decorative quote SVG */}
       <div className="absolute right-12 top-12 h-[118.81px] w-[142.95px] opacity-60">
-        <img 
+        <Image 
           src="/testimonialquotes.svg" 
           alt="" 
+          fill
           className="h-full w-full object-contain"
         />
       </div>
 
       <div className="px-12 pt-12">
         <p className="mx-auto w-[444px] text-[30px] leading-[44px] tracking-[-0.01em] text-[#344054]">
-          "{t.quote}"
+          &quot;{t.quote}&quot;
         </p>
       </div>
       
@@ -245,11 +249,12 @@ function Card({ t, mobile = false }: { t: Testimonial; mobile?: boolean }) {
           <div className="flex flex-col items-start gap-4 w-[444px] h-[61px]">
             <div className="w-full h-px bg-[#EAECF0]" />
             <div className="flex items-center gap-3 w-[444px] h-11">
-              <div className="w-11 h-11 rounded-full bg-[#E5F8F1] flex items-center justify-center overflow-hidden">
+              <div className="w-11 h-11 rounded-full bg-[#E5F8F1] flex items-center justify-center overflow-hidden relative">
                 {t.avatarUrl ? (
-                  <img
+                  <Image
                     src={t.avatarUrl}
                     alt={t.author}
+                    fill
                     className="w-11 h-11 rounded-full object-cover"
                   />
                 ) : (

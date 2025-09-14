@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface FounderSpotlightProps {
   quoteIconSrc?: string;
@@ -59,7 +60,7 @@ That experience shaped my life's mission: to help others find peace and healing 
                 >
                   {/* decorative quote */}
                   <div className="absolute right-5 top-5 h-20 w-24 opacity-80 md:right-12 md:top-12 md:h-[118.81px] md:w-[142.95px] z-0">
-                    <img src={quoteIconSrc} alt="" className="w-full h-full" />
+                    <Image src={quoteIconSrc} alt="" fill className="w-full h-full" />
                   </div>
 
                   {/* Text content */}
@@ -80,8 +81,8 @@ That experience shaped my life's mission: to help others find peace and healing 
                   <div className="px-4 pb-4 md:p-0 relative z-10 w-full">
                     <div className="border-t" style={{ borderColor: "#EAECF0" }} />
                     <div className="mt-4 flex items-center gap-2">
-                      <div className="w-11 h-11 rounded-full border-2 border-white overflow-hidden">
-                        <img src={authorImageSrc} alt={authorImageAlt} className="w-full h-full object-cover" />
+                      <div className="w-11 h-11 rounded-full border-2 border-white overflow-hidden relative">
+                        <Image src={authorImageSrc} alt={authorImageAlt} fill className="w-full h-full object-cover" />
                       </div>
                       <div className="flex flex-col">
                         <p className="text-[12px] md:text-[14px] leading-5 text-[#101828]">{authorName}</p>

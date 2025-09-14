@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { HambergerMenu, CloseSquare } from "iconsax-react";
+import Image from "next/image";
 
 // Local logo asset
 const IMG_LOGO = "/naralogo.svg"; // nara logo
@@ -48,7 +49,7 @@ export default function Navbar() {
         <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
           {/* Logo */}
           <Link href="#" className="flex items-center" aria-label="Nara home">
-            <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-auto" />
+            <Image src={IMG_LOGO} alt="Nara" width={100} height={42} className="h-[42px] w-auto" />
           </Link>
 
           {/* Desktop links */}
@@ -115,7 +116,7 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-between px-4 py-4">
             <div className="flex items-center">
-              <img src={IMG_LOGO} alt="Nara" className="h-[42px] w-auto" />
+              <Image src={IMG_LOGO} alt="Nara" width={100} height={42} className="h-[42px] w-auto" />
             </div>
 
             <button
