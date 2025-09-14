@@ -229,6 +229,39 @@ export default function ClientHomepage() {
                       <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Start a chat
                       </button>
+                      
+                      {/* Metrics Section */}
+                      <div 
+                        className="bg-[#fef6eb] rounded-[20px] border border-[#cd7b09] border-opacity-20 px-4 sm:px-6 py-4 mt-6 relative overflow-hidden"
+                        style={{
+                          background: `
+                            linear-gradient(to bottom, #fef6eb 0%, rgba(254,246,235,0) 100%),
+                            url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 560 154\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(47.629 3.6633e-14 -2.4525e-15 10.248 280 77)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0.22177\\'/><stop stop-color=\\'rgba(251,210,152,1)\\' offset=\\'0.71065\\'/><stop stop-color=\\'rgba(253,232,204,1)\\' offset=\\'0.85382\\'/><stop stop-color=\\'rgba(255,255,255,1)\\' offset=\\'0.99699\\'/></radialGradient></defs></svg>')
+                          `
+                        }}
+                      >
+                        <div className="flex flex-col sm:flex-row sm:justify-between gap-6 relative z-10">
+                          <div className="flex-1 text-left sm:text-center relative pb-6 sm:pb-0">
+                            <div className="text-[30px] font-semibold text-[#101828] leading-[38px] mb-2">
+                              83%
+                            </div>
+                            <div className="text-[14px] text-[#475467] leading-[20px]">
+                              feel better after their first chat
+                            </div>
+                            {/* Dotted border on the bottom for mobile, right for desktop */}
+                            <div className="block sm:hidden absolute bottom-0 left-0 right-0 h-0 border-b border-dashed border-[#9d5e07] border-opacity-60"></div>
+                            <div className="hidden sm:block absolute top-0 right-0 w-0 h-full border-r border-dashed border-[#9d5e07] border-opacity-60"></div>
+                          </div>
+                          <div className="flex-1 text-left sm:text-center">
+                            <div className="text-[30px] font-semibold text-[#101828] leading-[38px] mb-2">
+                              100%
+                            </div>
+                            <div className="text-[14px] text-[#475467] leading-[20px]">
+                              accurate in detecting high risk
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
 
@@ -261,7 +294,12 @@ export default function ClientHomepage() {
                             <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB"/>
                           </svg>
                         </div>
-                        <h3 className="text-[#353535] text-2xl font-semibold">Meditation</h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="text-[#353535] text-2xl font-semibold">Meditation</h3>
+                          <div className="bg-[#f0fbff] px-2.5 py-0.5 rounded-[16px]">
+                            <span className="text-[#06b1e5] text-[14px] font-medium">Coming Soon</span>
+                          </div>
+                        </div>
                         <p className="text-[#475467] text-base leading-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
                       </div>
                       <button className="w-full rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
@@ -381,6 +419,38 @@ export default function ClientHomepage() {
                       <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Start a chat
                       </button>
+                      
+                      {/* Metrics Section */}
+                      <div 
+                        className="bg-[#fef6eb] rounded-[20px] border border-[#cd7b09] border-opacity-20 px-8 py-6 mt-8 relative overflow-hidden"
+                        style={{
+                          background: `
+                            linear-gradient(to bottom, #fef6eb 0%, rgba(254,246,235,0) 100%),
+                            url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 560 154\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(47.629 3.6633e-14 -2.4525e-15 10.248 280 77)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0.22177\\'/><stop stop-color=\\'rgba(251,210,152,1)\\' offset=\\'0.71065\\'/><stop stop-color=\\'rgba(253,232,204,1)\\' offset=\\'0.85382\\'/><stop stop-color=\\'rgba(255,255,255,1)\\' offset=\\'0.99699\\'/></radialGradient></defs></svg>')
+                          `
+                        }}
+                      >
+                        <div className="flex justify-between gap-8 relative z-10">
+                          <div className="flex-1 text-center relative">
+                            <div className="text-[30px] font-semibold text-[#101828] leading-[38px] mb-3">
+                              83%
+                            </div>
+                            <div className="text-[14px] text-[#475467] leading-[20px]">
+                              feel better after their first chat
+                            </div>
+                            {/* Dotted border on the right */}
+                            <div className="absolute top-0 right-0 w-0 h-full border-r border-dashed border-[#9d5e07] border-opacity-60"></div>
+                          </div>
+                          <div className="flex-1 text-center">
+                            <div className="text-[30px] font-semibold text-[#101828] leading-[38px] mb-3">
+                              100%
+                            </div>
+                            <div className="text-[14px] text-[#475467] leading-[20px]">
+                              accurate in detecting high risk
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
 
@@ -400,7 +470,12 @@ export default function ClientHomepage() {
                           <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB"/>
                         </svg>
                       </div>
-                      <h3 className="text-[#353535] text-2xl lg:text-[46px] lg:leading-[44px] lg:tracking-[-0.02em] font-medium mb-4">Meditation</h3>
+                      <div className="flex items-center gap-2 mb-4">
+                        <h3 className="text-[#353535] text-2xl lg:text-[46px] lg:leading-[44px] lg:tracking-[-0.02em] font-medium">Meditation</h3>
+                        <div className="bg-[#f0fbff] px-2.5 py-0.5 rounded-[16px]">
+                          <span className="text-[#06b1e5] text-[14px] font-medium">Coming Soon</span>
+                        </div>
+                      </div>
                       <p className="text-[#736F67] leading-6 text-base lg:text-[18px] mb-6">Discover peace and clarity with guided meditations tailored to your emotional and mental needs.</p>
                       <button className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out border border-[#015033]">
                         Find your inner peace
