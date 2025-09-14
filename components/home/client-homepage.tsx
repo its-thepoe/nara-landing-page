@@ -9,7 +9,8 @@ import FounderSpotlight from "../shared/founder-spotlight";
 import ClientNavbar from "../layout/client-navbar";
 import Footer from "../layout/footer";
 import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
-import RollingNumber from "../shared/rolling-number";
+import RollingDigit from "../shared/rolling-digit";
+import Image from "next/image";
 
 // Client homepage - duplicated from landing page as boilerplate
 export default function ClientHomepage() {
@@ -59,20 +60,11 @@ export default function ClientHomepage() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <img
+                  <Image
                     alt="nara-dash"
                     src={heroMockup}
-                    className="absolute object-contain"
-                    style={{
-                      position: "absolute",
-                      height: "100%",
-                      width: "100%",
-                      left: 0,
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      color: "transparent"
-                    }}
+                    fill
+                    className="object-contain"
                   />
                 </motion.div>
               </div>
@@ -117,9 +109,11 @@ export default function ClientHomepage() {
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
-                      <img 
+                      <Image 
                         src="/selfcaremockup.webp" 
                         alt="Self Care App Mockup" 
+                        width={400}
+                        height={400}
                         className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
@@ -153,9 +147,11 @@ export default function ClientHomepage() {
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
-                      <img 
+                      <Image 
                         src="/therapymockup.webp" 
                         alt="Therapy App Mockup" 
+                        width={400}
+                        height={400}
                         className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
@@ -191,9 +187,11 @@ export default function ClientHomepage() {
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
-                      <img 
+                      <Image 
                         src="/aitherapymockup.webp" 
                         alt="AI Therapy App Mockup" 
+                        width={400}
+                        height={400}
                         className="absolute top-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:-translate-y-4 group-active:-translate-y-4 transition-transform duration-300 ease-out"
                       />
                     </div>
@@ -228,9 +226,11 @@ export default function ClientHomepage() {
                   >
                     {/* Image Above */}
                     <div className="w-full h-[280px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative overflow-hidden group hover:shadow-lg active:shadow-lg transition-all duration-300 ease-out">
-                      <img 
+                      <Image 
                         src="/meditationmockup.webp" 
                         alt="Meditation App Mockup" 
+                        width={400}
+                        height={400}
                         className="absolute bottom-[48px] left-1/2 transform -translate-x-1/2 w-[240px] h-auto group-hover:translate-y-4 group-active:translate-y-4 transition-all duration-300 ease-out"
                       />
                     </div>
@@ -275,9 +275,11 @@ export default function ClientHomepage() {
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#e5f8f1] rounded-[20px] border border-[rgba(1,188,119,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
-                        <img 
+                        <Image 
                           src="/selfcaremockup.webp" 
                           alt="Self Care App Mockup" 
+                          width={400}
+                          height={400}
                           className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
@@ -324,9 +326,11 @@ export default function ClientHomepage() {
                     </div>
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#eff3fb] rounded-[20px] border border-[rgba(6,101,254,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
-                        <img 
+                        <Image 
                           src="/therapymockup.webp" 
                           alt="Therapy App Mockup" 
+                          width={400}
+                          height={400}
                           className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
@@ -343,9 +347,11 @@ export default function ClientHomepage() {
                   >
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#fef6eb] rounded-[20px] border border-[rgba(245,151,20,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
-                        <img 
+                        <Image 
                           src="/aitherapymockup.webp" 
                           alt="AI Therapy App Mockup" 
+                          width={400}
+                          height={400}
                           className="absolute top-[48px] lg:top-[80px] left-1/2 transform -translate-x-1/2 w-[24px] lg:w-[400px] h-auto group-hover:-translate-y-4 transition-transform duration-300 ease-out"
                         />
                       </div>
@@ -392,9 +398,11 @@ export default function ClientHomepage() {
                     </div>
                     <div className="w-[560px] flex-shrink-0 overflow-hidden group">
                       <div className="w-full h-[480px] bg-[#f0fbff] rounded-[20px] border border-[rgba(89,213,251,0.1)] flex items-center justify-center relative hover:shadow-lg transition-all duration-300 ease-out">
-                        <img 
+                        <Image 
                           src="/meditationmockup.webp" 
                           alt="Meditation App Mockup" 
+                          width={400}
+                          height={400}
                           className="absolute bottom-[48px] lg:bottom-[80px] left-1/2 transform -translate-x-1/2 w-[240px] lg:w-[400px] h-auto group-hover:translate-y-4 transition-all duration-300 ease-out"
                         />
                       </div>
@@ -539,9 +547,37 @@ export default function ClientHomepage() {
                     
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-2">
-                        <div className="flex items-end justify-center lg:justify-start gap-1">
-                          <div className="text-[#101828] text-[36px] leading-[44px] lg:text-[48px] lg:leading-[60px] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px]">
-                            $<RollingNumber value={isYearly ? 149.99 : 19.99} />
+                        <div className="flex items-end justify-center lg:justify-start">
+                          <div className="text-[#101828] text-[36px] leading-[1em] lg:text-[48px] lg:leading-[1em] font-semibold tracking-[-0.72px] lg:tracking-[-0.96px] flex items-center">
+                            $
+                            <div className="flex">
+                              {/* Hundreds digit - only for yearly */}
+                              <AnimatePresence>
+                                {isYearly && (
+                                  <motion.div
+                                    key="hundreds"
+                                    initial={{ width: 0, opacity: 0 }}
+                                    animate={{ width: "auto", opacity: 1 }}
+                                    exit={{ width: 0, opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }}
+                                    className="overflow-hidden"
+                                  >
+                                    <div className="h-[1em] overflow-hidden">
+                                      <RollingDigit digit={1} />
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                              {/* Tens digit */}
+                              <div className="h-[1em] overflow-hidden">
+                                <RollingDigit digit={isYearly ? 4 : 1} />
+                              </div>
+                              {/* Units digit */}
+                              <div className="h-[1em] overflow-hidden">
+                                <RollingDigit digit={9} />
+                              </div>
+                            </div>
+                            .99
                           </div>
                           <AnimatePresence mode="wait">
                             <motion.span 
@@ -550,7 +586,7 @@ export default function ClientHomepage() {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: -10 }}
                               transition={{ duration: 0.3, ease: "easeOut" }}
-                              className="text-[#101828] text-[16px] leading-[24px] tracking-[-0.16px]"
+                              className="text-[#101828] text-[16px] leading-[24px] tracking-[-0.16px] ml-1"
                             >
                               {isYearly ? '/year' : '/month'}
                             </motion.span>
