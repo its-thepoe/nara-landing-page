@@ -18,18 +18,13 @@ const ITEMS: FaqItem[] = [
   },
   {
     q: "Can I customise the homework assignments?",
-    a: "Yes. You can create your own or use templates based on common therapeutic goals.",
+    a: "Yes! You can create custom assignments tailored to each client's needs, or choose from our library of evidence-based exercises. Track progress and send reminders automatically.",
     icon: "📝",
   },
   {
     q: "What does AI chat visibility look like?",
     a: "You'll see a summary of the client's AI interactions—only after they give permission. This helps you stay informed between sessions.",
     icon: "💬",
-  },
-  {
-    q: "Can I use my own intake forms?",
-    a: "Yes. Upload any forms you already use and share them during onboarding.",
-    icon: "📋",
   },
 ];
 

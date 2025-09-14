@@ -17,9 +17,9 @@ export default function Landing() {
     "http://localhost:3845/assets/fa660c84c18525d61ab8ceea3b74b54e1a86dcba.png";
 
   return (
-    <div className="w-full">
+    <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
-      <div className="lg:px-6 px-3">
+      <div className="relative z-10 lg:px-6 px-3">
         <div className="lg:px-20 lg:pb-3 p-4 bg-gradient-to-b from-[#f7fefb] to-[#e7fef6] shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden">
           <div className="flex flex-col">
             <div className="pt-20 lg:pt-48">
@@ -66,7 +66,7 @@ export default function Landing() {
       </div>
 
       {/* Features */}
-      <div id="features" className="lg:px-6 lg:py-0 px-1">
+      <div id="features" className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-6 lg:py-8">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
@@ -264,7 +264,7 @@ export default function Landing() {
         </div>
 
       {/* How it works */}
-      <div id="how-it-works" className="lg:px-6 lg:py-0 px-1">
+      <div id="how-it-works" className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#B9DFD1] bg-[#F4FBF9]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
@@ -350,10 +350,12 @@ export default function Landing() {
       </section>
       </div>
 
-      <Testimonials />
+      <div className="relative z-10">
+        <Testimonials />
+      </div>
 
       {/* Founder spotlight */}
-      <div className="lg:px-6 lg:py-0 px-1">
+      <div className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
@@ -414,7 +416,7 @@ export default function Landing() {
       </div>
 
       {/* FAQs */}
-      <div className="lg:px-6 lg:py-0 px-1">
+      <div className="relative z-10 lg:px-6 lg:py-0 px-1">
         <section className="py-4 lg:py-6">
           <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB]">
             <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>

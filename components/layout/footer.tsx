@@ -2,11 +2,11 @@ import { Twitter, LinkedIn, Instagram } from "../shared/icons";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#00100A]">
-      {/* Main Footer Content - matches Figma specs exactly */}
+    <footer className="relative z-20 w-full">
+      {/* Footer - Main Content */}
       <div className="flex w-full flex-col items-start gap-16 px-0 py-0">
         {/* Container */}
-        <div className="flex w-full flex-col items-center justify-center px-4 pt-8 lg:px-[144px]">
+        <div className="flex w-full flex-col items-center justify-center px-4 pt-8 pb-16 lg:px-[144px] bg-[#00100A]">
           {/* Inner Container */}
           <div className="flex w-full max-w-[1152px] flex-col items-start gap-8 pt-4">
             {/* Logo Container */}
@@ -129,7 +129,7 @@ export default function Footer() {
 
             {/* Horizontal Border - Social Media and Copyright - Desktop: horizontal, Mobile: vertical */}
             <div className="flex w-full max-w-[1152px] flex-col items-start gap-8 border-t border-dashed border-[#667085] pt-5 lg:flex-row lg:items-end lg:justify-between">
-              <p className="text-xs font-normal leading-[18px] tracking-[-0.12px] text-[#D0D5DD] lg:whitespace-nowrap">
+              <p className="text-xs font-normal leading-[18px] tracking-[-0.12px] text-[#D0D5DD] lg:whitespace-nowrap bg-transparent">
                 © Copyright 2025. All Rights Reserved by Nara LLC.
               </p>
               <div className="flex flex-row items-start gap-2">
@@ -172,22 +172,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Background Watermark Container - Full width */}
-        <div className="flex w-full items-center justify-center">
-          {/* Desktop Background */}
-          <div className="hidden lg:block relative h-[210.94px] w-full overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[200px] font-bold text-white/10">Nara</span>
-            </div>
-          </div>
-          {/* Mobile Background */}
-          <div className="block lg:hidden relative h-[69px] w-full overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[60px] font-bold text-white/10">Nara</span>
-            </div>
-          </div>
-        </div>
       </div>
+      
+      {/* Whitespace to allow post-footer to display */}
+      <div className="h-[69px] lg:h-[210.938px]"></div>
     </footer>
   );
 }
