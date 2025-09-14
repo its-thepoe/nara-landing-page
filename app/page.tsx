@@ -1,11 +1,11 @@
 import Landing from "@/components/home/landing";
-import NavResponsive from "@/components/layout/nav-responsive";
+import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
 export default function Page() {
   return (
     <div className="w-full">
-      <NavResponsive />
+      <Navbar />
       <Landing />
       <Footer />
     </div>

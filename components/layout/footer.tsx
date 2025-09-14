@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#00100A]">
       {/* Main Footer Content - matches Figma specs exactly */}
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-16 px-0 py-0">
+      <div className="flex w-full flex-col items-start gap-16 px-0 py-0">
         {/* Container */}
-        <div className="flex w-full flex-col items-center justify-center px-4 pt-8 lg:px-36">
+        <div className="flex w-full flex-col items-center justify-center px-4 pt-8 lg:px-[144px]">
           {/* Inner Container */}
           <div className="flex w-full max-w-[1152px] flex-col items-start gap-8 pt-4">
             {/* Logo Container */}
@@ -172,16 +172,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Background Watermark Container - Different for mobile and desktop */}
-        <div className="flex w-full items-center justify-center px-4 lg:px-36">
+        {/* Background Watermark Container - Full width */}
+        <div className="flex w-full items-center justify-center">
           {/* Desktop Background */}
-          <div className="hidden lg:block relative h-[210.94px] w-full max-w-[1152px] overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
+          <div className="hidden lg:block relative h-[210.94px] w-full overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-[200px] font-bold text-white/10">Nara</span>
             </div>
           </div>
           {/* Mobile Background */}
-          <div className="block lg:hidden relative h-[69px] w-full max-w-[343px] overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
+          <div className="block lg:hidden relative h-[69px] w-full overflow-hidden bg-gradient-to-b from-[#080808] to-[#00100A]">
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-[60px] font-bold text-white/10">Nara</span>
             </div>
