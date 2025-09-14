@@ -7,3 +7,9 @@ html { scroll-behavior: smooth; }
 
 /* Prevent horizontal overscroll on all pages */
 html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Custom dashed border */
+.custom-dashed-border {
+  border-left: 1px dashed var(--dash-color);
+  border-right: 1px dashed var(--dash-color);
+}

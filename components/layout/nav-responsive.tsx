@@ -44,7 +44,7 @@ export default function NavResponsive() {
   return (
     <>
       {/* Fixed, white top bar */}
-      <nav className="fixed inset-x-0 top-0 z-40 bg-white">
+      <nav className="fixed inset-x-0 top-0 z-50 bg-white">
         <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
           {/* Logo */}
           <Link href="#" className="flex items-center" aria-label="Nara home">
