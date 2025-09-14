@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 import Image from "next/image";
@@ -33,13 +33,13 @@ export default function Testimonials({
 }: TestimonialsProps) {
   const [index, setIndex] = useState(0);
 
-  const next = () => {
+  const next = useCallback(() => {
     setIndex((i) => (i + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
   
-  const prev = () => {
+  const prev = useCallback(() => {
     setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const desktopSlides = useMemo(() => {
     // Show three slides in order starting from index on desktop
