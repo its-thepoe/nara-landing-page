@@ -33,7 +33,7 @@ export const CLIENT_NAV_CONFIG: NavbarConfig = {
   navLinks: [
     { label: "For Providers", href: "/", isAnchor: false },
     { label: "Features", href: "#features", isAnchor: true },
-    { label: "How it works", href: "#how-it-works", isAnchor: true },
+    { label: "Pricing", href: "#pricing", isAnchor: true },
     { label: "FAQs", href: "#faqs", isAnchor: true },
   ],
   ctaText: "Get started - for free",
