@@ -436,7 +436,7 @@ export default function ClientHomepage() {
                               83%
                             </div>
                             <div className="text-[14px] text-[#475467] leading-[20px]">
-                              feel better after their first chat
+                              feel better after their first chat.
                             </div>
                             {/* Dotted border on the right */}
                             <div className="absolute top-0 right-0 w-0 h-full border-r border-dashed border-[#9d5e07] border-opacity-60"></div>
@@ -446,7 +446,7 @@ export default function ClientHomepage() {
                               100%
                             </div>
                             <div className="text-[14px] text-[#475467] leading-[20px]">
-                              accurate in detecting high risk
+                              accurate in detecting high risk.
                             </div>
                           </div>
                         </div>
