@@ -23,9 +23,9 @@ export const PROVIDER_NAV_CONFIG: NavbarConfig = {
     { label: "FAQs", href: "#faqs", isAnchor: true },
   ],
   ctaText: "Get started - for free",
-  ctaHref: "#get-started",
+  ctaHref: "javascript:void(0)",
   secondaryCtaText: "Book a demo",
-  secondaryCtaHref: "#book-demo",
+  secondaryCtaHref: "javascript:void(0)",
 };
 
 // Client page navigation
@@ -37,7 +37,7 @@ export const CLIENT_NAV_CONFIG: NavbarConfig = {
     { label: "FAQs", href: "#faqs", isAnchor: true },
   ],
   ctaText: "Get started - for free",
-  ctaHref: "#get-started",
+  ctaHref: "javascript:void(0)",
   secondaryCtaText: "Book a demo",
-  secondaryCtaHref: "#book-demo",
+  secondaryCtaHref: "javascript:void(0)",
 };

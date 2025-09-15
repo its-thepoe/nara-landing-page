@@ -200,17 +200,17 @@ export default function Navbar({
                 <p className="mb-4 text-xs font-semibold tracking-wider text-[#667085]">LEGAL</p>
                 <ul className="space-y-4 text-[20px] text-[#344054]">
                   <li>
-                    <Link href="#privacy" onClick={() => setIsOpen(false)}>
+                    <Link href="javascript:void(0)" onClick={() => setIsOpen(false)}>
                       Privacy Policy
                     </Link>
                   </li>
                   <li>
-                    <Link href="#terms" onClick={() => setIsOpen(false)}>
+                    <Link href="javascript:void(0)" onClick={() => setIsOpen(false)}>
                       Terms of Service
                     </Link>
                   </li>
                   <li>
-                    <Link href="#compliance" onClick={() => setIsOpen(false)}>
+                    <Link href="javascript:void(0)" onClick={() => setIsOpen(false)}>
                       Compliance
                     </Link>
                   </li>

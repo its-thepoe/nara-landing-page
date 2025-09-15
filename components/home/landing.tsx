@@ -33,14 +33,16 @@ export default function Landing() {
                   and stay connected between sessions.
                 </p>
                 <div className="mt-8 flex lg:flex-row flex-col justify-center w-full gap-3">
-                  <a href="#get-started">
+                  <a href="javascript:void(0)">
                     <div className="bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
                       <p className="text-center text-base text-white">Get started - for free</p>
                     </div>
                   </a>
-                  <div className="border border-[#015033] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
-                    <p className="text-center text-base text-[#015033]">Book a demo</p>
-                  </div>
+                  <a href="javascript:void(0)">
+                    <div className="border border-[#015033] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm flex items-center justify-center px-5 h-[48px] cursor-pointer rounded w-full lg:max-w-fit transition-all duration-200 ease-out">
+                      <p className="text-center text-base text-[#015033]">Book a demo</p>
+                    </div>
+                  </a>
                 </div>
                 <div className="mt-8 flex items-center justify-center gap-4">
                   <a
@@ -478,13 +480,13 @@ export default function Landing() {
                 viewport={{ once: true, margin: "-50px" }}
               >
                 <a
-                  href="#get-started"
+                  href="javascript:void(0)"
                   className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
                 >
                   Get started - for free
                 </a>
                 <a
-                  href="#book-demo"
+                  href="javascript:void(0)"
                   className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out"
                   style={{ borderColor: "#015033", borderWidth: 1 }}
                 >
@@ -523,7 +525,7 @@ export default function Landing() {
                   questions
                 </h2>
                     <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
-                      Got questions? We&apos;ve got answers. Chat with our <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">&quot;support&quot;</span> team anytime.
+                      Got questions? We&apos;ve got answers. Chat with our <span className="text-[#475467] underline hover:text-[#015033] hover:underline transition-all duration-200 cursor-pointer">support</span> team anytime.
                 </p>
               </div>
                   
