@@ -1,95 +1,123 @@
-<a href="https://precedent.dev">
-  <img alt="Precedent – Building blocks for your Next project" src="https://precedent.dev/opengraph-image" />
-  <h1 align="center">Precedent</h1>
-</a>
+<div align="center">
+  <img alt="NARA – Mental health provider & client landing pages" src="./public/providersocialpreview.webp" width="100%" />
+  <h1>NARA Landing Page</h1>
+  <p>Provider & Client marketing site built with Next.js App Router, Tailwind CSS, and Framer Motion.</p>
+</div>
 
 <p align="center">
-  Building blocks for your Next project
+  <a href="#overview"><strong>Overview</strong></a> ·
+  <a href="#routes"><strong>Routes</strong></a> ·
+  <a href="#getting-started"><strong>Getting Started</strong></a> ·
+  <a href="#scripts"><strong>Scripts</strong></a> ·
+  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
+  <a href="#images"><strong>Images</strong></a> ·
+  <a href="#development-notes"><strong>Notes</strong></a>
 </p>
 
-<p align="center">
-  <a href="https://twitter.com/steventey">
-    <img src="https://img.shields.io/twitter/follow/steventey?style=flat&label=steventey&logo=twitter&color=0bf&logoColor=fff" alt="Steven Tey Twitter follower count" />
-  </a>
-  <a href="https://github.com/steven-tey/precedent">
-    <img src="https://img.shields.io/github/stars/steven-tey/precedent?label=steven-tey%2Fprecedent" alt="Precedent repo star count" />
-  </a>
-</p>
+## Overview
 
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#one-click-deploy"><strong>One-click Deploy</strong></a> ·
-  <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
-  <a href="#author"><strong>Author</strong></a>
-</p>
+This repository contains the NARA marketing site with two primary experiences:
+
+- Provider landing page (index)
+- Client landing page under `/clients`
+
+The site uses the Next.js App Router with a shared design system, standardized Navbar/Footer, and motion-enhanced sections.
+
+## Routes
+
+- `/` – Provider landing page (see `components/home/landing.tsx`)
+- `/clients` – Client landing page (see `components/home/client-homepage.tsx`)
+
+Open Graph / social images are configured per route in the corresponding `layout.tsx` files.
+
+## Getting Started
+
+Clone the repo and install dependencies with your preferred package manager. This project uses `pnpm`:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+The app runs on `http://localhost:3000` by default.
+
+## Scripts
+
+```bash
+# run dev server
+pnpm dev
+
+# build for production
+pnpm build
+
+# start production server (after build)
+pnpm start
+
+# lint
+pnpm lint
+
+# format (dry) / format and write
+pnpm format
+pnpm format:write
+```
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- React 18 + TypeScript
+- Tailwind CSS
+- Framer Motion (animations)
+- Radix UI primitives (popover, dialog, tooltip)
+
+## Images
+
+Project images live in `public/` and are used across the README and pages:
+
+<div align="center">
+  <img alt="Client app mockup" src="./public/clientmockup.webp" width="600" />
+  <br/>
+  <em>Client app mockup</em>
+</div>
+
 <br/>
 
-## Introduction
+<div align="center">
+  <img alt="Provider dashboard mockup" src="./public/providerdashboardmockup.webp" width="600" />
+  <br/>
+  <em>Provider dashboard mockup</em>
+</div>
 
-Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project.
+Social previews used for sharing:
 
-## One-click Deploy
+- Provider (index): `./public/providersocialpreview.webp`
+- Client (`/clients`): `./public/clientsocialpreview.webp`
 
-You can deploy this template to Vercel with the button below:
+## Development Notes
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsteven-tey%2Fprecedent&project-name=precedent&repository-name=precedent&demo-title=Precedent&demo-description=An%20opinionated%20collection%20of%20components%2C%20hooks%2C%20and%20utilities%20for%20your%20Next%20project.&demo-url=https%3A%2F%2Fprecedent.dev&demo-image=https%3A%2F%2Fprecedent.dev%2Fopengraph-image&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY&envDescription=Create%20a%20Clerk%20application%20to%20get%20these%20variables%3A&envLink=https%3A%2F%2Fdashboard.clerk.com%2Fapps%2Fnew)
+- Pages vs Components: page entries live in `app/` (e.g., `app/page.tsx`, `app/clients/page.tsx`) and render composable components from `components/`.
+- Metadata & Social: use `export const metadata` in `app/layout.tsx` and `app/clients/layout.tsx` to define titles, descriptions, and Open Graph/Twitter images.
+- Animations: Framer Motion is used with simple `initial/animate/transition`. Prefer `easeOut` and short durations (200–300ms). For scroll entrances, avoid unreliable `whileInView` with server components; keep page entries as client components when necessary.
+- Assets: App store badges are in `public/appstorebadge-black.svg` and `public/playstorebadge-black.svg`.
+- Links: Placeholder legal links intentionally use `javascript:void(0)` to prevent scroll-to-top.
+- Footer: Standardized at the page level for provider and client routes.
 
-You can also clone & create this repo locally with the following command:
+## Contributing
+
+Create a branch and open a PR:
 
 ```bash
-npx create-next-app precedent --example "https://github.com/steven-tey/precedent"
+# create and switch to a new branch
+git checkout -b feat/update-readme
+
+# stage and commit changes
+git add -A && git commit -m "docs: update README for NARA landing"
+
+# push branch
+git push -u origin feat/update-readme
 ```
 
-Then, install the dependencies with your package manager of choice:
+---
 
-```bash
-npm i
-yarn
-pnpm i
-```
+© NARA. All rights reserved.
 
-## Tech Stack + Features
 
-https://github.com/user-attachments/assets/aef3c099-e371-43bf-b426-f5ba73185a7c
-
-### Frameworks
-
-- [Next.js](https://nextjs.org/) – React framework for building performant apps with the best developer experience
-- [Clerk](https://go.clerk.com/precedent) - A comprehensive user management platform with beautifully designed, drop-in React components
-
-### Platforms
-
-- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
-
-### UI
-
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development
-- [Radix](https://www.radix-ui.com/) – Primitives like modal, popover, etc. to build a stellar user experience
-- [Framer Motion](https://framer.com/motion) – Motion library for React to animate components with ease
-- [Lucide](https://lucide.dev/) – Beautifully simple, pixel-perfect icons
-- [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) – Optimize custom fonts and remove external network requests for improved performance
-- [`ImageResponse`](https://nextjs.org/docs/app/api-reference/functions/image-response) – Generate dynamic Open Graph images at the edge
-
-### Hooks and Utilities
-
-- `useIntersectionObserver` –  React hook to observe when an element enters or leaves the viewport
-- `useLocalStorage` – Persist data in the browser's local storage
-- `useScroll` – React hook to observe scroll position ([example](https://github.com/steven-tey/precedent/blob/main/components/layout/navbar.tsx#L12))
-- `nFormatter` – Format numbers with suffixes like `1.2k` or `1.2M`
-- `capitalize` – Capitalize the first letter of a string
-- `truncate` – Truncate a string to a specified length
-- [`use-debounce`](https://www.npmjs.com/package/use-debounce) – Debounce a function call / state update
-
-### Code Quality
-
-- [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
-- [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
-- [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript
-
-### Miscellaneous
-
-- [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
-
-## Author
-
-- Steven Tey ([@steventey](https://twitter.com/steventey))
