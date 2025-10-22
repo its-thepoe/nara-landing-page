@@ -1,5 +1,4 @@
 <div align="center">
-  <img alt="NARA – Mental health provider & client landing pages" src="./public/providersocialpreview.webp" width="100%" />
   <h1>NARA Landing Page</h1>
   <p>Provider & Client marketing site built with Next.js App Router, Tailwind CSS, and Framer Motion.</p>
 </div>
@@ -10,7 +9,6 @@
   <a href="#getting-started"><strong>Getting Started</strong></a> ·
   <a href="#scripts"><strong>Scripts</strong></a> ·
   <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#images"><strong>Images</strong></a> ·
   <a href="#development-notes"><strong>Notes</strong></a>
 </p>
 
@@ -69,28 +67,6 @@ pnpm format:write
 - Framer Motion (animations)
 - Radix UI primitives (popover, dialog, tooltip)
 
-## Images
-
-Project images live in `public/` and are used across the README and pages:
-
-<div align="center">
-  <img alt="Client app mockup" src="./public/clientmockup.webp" width="600" />
-  <br/>
-  <em>Client app mockup</em>
-</div>
-
-<br/>
-
-<div align="center">
-  <img alt="Provider dashboard mockup" src="./public/providerdashboardmockup.webp" width="600" />
-  <br/>
-  <em>Provider dashboard mockup</em>
-</div>
-
-Social previews used for sharing:
-
-- Provider (index): `./public/providersocialpreview.webp`
-- Client (`/clients`): `./public/clientsocialpreview.webp`
 
 ## Development Notes
 
