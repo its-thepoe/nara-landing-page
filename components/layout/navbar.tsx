@@ -103,7 +103,16 @@ export default function Navbar({
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            {secondaryCtaText && (
+              <Link
+                href={secondaryCtaHref}
+                className="rounded-md px-5 py-3 text-[16px] transition-[transform,opacity] duration-200 ease-out-cubic"
+                style={{ color: COLOR_PRIMARY_600, borderColor: COLOR_PRIMARY_600, borderWidth: 1 }}
+              >
+                {secondaryCtaText}
+              </Link>
+            )}
             <Link
               href={ctaHref}
               className="rounded-md px-5 py-3 text-[16px] text-white transition-[transform,opacity] duration-200 ease-out-cubic"

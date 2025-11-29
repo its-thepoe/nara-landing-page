@@ -47,8 +47,8 @@ export const ORGANIZATION_NAV_CONFIG: NavbarConfig = {
     { label: "For Clients", href: "/clients", isAnchor: false },
     { label: "For Providers", href: "/", isAnchor: false },
   ],
-  ctaText: "Chat with our team",
+  ctaText: "Login",
   ctaHref: "javascript:void(0)",
-  secondaryCtaText: "Download brochure",
+  secondaryCtaText: "Book Your Demo",
   secondaryCtaHref: "javascript:void(0)",
 };
