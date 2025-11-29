@@ -97,7 +97,10 @@ export default function Landing() {
 
       {/* Features */}
       <SectionContainer id="features" variant="white">
-        <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+        <div
+          className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full"
+          style={{ "--dash-color": SECTION_VARIANT_STYLES.white.dashColor } as React.CSSProperties}
+        >
           <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <p className="text-[#015033] text-sm">FEATURES</p>
@@ -375,7 +378,10 @@ export default function Landing() {
 
       {/* How it works */}
       <SectionContainer id="how-it-works" variant="mint" sectionClassName="py-4 lg:py-6">
-        <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+        <div
+          className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto"
+          style={{ "--dash-color": SECTION_VARIANT_STYLES.mint.dashColor } as React.CSSProperties}
+        >
               <div className="flex flex-col items-center gap-12 lg:px-6 px-3 w-full">
               {/* Header */}
               <div className="flex w-full flex-col items-center gap-4 text-center">
@@ -507,7 +513,10 @@ export default function Landing() {
 
       {/* FAQs */}
       <SectionContainer id="faqs" variant="gray" sectionClassName="py-4 lg:py-6">
-        <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+        <div
+          className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto"
+          style={{ "--dash-color": SECTION_VARIANT_STYLES.gray.dashColor } as React.CSSProperties}
+        >
               <div className="lg:px-6 px-3 w-full">
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-8 w-full">
                   {/* Left Column - Title */}
