@@ -531,7 +531,10 @@ export default function Landing() {
                   questions
                 </h2>
                     <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
-                      Got questions? We&apos;ve got answers. Chat with our <span className="text-[#475467] underline hover:text-[#015033] hover:underline transition-all duration-200 cursor-pointer">support</span> team anytime.
+                      Still got more questions?{" "}
+                      <span className="underline hover:text-[#015033] hover:no-underline transition-all duration-200 cursor-pointer">
+                        View all FAQs
+                      </span>
                 </p>
               </div>
                   
