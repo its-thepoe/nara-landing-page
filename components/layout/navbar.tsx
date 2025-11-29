@@ -170,19 +170,21 @@ export default function Navbar({
 
           <nav className="px-4 pb-4 pt-2">
             <ul className="space-y-8 text-[24px] font-medium text-[#1D2939]">
-              {navLinks.map((link, index) => (
-                <li key={index}>
-                  {link.isAnchor ? (
-                    <a href={link.href} onClick={handleAnchorClick(link.href.replace('#', ''))}>
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link href={link.href} onClick={() => setIsOpen(false)}>
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              <li>
+                <Link href="/organizations" onClick={() => setIsOpen(false)}>
+                  For Organizations
+                </Link>
+              </li>
+              <li>
+                <Link href="/clients" onClick={() => setIsOpen(false)}>
+                  For Clients
+                </Link>
+              </li>
+              <li>
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  For Providers
+                </Link>
+              </li>
             </ul>
 
             <div className="my-8 h-px w-full bg-gray-200" />
@@ -194,6 +196,11 @@ export default function Navbar({
                 </p>
                 <ul className="space-y-4 text-[20px] text-[#344054]">
                   <li>
+                    <Link href="/organizations" onClick={() => setIsOpen(false)}>
+                      For Organizations
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/clients" onClick={() => setIsOpen(false)}>
                       For Clients
                     </Link>
@@ -201,11 +208,6 @@ export default function Navbar({
                   <li>
                     <Link href="/" onClick={() => setIsOpen(false)}>
                       For Providers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/organizations" onClick={() => setIsOpen(false)}>
-                      For Organizations
                     </Link>
                   </li>
                 </ul>

@@ -60,6 +60,13 @@ export default function Footer() {
                 </h3>
                 <div className="flex flex-col items-start gap-3">
                    <a
+                     href="/organizations"
+                     className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
+                   >
+                     For Organizations
+                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+                   </a>
+                   <a
                      href="/clients"
                      className="text-sm font-normal leading-5 tracking-[-0.14px] text-[#F2F4F7] transition-all duration-200 hover:text-white relative group"
                    >

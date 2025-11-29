@@ -5,6 +5,7 @@ import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctago
 import Testimonials from "../shared/testimonials";
 import Faq from "./faq";
 import FounderSpotlight from "../shared/founder-spotlight";
+import SectionContainer, { SECTION_VARIANT_STYLES } from "../shared/section-container";
 import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 import Image from "next/image";
 import Navbar from "../layout/navbar";
@@ -95,11 +96,9 @@ export default function Landing() {
       </div>
 
       {/* Features */}
-      <div id="features" className="relative z-10 lg:px-6 lg:py-0 px-1">
-        <section className="py-6 lg:py-8">
-          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
-              <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
+      <SectionContainer id="features" variant="white">
+        <div className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full" style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}>
+          <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
                 <div className="flex flex-col gap-6 lg:gap-8">
                   <p className="text-[#015033] text-sm">FEATURES</p>
                   <p className="text-[#101828] lg:leading-[72px] leading-[44px] lg:text-[60px] text-[36px] font-semibold">
@@ -370,17 +369,13 @@ export default function Landing() {
                     </div>
                   </motion.div>
                 </motion.div>
-              </div>
-            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </SectionContainer>
 
       {/* How it works */}
-      <div id="how-it-works" className="relative z-10 lg:px-6 lg:py-0 px-1">
-        <section className="py-4 lg:py-6">
-          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#B9DFD1] bg-[#F4FBF9]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+      <SectionContainer id="how-it-works" variant="mint" sectionClassName="py-4 lg:py-6">
+        <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
               <div className="flex flex-col items-center gap-12 lg:px-6 px-3 w-full">
               {/* Header */}
               <div className="flex w-full flex-col items-center gap-4 text-center">
@@ -494,10 +489,8 @@ export default function Landing() {
                 </a>
               </motion.div>
             </div>
-          </div>
         </div>
-      </section>
-      </div>
+      </SectionContainer>
 
       <div id="testimonials" className="relative z-10">
         <Testimonials 
@@ -513,10 +506,8 @@ export default function Landing() {
       </div>
 
       {/* FAQs */}
-      <div id="faqs" className="relative z-10 lg:px-6 lg:py-0 px-1">
-        <section className="py-4 lg:py-6">
-          <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB]">
-            <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
+      <SectionContainer id="faqs" variant="gray" sectionClassName="py-4 lg:py-6">
+        <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
               <div className="lg:px-6 px-3 w-full">
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-8 w-full">
                   {/* Left Column - Title */}
@@ -537,10 +528,8 @@ export default function Landing() {
                   </div>
                 </div>
             </div>
-          </div>
         </div>
-      </section>
-      </div>
+      </SectionContainer>
 
     </div>
     </>
