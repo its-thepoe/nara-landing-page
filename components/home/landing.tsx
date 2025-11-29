@@ -100,7 +100,7 @@ export default function Landing() {
         id="features"
         variant="white"
         withDashedWrapper
-        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full"
+        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full max-w-[1440px] mx-auto"
       >
           <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
                 <div className="flex flex-col gap-6 lg:gap-8">

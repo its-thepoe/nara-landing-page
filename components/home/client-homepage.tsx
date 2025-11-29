@@ -98,7 +98,7 @@ export default function ClientHomepage() {
         id="features"
         variant="white"
         withDashedWrapper
-        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full"
+        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full max-w-[1440px] mx-auto"
       >
           <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-8">
                 <div className="flex flex-col gap-7 text-left lg:text-center">
