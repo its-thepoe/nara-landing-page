@@ -3,10 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { QuoteDown, UserSearch, TaskSquare, SmsStar, Messages2, Book, UserOctagon } from "iconsax-react";
 import Testimonials from "../shared/testimonials";
-import Faq from "./faq";
+import Faq from "../shared/faq";
 import FounderSpotlight from "../shared/founder-spotlight";
 import SectionContainer from "../shared/section-container";
 import { THERAPIST_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
+import { ORGANIZATION_FAQ_ITEMS } from "@/lib/faq-data";
 import Image from "next/image";
 import Navbar from "../layout/navbar";
 import { PROVIDER_NAV_CONFIG } from "@/lib/navigation-config";
@@ -536,7 +537,7 @@ export default function Landing() {
                   
                   {/* Right Column - FAQ Items */}
                   <div className="flex flex-col gap-3 w-full lg:w-1/2">
-                    <Faq />
+                    <Faq items={ORGANIZATION_FAQ_ITEMS} defaultOpenIndex={0} showIcons={false} />
                   </div>
                 </div>
             </div>

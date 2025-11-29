@@ -33,32 +33,32 @@ export const ORGANIZATION_FAQ_ITEMS: FaqItemData[] = [
   {
     q: "How is Nara different from a standard wellness app?",
     a: "Most wellness apps focus only on content. Nara combines daily support for employees with an organization dashboard that shows high-level engagement and wellbeing trends.",
-    icon: "",
+    icon: "Book",
   },
   {
     q: "What data do we see as an employer?",
     a: "You see aggregated, de-identified information only. You can view trends by team, location, or other agreed groupings, but never individual activity, sessions, or answers. Employee privacy comes first.",
-    icon: "",
+    icon: "ShieldTick",
   },
   {
     q: "How long does it take to get started?",
     a: "Once we have your eligibility list or HRIS connection, most organizations can invite staff within a short set-up period. We support you through launch planning, communications, and administrator training.",
-    icon: "",
+    icon: "DocumentText",
   },
   {
     q: "How do we encourage people to use Nara without adding pressure?",
     a: "We share launch materials, email templates, and manager talking points that frame Nara as support, not another task. The product itself is built around short, gentle sessions that fit into daily life.",
-    icon: "",
+    icon: "Messages2",
   },
   {
     q: "Does Nara replace our EAP or existing mental health support?",
     a: "Nara works alongside your current offers. We focus on everyday mental health skills and early support. You can still signpost staff to therapy, EAP services, or local resources when they need more intensive help.",
-    icon: "",
+    icon: "UserOctagon",
   },
   {
     q: "How is Nara priced?",
     a: "Pricing depends on organization size and scope. In your demo, we walk through options that fit your team count, locations, and goals, then share a clear proposal.",
-    icon: "",
+    icon: "Money",
   },
 ];
 
