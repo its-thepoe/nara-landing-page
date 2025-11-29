@@ -23,7 +23,7 @@ export default function ClientHomepage() {
       <Navbar {...CLIENT_NAV_CONFIG} />
       <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
-      <div id="hero" className="relative z-10 lg:px-6 px-3">
+      <div id="hero" className="relative z-10 px-1 lg:px-4">
         <div 
           className="lg:px-20 lg:pb-3 p-4 shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden"
           style={{

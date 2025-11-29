@@ -20,7 +20,7 @@ export default function Landing() {
       <Navbar {...PROVIDER_NAV_CONFIG} />
       <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
-      <div id="hero" className="relative z-10 lg:px-6 px-3">
+      <div id="hero" className="relative z-10 px-1 lg:px-4">
         <div className="lg:px-20 lg:pb-3 p-4 bg-gradient-to-b from-[#f7fefb] to-[#e7fef6] shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden">
           <div className="flex flex-col">
             <div className="pt-20 lg:pt-48">
