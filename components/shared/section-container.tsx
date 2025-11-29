@@ -15,7 +15,7 @@ export const SECTION_VARIANT_STYLES: Record<
   },
   gray: {
     containerClass: "bg-[#F9FAFB] border-[#EAECF0]",
-    dashColor: "#D1EAE1",
+    dashColor: "#E4E7EC",
   },
   mint: {
     containerClass: "bg-[#F4FBF9] border-[#B9DFD1]",
@@ -52,8 +52,8 @@ export default function SectionContainer({
   dashedWrapperClassName,
   dashedWrapperStyle,
 }: SectionContainerProps) {
-  const outerClasses = clsx("relative z-10 lg:px-6 lg:py-0 px-1", outerClassName);
-  const sectionClasses = sectionClassName ?? "py-6 lg:py-8";
+  const outerClasses = clsx("relative z-10 px-1 lg:px-4 lg:py-0", outerClassName);
+  const sectionClasses = sectionClassName ?? "py-4 lg:py-4";
   const containerClasses = clsx(
     "rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px]",
     SECTION_VARIANT_STYLES[variant].containerClass,
