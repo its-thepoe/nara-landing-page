@@ -498,13 +498,13 @@ export default function Landing() {
         </div>
       </SectionContainer>
 
-      <div id="testimonials" className="relative z-10">
-        <Testimonials 
-          testimonials={THERAPIST_TESTIMONIALS_CONFIG.testimonials}
-          title={THERAPIST_TESTIMONIALS_CONFIG.title}
-          subtitle={THERAPIST_TESTIMONIALS_CONFIG.subtitle}
-        />
-      </div>
+      <Testimonials 
+        sectionId="testimonials"
+        className="relative z-10"
+        testimonials={THERAPIST_TESTIMONIALS_CONFIG.testimonials}
+        title={THERAPIST_TESTIMONIALS_CONFIG.title}
+        subtitle={THERAPIST_TESTIMONIALS_CONFIG.subtitle}
+      />
 
       {/* Founder spotlight */}
       <div id="founder-spotlight">

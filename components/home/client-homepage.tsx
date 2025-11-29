@@ -500,13 +500,13 @@ export default function ClientHomepage() {
       </SectionContainer>
 
 
-      <div id="testimonials" className="relative z-10">
-        <Testimonials 
-          testimonials={CLIENT_TESTIMONIALS_CONFIG.testimonials}
-          title="CUSTOMER TESTIMONIALS"
-          subtitle="What Our Users Are Saying"
-        />
-      </div>
+      <Testimonials 
+        sectionId="testimonials"
+        className="relative z-10"
+        testimonials={CLIENT_TESTIMONIALS_CONFIG.testimonials}
+        title="CUSTOMER TESTIMONIALS"
+        subtitle="What Our Users Are Saying"
+      />
 
       {/* Plans and Pricing */}
       <SectionContainer id="pricing" variant="white" sectionClassName="py-4 lg:py-6">

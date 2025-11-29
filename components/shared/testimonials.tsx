@@ -4,6 +4,7 @@ import React, { useMemo, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 import Image from "next/image";
+import SectionContainer, { SECTION_VARIANT_STYLES, SectionVariant } from "./section-container";
 
 export type Testimonial = {
   quote: string;
@@ -20,6 +21,9 @@ interface TestimonialsProps {
   showArrows?: boolean;
   autoPlay?: boolean;
   autoPlayInterval?: number;
+  wrapWithSection?: boolean;
+  sectionVariant?: SectionVariant;
+  sectionId?: string;
 }
 
 export default function Testimonials({
@@ -30,6 +34,9 @@ export default function Testimonials({
   showArrows = true,
   autoPlay = false,
   autoPlayInterval = 5000,
+  wrapWithSection = true,
+  sectionVariant = "gray",
+  sectionId,
 }: TestimonialsProps) {
   const [index, setIndex] = useState(0);
 
@@ -59,13 +66,13 @@ export default function Testimonials({
     return null;
   }
 
-  return (
-    <div className={`lg:px-6 lg:py-0 px-1 ${className}`}>
-      <section className="py-4 lg:py-6">
-        <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-[#F9FAFB] overflow-hidden">
-          <div className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" style={{ "--dash-color": "#D1EAE1" } as React.CSSProperties}>
-            <div className="lg:px-6 px-3 w-full">
-            <div className="flex w-full flex-col items-center gap-8">
+  const content = (
+    <div
+      className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto"
+      style={{ "--dash-color": SECTION_VARIANT_STYLES[sectionVariant].dashColor } as React.CSSProperties}
+    >
+      <div className="lg:px-6 px-3 w-full">
+        <div className="flex w-full flex-col items-center gap-8">
               <div className="flex w-full max-w-[750px] flex-col items-center gap-4 text-center">
                 <p className="text-[12px] md:text-[14px] tracking-[-0.01em] text-[#015033]">
                   {title}
@@ -137,9 +144,32 @@ export default function Testimonials({
                   </div>
                 )}
               </div>
-            </div>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (wrapWithSection) {
+    return (
+      <SectionContainer
+        id={sectionId}
+        variant={sectionVariant}
+        outerClassName={className}
+        sectionClassName="py-4 lg:py-6"
+        containerClassName="overflow-hidden"
+      >
+        {content}
+      </SectionContainer>
+    );
+  }
+
+  return (
+    <div id={sectionId} className={`lg:px-6 lg:py-0 px-1 ${className}`}>
+      <section className="py-4 lg:py-6">
+        <div
+          className={`rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] ${SECTION_VARIANT_STYLES[sectionVariant].containerClass} overflow-hidden`}
+        >
+          {content}
         </div>
       </section>
     </div>
