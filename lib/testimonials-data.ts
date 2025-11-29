@@ -57,6 +57,38 @@ export const THERAPIST_TESTIMONIALS_CONFIG = {
   ],
 };
 
+// Organization page testimonials configuration
+export const ORGANIZATION_TESTIMONIALS_CONFIG = {
+  title: "ORGANIZATION TESTIMONIALS",
+  subtitle: "Health systems trust Nara to power measurement-based care",
+  testimonials: [
+    {
+      quote:
+        "Rolling out Nara across our outpatient clinics gave us real-time visibility into rising-risk members. Care teams intervene days faster now.",
+      author: "Monica Harrington",
+      role: "VP, Integrated Behavioral Health at Brightway Health",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "Nara plugs into our existing EHR and fills the gaps between sessions. Engagement scores jumped 34% within the first quarter.",
+      author: "Ravi Patel",
+      role: "Clinical Innovation Director, UnityCare",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "Executive teams finally get the measurement-based care dashboards we've wanted for years. Nara makes reporting effortless.",
+      author: "Danielle Brooks",
+      role: "COO, Haven Mental Health",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=150&h=150&fit=crop&crop=face",
+    },
+  ],
+};
+
 
 // Client page testimonials configuration
 export const CLIENT_TESTIMONIALS_CONFIG = {

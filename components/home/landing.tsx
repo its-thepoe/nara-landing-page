@@ -19,7 +19,7 @@ export default function Landing() {
       <Navbar {...PROVIDER_NAV_CONFIG} />
       <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
-      <div className="relative z-10 lg:px-6 px-3">
+      <div id="hero" className="relative z-10 lg:px-6 px-3">
         <div className="lg:px-20 lg:pb-3 p-4 bg-gradient-to-b from-[#f7fefb] to-[#e7fef6] shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden">
           <div className="flex flex-col">
             <div className="pt-20 lg:pt-48">
@@ -499,7 +499,7 @@ export default function Landing() {
       </section>
       </div>
 
-      <div className="relative z-10">
+      <div id="testimonials" className="relative z-10">
         <Testimonials 
           testimonials={THERAPIST_TESTIMONIALS_CONFIG.testimonials}
           title={THERAPIST_TESTIMONIALS_CONFIG.title}
@@ -508,7 +508,9 @@ export default function Landing() {
       </div>
 
       {/* Founder spotlight */}
-      <FounderSpotlight />
+      <div id="founder-spotlight">
+        <FounderSpotlight />
+      </div>
 
       {/* FAQs */}
       <div id="faqs" className="relative z-10 lg:px-6 lg:py-0 px-1">

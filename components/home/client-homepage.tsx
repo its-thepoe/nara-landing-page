@@ -22,7 +22,7 @@ export default function ClientHomepage() {
       <Navbar {...CLIENT_NAV_CONFIG} />
       <div className="relative z-10 w-full bg-white">
       {/* Hero Section with improved background structure */}
-      <div className="relative z-10 lg:px-6 px-3">
+      <div id="hero" className="relative z-10 lg:px-6 px-3">
         <div 
           className="lg:px-20 lg:pb-3 p-4 shadow-xs rounded-b-[24px] lg:rounded-b-[32px] border-b border-[#e7fef6] overflow-hidden"
           style={{
@@ -500,7 +500,7 @@ export default function ClientHomepage() {
       </div>
 
 
-      <div className="relative z-10">
+      <div id="testimonials" className="relative z-10">
         <Testimonials 
           testimonials={CLIENT_TESTIMONIALS_CONFIG.testimonials}
           title="CUSTOMER TESTIMONIALS"
@@ -758,7 +758,9 @@ export default function ClientHomepage() {
       </div>
 
       {/* Founder spotlight */}
-      <FounderSpotlight />
+      <div id="founder-spotlight">
+        <FounderSpotlight />
+      </div>
 
       {/* FAQs */}
       <div id="faqs" className="relative z-10 lg:px-6 lg:py-0 px-1">

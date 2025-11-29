@@ -17,10 +17,9 @@ export interface NavbarConfig {
 // Provider/Main page navigation
 export const PROVIDER_NAV_CONFIG: NavbarConfig = {
   navLinks: [
+    { label: "For Organizations", href: "/organizations", isAnchor: false },
     { label: "For Clients", href: "/clients", isAnchor: false },
-    { label: "Features", href: "#features", isAnchor: true },
-    { label: "How it works", href: "#how-it-works", isAnchor: true },
-    { label: "FAQs", href: "#faqs", isAnchor: true },
+    { label: "For Providers", href: "/", isAnchor: false },
   ],
   ctaText: "Get started - for free",
   ctaHref: "javascript:void(0)",
@@ -31,13 +30,25 @@ export const PROVIDER_NAV_CONFIG: NavbarConfig = {
 // Client page navigation
 export const CLIENT_NAV_CONFIG: NavbarConfig = {
   navLinks: [
+    { label: "For Organizations", href: "/organizations", isAnchor: false },
+    { label: "For Clients", href: "/clients", isAnchor: false },
     { label: "For Providers", href: "/", isAnchor: false },
-    { label: "Features", href: "#features", isAnchor: true },
-    { label: "Pricing", href: "#pricing", isAnchor: true },
-    { label: "FAQs", href: "#faqs", isAnchor: true },
   ],
   ctaText: "Get started - for free",
   ctaHref: "javascript:void(0)",
   secondaryCtaText: "Book a demo",
+  secondaryCtaHref: "javascript:void(0)",
+};
+
+// Organization page navigation
+export const ORGANIZATION_NAV_CONFIG: NavbarConfig = {
+  navLinks: [
+    { label: "For Organizations", href: "/organizations", isAnchor: false },
+    { label: "For Clients", href: "/clients", isAnchor: false },
+    { label: "For Providers", href: "/", isAnchor: false },
+  ],
+  ctaText: "Chat with our team",
+  ctaHref: "javascript:void(0)",
+  secondaryCtaText: "Download brochure",
   secondaryCtaHref: "javascript:void(0)",
 };

@@ -194,6 +194,11 @@ export default function Navbar({
                       For Providers
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/organizations" onClick={() => setIsOpen(false)}>
+                      For Organizations
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
