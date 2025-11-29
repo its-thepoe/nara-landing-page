@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SectionContainer from "./section-container";
 
 interface FounderSpotlightProps {
   quoteIconSrc?: string;
@@ -26,14 +27,14 @@ That experience shaped my life's mission: to help others find peace and healing 
   const authorImageAlt = "Perez Willie-Nwobu";
 
   return (
-    <div className={`relative z-10 lg:px-6 lg:py-0 px-1 ${className}`}>
-      <section className="py-4 lg:py-6">
-        <div className="rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px] border-[#EAECF0] bg-white">
-          <div 
-            className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto" 
-            style={{ "--dash-color": "#F2F4F7" } as React.CSSProperties}
-          >
-            <div className="lg:px-6 px-3 w-full">
+    <SectionContainer
+      outerClassName={className}
+      variant="white"
+      sectionClassName="py-4 lg:py-6"
+      withDashedWrapper
+      dashedWrapperClassName="flex flex-col gap-8 lg:py-[96px] py-[56px] w-full max-w-[1440px] mx-auto"
+    >
+      <div className="lg:px-6 px-3 w-full">
               <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:justify-end md:gap-4">
                 {/* Image Column */}
                 <motion.div 
@@ -92,10 +93,7 @@ That experience shaped my life's mission: to help others find peace and healing 
                   </div>
                 </motion.div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </SectionContainer>
   );
 }

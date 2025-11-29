@@ -35,6 +35,9 @@ interface SectionContainerProps {
   sectionClassName?: string;
   containerClassName?: string;
   containerStyle?: React.CSSProperties;
+  withDashedWrapper?: boolean;
+  dashedWrapperClassName?: string;
+  dashedWrapperStyle?: React.CSSProperties;
 }
 
 export default function SectionContainer({
@@ -45,6 +48,9 @@ export default function SectionContainer({
   sectionClassName,
   containerClassName,
   containerStyle,
+  withDashedWrapper = false,
+  dashedWrapperClassName,
+  dashedWrapperStyle,
 }: SectionContainerProps) {
   const outerClasses = clsx("relative z-10 lg:px-6 lg:py-0 px-1", outerClassName);
   const sectionClasses = sectionClassName ?? "py-6 lg:py-8";
@@ -53,12 +59,24 @@ export default function SectionContainer({
     SECTION_VARIANT_STYLES[variant].containerClass,
     containerClassName
   );
+  const dashedWrapperInlineStyle = {
+    ...dashedWrapperStyle,
+    "--dash-color": SECTION_VARIANT_STYLES[variant].dashColor,
+  } as React.CSSProperties;
+
+  const content = withDashedWrapper ? (
+    <div className={clsx("custom-dashed-border", dashedWrapperClassName)} style={dashedWrapperInlineStyle}>
+      {children}
+    </div>
+  ) : (
+    children
+  );
 
   return (
     <div id={id} className={outerClasses}>
       <section className={sectionClasses}>
         <div className={containerClasses} style={containerStyle}>
-          {children}
+          {content}
         </div>
       </section>
     </div>

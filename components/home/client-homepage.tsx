@@ -11,7 +11,7 @@ import { CLIENT_NAV_CONFIG } from "@/lib/navigation-config";
 import { CLIENT_TESTIMONIALS_CONFIG } from "@/lib/testimonials-data";
 import RollingDigit from "../shared/rolling-digit";
 import Image from "next/image";
-import SectionContainer, { SECTION_VARIANT_STYLES } from "../shared/section-container";
+import SectionContainer from "../shared/section-container";
 
 // Client homepage - duplicated from landing page as boilerplate
 export default function ClientHomepage() {
@@ -94,11 +94,12 @@ export default function ClientHomepage() {
       </div>
 
       {/* Features */}
-      <SectionContainer id="features" variant="white">
-        <div
-          className="custom-dashed-border flex flex-col gap-8 lg:py-24 py-14 w-full"
-          style={{ "--dash-color": SECTION_VARIANT_STYLES.white.dashColor } as React.CSSProperties}
-        >
+      <SectionContainer
+        id="features"
+        variant="white"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full"
+      >
           <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-8">
                 <div className="flex flex-col gap-7 text-left lg:text-center">
                   <p className="text-[#015033] text-[12px] leading-[18px] tracking-[-0.12px]">FEATURES</p>
@@ -496,7 +497,6 @@ export default function ClientHomepage() {
                   </motion.div>
                 </motion.div>
           </div>
-        </div>
       </SectionContainer>
 
 
@@ -509,11 +509,13 @@ export default function ClientHomepage() {
       />
 
       {/* Plans and Pricing */}
-      <SectionContainer id="pricing" variant="white" sectionClassName="py-4 lg:py-6">
-        <div
-          className="custom-dashed-border flex flex-col gap-8 lg:gap-16 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto"
-          style={{ "--dash-color": SECTION_VARIANT_STYLES.white.dashColor } as React.CSSProperties}
-        >
+      <SectionContainer
+        id="pricing"
+        variant="white"
+        sectionClassName="py-4 lg:py-6"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-8 lg:gap-16 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto"
+      >
               {/* Header Section */}
               <div className="lg:px-6 px-3 w-full">
                 <div className="flex flex-col items-center lg:items-center gap-8 max-w-[750px] mx-auto w-full">
@@ -753,7 +755,6 @@ export default function ClientHomepage() {
                 </div>
                 </div>
               </div>
-        </div>
       </SectionContainer>
 
       {/* Founder spotlight */}
@@ -762,11 +763,13 @@ export default function ClientHomepage() {
       </div>
 
       {/* FAQs */}
-      <SectionContainer id="faqs" variant="gray" sectionClassName="py-4 lg:py-6">
-        <div
-          className="custom-dashed-border flex flex-col gap-8 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto"
-          style={{ "--dash-color": SECTION_VARIANT_STYLES.gray.dashColor } as React.CSSProperties}
-        >
+      <SectionContainer
+        id="faqs"
+        variant="gray"
+        sectionClassName="py-4 lg:py-6"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-8 lg:py-[96px] pt-[56px] pb-[48px] w-full max-w-[1440px] mx-auto"
+      >
               <div className="lg:px-6 px-3 w-full">
                 <div className="flex flex-col gap-8 lg:flex-row lg:gap-8 w-full">
                   {/* Left Column - Title */}
@@ -787,7 +790,6 @@ export default function ClientHomepage() {
                   </div>
                 </div>
             </div>
-        </div>
       </SectionContainer>
       </div>
 
