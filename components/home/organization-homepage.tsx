@@ -364,7 +364,7 @@ const ORGANIZATION_IMPACTS = [
 
 // Single responsive landing built from the desktop version and adapted down to mobile
 export default function Landing() {
-  const heroMockup = "/providerdashboardmockup.webp";
+  const heroMockup = "/orgmockup.webp";
   const ORGANIZATION_TESTIMONIALS = [
     {
       quote:
