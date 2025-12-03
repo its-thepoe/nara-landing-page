@@ -19,7 +19,6 @@ type EmployeeOfferingCard = {
 };
 
 type SupportPersonaCard = {
-  title: string;
   description: string;
   ctaLabel: string;
   audience: string;
@@ -238,19 +237,19 @@ const NARA_DIFFERENCE_STATS: NaraDifferenceStat[] = [
 const SUPPORT_PERSONA_CARDS: SupportPersonaCard[] = [
   {
     audience: "For HR leaders",
-    title: "Improve outcomes and lower costs with personalized mental health care.",
+   
     description: "Give your workforce access to therapy, meditation, and AI-guided support in one secure platform designed for busy schedules.",
     ctaLabel: "Learn more",
   },
   {
     audience: "For benefits administrators",
-    title: "Measure utilization without spreadsheets or manual surveys.",
+   
     description: "Plug Nara into your existing benefits stack and unlock real-time insights on engagement, risk, and satisfaction.",
     ctaLabel: "Learn more",
   },
   {
     audience: "For people and culture teams",
-    title: "Bring calm to every day—from onboarding to big launches.",
+
     description: "Support managers and ICs with ready-made programs, nudges, and content that keep teams grounded and connected.",
     ctaLabel: "Learn more",
   },
@@ -567,6 +566,100 @@ export default function Landing() {
       </SectionContainer>
 
       <SectionContainer
+        variant="white"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-10 lg:py-[120px] py-[72px] w-full max-w-[1440px] mx-auto"
+      >
+        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
+          <p className="text-[32px] leading-[40px] font-semibold tracking-[-0.02em] text-[#101828] lg:text-[48px] lg:leading-[60px]">
+            The Nara difference
+          </p>
+        </div>
+        <motion.div
+          className="grid w-full grid-cols-1 gap-4 px-3 lg:px-6 lg:grid-cols-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {NARA_DIFFERENCE_STATS.map((stat, index) => (
+            <motion.div
+              key={stat.value}
+              className="flex h-full min-h-[360px] flex-col justify-between gap-4 rounded-[20px] border border-[#EAECF0] bg-[#F9FAFB] p-8 shadow-[0px_1px_2px_rgba(16,24,40,0.04)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * (index + 1), ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="mx-auto flex size-10 items-center justify-center rounded-full bg-white text-[#101828] shadow-[0px_1px_2px_rgba(16,24,40,0.06)]">
+                {stat.icon}
+              </div>
+              <div className="mx-auto mt-2 flex w-full max-w-[341px] flex-col gap-2 text-center">
+                <p className="text-[48px] leading-[60px] font-semibold tracking-[-0.03em] text-[#101828]">{stat.value}</p>
+                <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#667085]">{stat.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </SectionContainer>
+
+      <SectionContainer
+        variant="sky"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-12 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
+      >
+        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
+          <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#1A7283]">OUTCOMES</p>
+          <div className="flex flex-col gap-4">
+            <p className="text-[36px] leading-[44px] font-semibold tracking-[-0.02em] text-[#101828] md:text-[48px] md:leading-[60px]">
+              The outcomes Nara works towards
+            </p>
+            <p className="mx-auto max-w-[600px] text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
+              Nara combines science-backed tools with gentle guidance so employees can shift how they feel, one small step at a time.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex w-full overflow-x-auto px-3 lg:px-6">
+          <div className="flex w-full min-w-full flex-col gap-6 xl:flex-row xl:gap-4">
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:flex xl:flex-row xl:gap-4">
+              {OUTCOME_CARDS.map((card) => (
+                <div
+                  key={card.title}
+                  className="flex h-full min-h-[320px] flex-col justify-between gap-4 rounded-[20px] border border-[rgba(89,213,251,0.3)] bg-white p-7 shadow-[0px_1px_2px_rgba(16,24,40,0.05)] xl:min-h-[360px]"
+                >
+                  <div className="flex size-10 items-center justify-center">{card.icon}</div>
+                  <div className="flex flex-col gap-4 text-left">
+                    <p className="text-[22px] leading-[30px] font-semibold text-[#101828] md:text-[24px] md:leading-[32px]">
+                      {card.title}
+                    </p>
+                    <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#667085]">{card.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-full items-center justify-start gap-3 px-3 lg:px-6">
+          <button
+            type="button"
+            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
+            aria-label="Previous outcome"
+          >
+            <ArrowLeft size="20" color="#98A2B3" />
+          </button>
+          <button
+            type="button"
+            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
+            aria-label="Next outcome"
+          >
+            <ArrowRight size="20" color="#98A2B3" />
+          </button>
+        </div>
+      </SectionContainer>
+
+      <SectionContainer
         variant="gray"
         withDashedWrapper
         dashedWrapperClassName="flex flex-col gap-10 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
@@ -580,7 +673,7 @@ export default function Landing() {
           <p className="mx-auto max-w-[428px] text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
             Your role is to give people access, set expectations, and understand what is changing. Nara supports the rest.
           </p>
-                    </div>
+        </div>
 
         <div className="grid w-full grid-cols-1 gap-4 px-3 lg:grid-cols-3 lg:px-6">
           {NARA_STEPS.map((step) => (
@@ -588,15 +681,15 @@ export default function Landing() {
               <div className="px-8">
                 <div className="inline-flex items-center rounded-t-[8px] bg-[#01BC77] px-2 py-1 text-[12px] font-medium tracking-[-0.01em] text-white">
                   {step.label}
-                    </div>
-                    </div>
+                </div>
+              </div>
               <div className="rounded-[20px] border border-[#EDF9F5] bg-white p-8 shadow-[0px_1px_2px_rgba(198,236,223,0.1)]">
                 <p className="text-[24px] leading-[32px] font-medium text-[#222222]">{step.title}</p>
                 <p className="mt-3 text-[14px] leading-[20px] tracking-[-0.01em] text-[#475467]">{step.description}</p>
-                    </div>
-                    </div>
+              </div>
+            </div>
           ))}
-                    </div>
+        </div>
 
         <div className="flex items-center justify-center px-3 lg:px-6">
           <a
@@ -605,8 +698,10 @@ export default function Landing() {
           >
             Book Your Demo
           </a>
-                    </div>
+        </div>
       </SectionContainer>
+
+
 
       <SectionContainer
         id="testimonials"
@@ -689,100 +784,6 @@ export default function Landing() {
       </SectionContainer>
 
       <SectionContainer
-        variant="white"
-        withDashedWrapper
-        dashedWrapperClassName="flex flex-col gap-10 lg:py-[120px] py-[72px] w-full max-w-[1440px] mx-auto"
-      >
-        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
-          <p className="text-[32px] leading-[40px] font-semibold tracking-[-0.02em] text-[#101828] lg:text-[48px] lg:leading-[60px]">
-            The Nara difference
-                  </p>
-                </div>
-              <motion.div 
-          className="grid w-full grid-cols-1 gap-4 px-3 lg:px-6 lg:grid-cols-3"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-          {NARA_DIFFERENCE_STATS.map((stat, index) => (
-                  <motion.div 
-              key={stat.value}
-              className="flex h-full min-h-[360px] flex-col justify-between gap-4 rounded-[20px] border border-[#EAECF0] bg-[#F9FAFB] p-8 shadow-[0px_1px_2px_rgba(16,24,40,0.04)]"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * (index + 1), ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                  >
-              <div className="flex size-10 items-center justify-center rounded-full bg-white text-[#101828] shadow-[0px_1px_2px_rgba(16,24,40,0.06)] mx-auto">
-                {stat.icon}
-                    </div>
-              <div className="mx-auto mt-2 flex w-full max-w-[341px] flex-col gap-2 text-center">
-                <p className="text-[48px] leading-[60px] font-semibold tracking-[-0.03em] text-[#101828]">{stat.value}</p>
-                <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#667085]">{stat.description}</p>
-                    </div>
-                  </motion.div>
-          ))}
-        </motion.div>
-      </SectionContainer>
-
-      <SectionContainer
-        variant="sky"
-        withDashedWrapper
-        dashedWrapperClassName="flex flex-col gap-12 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
-      >
-        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
-          <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#1A7283]">OUTCOMES</p>
-          <div className="flex flex-col gap-4">
-            <p className="text-[36px] leading-[44px] font-semibold tracking-[-0.02em] text-[#101828] md:text-[48px] md:leading-[60px]">
-              The outcomes Nara works towards
-            </p>
-            <p className="mx-auto max-w-[600px] text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
-              Nara combines science-backed tools with gentle guidance so employees can shift how they feel, one small step at a time.
-            </p>
-          </div>
-                    </div>
-
-        <div className="flex w-full overflow-x-auto px-3 lg:px-6">
-          <div className="flex w-full min-w-full flex-col gap-6 xl:flex-row xl:gap-4">
-            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:flex xl:flex-row xl:gap-4">
-              {OUTCOME_CARDS.map((card) => (
-                <div
-                  key={card.title}
-                  className="flex h-full min-h-[320px] flex-col justify-between gap-4 rounded-[20px] border border-[rgba(89,213,251,0.3)] bg-white p-7 shadow-[0px_1px_2px_rgba(16,24,40,0.05)] xl:min-h-[360px]"
-                >
-                  <div className="flex size-10 items-center justify-center">{card.icon}</div>
-                  <div className="flex flex-col gap-4 text-left">
-                    <p className="text-[22px] leading-[30px] font-semibold text-[#101828] md:text-[24px] md:leading-[32px]">
-                      {card.title}
-                    </p>
-                    <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#667085]">{card.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex w-full items-center justify-start gap-3 px-3 lg:px-6">
-          <button
-            type="button"
-            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
-            aria-label="Previous outcome"
-          >
-            <ArrowLeft size="20" color="#98A2B3" />
-          </button>
-          <button
-            type="button"
-            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
-            aria-label="Next outcome"
-          >
-            <ArrowRight size="20" color="#98A2B3" />
-          </button>
-        </div>
-      </SectionContainer>
-
-      <SectionContainer
         id="support-teams"
         variant="gray"
         sectionClassName="py-4"
@@ -799,12 +800,11 @@ export default function Landing() {
                 key={card.audience}
                 className="flex min-h-[400px] flex-col rounded-[8px] border border-[#F9FAFB] bg-white px-7 py-8 text-left shadow-[0px_1px_2px_rgba(231,235,239,0.1)] md:h-[440px]"
               >
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
                   <p className="text-[30px] font-semibold leading-[38px] text-[#1D2939]">{card.audience}</p>
-                  <p className="text-[18px] leading-[28px] text-[#475467] tracking-[-0.01em]">{card.title}</p>
-                    </div>
+                </div>
                 <div className="mt-auto flex flex-col gap-5">
-                  <p className="text-[18px] leading-[28px] text-[#475467] tracking-[-0.01em]">{card.description}</p>
+                     <p className="text-[18px] leading-[28px] text-[#475467] tracking-[-0.01em]">{card.description}</p>
                   <button
                     type="button"
                     className="flex w-fit items-center gap-2 text-[16px] font-medium text-[#015033] transition hover:text-[#013d26]"
