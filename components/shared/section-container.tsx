@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import React from "react";
 
-export type SectionVariant = "white" | "gray" | "mint" | "transparent";
+export type SectionVariant = "white" | "gray" | "mint" | "sky" | "transparent";
 
 export const SECTION_VARIANT_STYLES: Record<
   SectionVariant,
@@ -19,6 +19,10 @@ export const SECTION_VARIANT_STYLES: Record<
   },
   mint: {
     containerClass: "bg-[#F4FBF9] border-[#B9DFD1]",
+    dashColor: "#D1EAE1",
+  },
+  sky: {
+    containerClass: "bg-[#F0FBFF] border-[rgba(89,213,251,0.3)]",
     dashColor: "#D1EAE1",
   },
   transparent: {

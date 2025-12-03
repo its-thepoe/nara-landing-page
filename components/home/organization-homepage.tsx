@@ -25,16 +25,29 @@ type SupportPersonaCard = {
   audience: string;
 };
 
-type OrganizationOffering = {
+type NaraOffering = {
   title: string;
   description: string;
   icon: React.ReactNode;
+  badge?: string | null;
 };
 
 type NaraDifferenceStat = {
   value: string;
   description: string;
   icon: React.ReactNode;
+};
+
+type OutcomeCard = {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+};
+
+type ProcessStep = {
+  label: string;
+  title: string;
+  description: string;
 };
 
 const EMPLOYEE_OFFERING_CARDS: EmployeeOfferingCard[] = [
@@ -96,6 +109,96 @@ const EMPLOYEE_OFFERING_CARDS: EmployeeOfferingCard[] = [
   },
 ];
 
+const NARA_STEPS: ProcessStep[] = [
+  {
+    label: "STEP 1",
+    title: "Get your team onboard",
+    description: "Add your eligible staff in a few clicks and keep access up to date as things change.",
+  },
+  {
+    label: "STEP 2",
+    title: "See how your people engage",
+    description: "Track overall wellbeing and engagement trends by team, location, or role. Never individual data.",
+  },
+  {
+    label: "STEP 3",
+    title: "Share a clear story with leadership",
+    description: "Show leaders the big-picture trends shaping your organization, without exposing personal information.",
+  },
+];
+
+const OUTCOME_CARDS: OutcomeCard[] = [
+  {
+    title: "Lower day-to-day stress",
+    description:
+      "Short, guided practices help people slow their breathing, calm racing thoughts, and respond instead of react. Over time, stress feels more manageable and less constant.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="12" fill="#F4F7FE" />
+        <path
+          d="M21.061 9.99987C22.0018 10.0013 22.9146 10.376 23.598 11.0468L30.8195 18.1461C32.1295 19.4281 32.1295 21.5377 30.8195 22.8197L23.598 29.919C21.9977 31.4859 19.3989 31.4859 17.7986 29.919L9.96927 22.2433C8.68261 21.0054 8.62404 18.9734 9.83132 17.6609L17.4751 9.42343C18.116 8.73502 19.0012 8.33398 19.9419 8.33398H19.9744C20.3358 8.33398 20.6904 8.40189 21.0223 8.5332"
+          fill="#344054"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Better sleep and recovery",
+    description:
+      "Evening wind-down sessions, audio to fall asleep to, and gentle reminders support healthier routines. People wake up clearer, less irritable, and more ready for the day.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="12" fill="#E0F5FF" />
+        <path
+          d="M25.8943 13.216C26.6071 12.5032 27.765 13.0106 27.765 14.0282V25.9705C27.765 26.9881 26.6071 27.4955 25.8943 26.7827L20.2074 21.0958C19.8108 20.6992 19.8108 20.0361 20.2074 19.6395L25.8943 13.9526Z"
+          fill="#4CC5FF"
+        />
+        <path
+          d="M13.5 17.7499C13.5 14.0229 16.5229 11 20.25 11H21.3333C21.7015 11 21.995 11.2934 21.995 11.6616V28.338C21.995 28.7062 21.7015 28.9997 21.3333 28.9997H20.25C16.5229 28.9997 13.5 25.9768 13.5 22.2498V17.7499Z"
+          fill="#08A0E4"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "More focus and steady output",
+    description:
+      "Quick check-ins and focus tools help staff reset between meetings, block distractions, and get back into deep work. Workloads feel more achievable and less draining.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="12" fill="#F9F5FF" />
+        <path
+          d="M11.6667 14.1663C11.6667 13.246 12.4131 12.4997 13.3334 12.4997H26.6667C27.5871 12.4997 28.3334 13.246 28.3334 14.1663V25.833C28.3334 26.7534 27.5871 27.4997 26.6667 27.4997H13.3334C12.4131 27.4997 11.6667 26.7534 11.6667 25.833V14.1663Z"
+          stroke="#7A5AF8"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M16.6667 18.333H23.3334" stroke="#7A5AF8" strokeWidth="2" strokeLinecap="round" />
+        <path d="M16.6667 21.6663H23.3334" stroke="#7A5AF8" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Feeling supported at work",
+    description:
+      "Nara gives everyone private, stigma-free support. Content reflects different backgrounds and experiences, so more people feel seen and cared for by their employer.",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="12" fill="#FDF2FF" />
+        <path
+          d="M20.0002 11.6667C21.8411 11.6667 23.3335 13.1591 23.3335 15.0001C23.3335 16.2167 22.6752 17.2796 21.6664 17.8639V20.0001C21.6664 20.9205 20.9201 21.6667 20.0002 21.6667C19.0803 21.6667 18.334 20.9205 18.334 20.0001V17.8639C17.3252 17.2796 16.6668 16.2167 16.6668 15.0001C16.6668 13.1591 18.1592 11.6667 20.0002 11.6667Z"
+          fill="#B423A4"
+        />
+        <path
+          d="M14.1666 25.4167C14.1666 24.7654 14.4821 24.1536 15.0084 23.7741C16.1444 22.9524 17.9793 21.6667 20.0001 21.6667C22.0209 21.6667 23.8558 22.9524 24.9918 23.7741C25.518 24.1536 25.8335 24.7654 25.8335 25.4167V27.2499C25.8335 28.3084 24.9751 29.1667 23.9168 29.1667H16.0835C15.0251 29.1667 14.1666 28.3084 14.1666 27.2499V25.4167Z"
+          fill="#B423A4"
+        />
+      </svg>
+    ),
+  },
+];
+
 const NARA_DIFFERENCE_STATS: NaraDifferenceStat[] = [
   {
     value: "87%",
@@ -153,67 +256,111 @@ const SUPPORT_PERSONA_CARDS: SupportPersonaCard[] = [
   },
 ];
 
-const ORGANIZATION_OFFERINGS: OrganizationOffering[] = [
+const NARA_OFFERINGS: NaraOffering[] = [
   {
-    title: "Remote Patient Monitoring",
-    description: "Get real-time data on mood, engagement, and therapy progress.",
+    title: "Therapy",
+    description: "Licensed therapists for stress, burnout, anxiety, and personal challenges.",
     icon: (
-      <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.174316" width="48" height="48" rx="24" fill="#E5F8F1" />
-        <rect x="0.25" y="0.424316" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5" />
-        <path d="M23.9982 26.1743C18.9882 26.1743 14.9082 29.5343 14.9082 33.6743C14.9082 33.9543 15.1282 34.1743 15.4082 34.1743H32.5882C32.8682 34.1743 33.0882 33.9543 33.0882 33.6743C33.0882 29.5343 29.0082 26.1743 23.9982 26.1743ZM28.72 22.5243L27.76 21.5643C28.26 20.8143 28.55 19.9143 28.55 18.9443C28.55 16.3043 26.41 14.1743 23.78 14.1743C21.15 14.1743 19 16.3143 19 18.9443C19 21.5743 21.14 23.7143 23.77 23.7143C24.74 23.7143 25.64 23.4243 26.39 22.9243L27.35 23.8843C27.54 24.0743 27.79 24.1643 28.03 24.1643C28.28 24.1643 28.53 24.0743 28.71 23.8843C29.09 23.5143 29.09 22.9043 28.72 22.5243Z" fill="#01BC77" />
-      </svg>
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#E5F8F1]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path
+            d="M24 35.353C29.9371 35.353 34.75 30.5401 34.75 24.603C34.75 18.666 29.9371 13.853 24 13.853C18.0629 13.853 13.25 18.666 13.25 24.603C13.25 30.5401 18.0629 35.353 24 35.353ZM22.2373 23.3149C21.9312 23.417 21.5941 23.3113 21.4004 23.0532C20.9504 22.4532 20.0496 22.4532 19.5996 23.0532C19.351 23.3843 18.8811 23.4511 18.5498 23.2026C18.2187 22.954 18.1519 22.4841 18.4004 22.1528C18.9124 21.4704 19.6737 21.1209 20.4414 21.104C20.177 20.8095 20.1865 20.3559 20.4697 20.0728C20.7626 19.7799 21.2374 19.7799 21.5303 20.0728C21.564 20.1089 21.6711 20.223 21.7256 20.2866C21.8339 20.4129 21.9784 20.5936 22.124 20.812C22.3989 21.2244 22.75 21.8776 22.75 22.603C22.75 22.9259 22.5436 23.2129 22.2373 23.3149Z"
+            fill="#01BC77"
+          />
+        </svg>
+      </div>
     ),
   },
   {
-    title: "Assignments",
-    description: "Keep clients engaged between sessions with tailored assignments—track progress effortlessly and send timely reminders.",
+    title: "Guided Meditation",
+    description: "Short calming sessions that help people reset, focus, and manage daily pressure.",
     icon: (
-      <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.603027" width="48" height="48" rx="24" fill="#F0FBFF" />
-        <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#59D5FB" strokeOpacity="0.1" strokeWidth="0.5" />
-        <path d="M26.75 16.603C26.75 15.0842 25.5188 13.853 24 13.853C22.4812 13.853 21.25 15.0842 21.25 16.603C21.25 18.1218 22.4812 19.353 24 19.353C25.5188 19.353 26.75 18.1218 26.75 16.603Z" fill="#59D5FB" />
-        <path d="M24 19.853C22.1235 19.853 20.4224 20.5464 19.1896 21.6661C19.0655 21.7788 18.9461 21.8959 18.8318 22.017C18.3444 22.5331 18.161 23.1567 18.0627 23.6363C17.9065 24.398 17.5898 25.2847 17.0854 25.9569C16.5933 26.6127 15.9951 26.9831 15.225 26.9831C14.6865 26.9831 14.25 27.3821 14.25 27.8744C14.25 28.3666 14.6865 28.7656 15.225 28.7656C16.8397 28.7656 17.969 27.9306 18.6934 26.9652C19.3068 26.1478 19.6804 25.1811 19.8903 24.3529C20.2492 25.2113 20.4742 26.0318 20.3893 26.8388C20.2887 27.7958 19.665 28.5126 18.6721 29.1775C18.1789 29.5077 17.6266 29.8036 17.0515 30.1002C16.5802 30.3416 15.7996 30.7418 15.3672 30.9987C14.3771 31.5869 14.1003 32.6941 14.3235 33.5948C14.5504 34.5106 15.3294 35.353 16.5358 35.353C18.5176 35.353 20.3854 35.197 22.2897 34.3019L23.9098 33.3104L25.5681 34.3044C27.5076 35.1972 29.4098 35.353 31.4317 35.353C32.6442 35.353 33.4407 34.5228 33.6746 33.5984C33.9048 32.6886 33.6158 31.5797 32.6111 30.9952C32.1701 30.7387 31.677 30.4913 31.1957 30.2499C30.6083 29.9533 29.7398 29.5043 29.2353 29.1735C28.217 28.5058 27.5827 27.7884 27.4806 26.8372C27.3907 26.0006 27.6628 25.1289 28.0748 24.2104C28.2771 25.0686 28.6576 26.1004 29.3066 26.9652C30.031 27.9306 31.1603 28.7656 32.775 28.7656C33.3135 28.7656 33.75 28.3666 33.75 27.8744C33.75 27.3821 33.3135 26.9831 32.775 26.9831C32.0049 26.9831 31.4067 26.6127 30.9146 25.9569C30.4102 25.2847 30.0935 24.398 29.9373 23.6363C29.839 23.1567 29.6556 22.5331 29.1682 22.017C29.0367 21.8777 28.8987 21.7439 28.7544 21.6158C27.5264 20.5257 25.8481 19.853 24 19.853Z" fill="#59D5FB" />
-      </svg>
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#E8F6FF]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#E8F6FF" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#60A5FA" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path
+            d="M24 14.603C26.25 14.603 27.75 16.103 27.75 18.353C27.75 19.553 27.2 20.603 26.35 21.353H27.02C28.77 21.353 29.5 23.573 28.2 24.603L23.18 28.553C22.51 29.083 22.25 29.903 22.55 30.603C22.93 31.523 22.25 32.603 21.25 32.603H19.13C17.18 32.603 15.75 31.173 15.75 29.223V18.353C15.75 16.103 17.25 14.603 19.5 14.603H24Z"
+            fill="#0EA6E9"
+          />
+        </svg>
+      </div>
+    ),
+  },
+  {
+    title: "AI-assisted Support",
+    description: "Private on-demand chats that help employees process thoughts and regulate emotions.",
+    icon: (
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#FFF5E1]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#FFF5E1" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#F2A007" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path d="M16 17.6743C16 16.3743 17.05 15.3243 18.35 15.3243H29.65C30.95 15.3243 32 16.3743 32 17.6743V25.0343C32 26.3343 30.95 27.3843 29.65 27.3843H23.42C23.14 27.3843 22.88 27.5043 22.69 27.7043L19.72 30.8843C19.16 31.4843 18.16 31.0843 18.16 30.2643V28.0443C18.16 27.4643 17.69 26.9943 17.11 26.9943H18.35C17.05 26.9943 16 25.9443 16 24.6443V17.6743Z" fill="#F2A007" />
+          <path d="M20 33.0243H29.65C30.95 33.0243 32 31.9743 32 30.6743V29.3243H26.89C25.59 29.3243 24.54 28.2743 24.54 26.9743V26.8743H18.35C18.08 26.8743 17.82 26.8243 17.58 26.7343V30.6743C17.58 31.9743 18.63 33.0243 19.93 33.0243H20Z" fill="#FFEFC7" />
+        </svg>
+      </div>
+    ),
+  },
+  {
+    title: "Self-care Tools",
+    description: "Mood check-ins, prompts, and reflections that support daily habits and emotional balance.",
+    icon: (
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#E5F8F1]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#E5F8F1" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#01BC77" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path d="M28.5 17.853H19.5C16.7 17.853 14.5 20.053 14.5 22.853V26.853C14.5 29.653 16.7 31.853 19.5 31.853H28.5C31.3 31.853 33.5 29.653 33.5 26.853V22.853C33.5 20.053 31.3 17.853 28.5 17.853Z" fill="#01BC77" fillOpacity="0.15" />
+          <path d="M27 21.853H21" stroke="#01BC77" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M29 25.853H21" stroke="#01BC77" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M25 29.853H21" stroke="#01BC77" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </div>
     ),
   },
   {
     title: "High Risk Detection",
-    description: "Identify early signs of high-risk patients through assessments, mood check-ins, AI-powered conversations, and other integrated tools.",
+    description: "Early signs of distress are flagged so people get timely support when it matters.",
     icon: (
-      <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.174316" width="48" height="48" rx="24" fill="#FDF2F2" />
-        <rect x="0.25" y="0.424316" width="47.5" height="47.5" rx="23.75" stroke="#D92D20" strokeOpacity="0.1" strokeWidth="0.5" />
-        <path d="M22.3623 14.1892C23.4266 13.836 24.5734 13.836 25.6377 14.1892C26.6976 14.541 27.5301 15.3753 28.3662 16.5476C29.1996 17.7163 30.1206 19.3466 31.3076 21.447L31.3545 21.5291C32.5417 23.6298 33.4623 25.2595 34.0361 26.5808C34.6127 27.9085 34.9 29.0547 34.6709 30.156C34.4402 31.2649 33.8715 32.2737 33.043 33.0359C32.2165 33.7962 31.0908 34.1172 29.6738 34.2712C28.2648 34.4244 26.4212 34.4246 24.0488 34.4246H23.9512C21.5787 34.4246 19.7353 34.4244 18.3262 34.2712C16.9091 34.1172 15.7836 33.7962 14.957 33.0359C14.1284 32.2737 13.5598 31.2649 13.3291 30.156C13.1 29.0547 13.3873 27.9085 13.9639 26.5808C14.5377 25.2594 15.4583 23.6298 16.6455 21.5291L16.6924 21.447C17.8794 19.3466 18.8004 17.7163 19.6338 16.5476C20.4698 15.3753 21.3024 14.541 22.3623 14.1892ZM23.9951 28.1746C23.4454 28.1747 23 28.6224 23 29.1746C23.0002 29.7266 23.4456 30.1744 23.9951 30.1746H24.0039C24.5536 30.1746 24.9998 29.7266 25 29.1746C25 28.6223 24.5537 28.1746 24.0039 28.1746H23.9951ZM24 20.1746C23.4477 20.1746 23 20.6223 23 21.1746V25.1746C23.0002 25.7266 23.4479 26.1746 24 26.1746C24.5521 26.1745 24.9998 25.7266 25 25.1746V21.1746C25 20.6223 24.5522 20.1746 24 20.1746Z" fill="#D92D20" />
-      </svg>
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#FFECEC]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#FFECEC" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#F04438" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path d="M25.25 28.853H22.75C22.16 28.853 21.75 28.443 21.75 27.853C21.75 27.263 22.16 26.853 22.75 26.853H25.25C25.84 26.853 26.25 27.263 26.25 27.853C26.25 28.443 25.84 28.853 25.25 28.853Z" fill="#F04438" />
+          <path d="M24 21.353C23.45 21.353 23 21.803 23 22.353V24.853C23 25.403 23.45 25.853 24 25.853C24.55 25.853 25 25.403 25 24.853V22.353C25 21.803 24.55 21.353 24 21.353Z" fill="#F04438" />
+        </svg>
+      </div>
     ),
   },
   {
-    title: "AI Chat Summaries",
-    description: "View summaries of patient interactions with Nara's AI (with consent). Stay informed between sessions.",
+    title: "Secure messaging",
+    description: "Communicate safely with clients between appointments, keeping the therapeutic bond strong.",
+    badge: "Coming soon",
     icon: (
-      <svg width="48" height="49" viewBox="0 0 48 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.174316" width="48" height="48" rx="24" fill="#FFFBEB" />
-        <rect x="0.25" y="0.424316" width="47.5" height="47.5" rx="23.75" stroke="#FFC800" strokeOpacity="0.1" strokeWidth="0.5" />
-        <path
-          d="M16 17.6743C16 16.3743 17.05 15.3243 18.35 15.3243H29.65C30.95 15.3243 32 16.3743 32 17.6743V25.0343C32 26.3343 30.95 27.3843 29.65 27.3843H23.42C23.14 27.3843 22.88 27.5043 22.69 27.7043L19.72 30.8843C19.16 31.4843 18.16 31.0843 18.16 30.2643V28.0443C18.16 27.4643 17.69 26.9943 17.11 26.9943H18.35C17.05 26.9943 16 25.9443 16 24.6443V17.6743Z"
-          fill="#FFC800"
-        />
-        <path
-          d="M20 33.0243H29.65C30.95 33.0243 32 31.9743 32 30.6743V29.3243H26.89C25.59 29.3243 24.54 28.2743 24.54 26.9743V26.8743H18.35C18.08 26.8743 17.82 26.8243 17.58 26.7343V30.6743C17.58 31.9743 18.63 33.0243 19.93 33.0243H20Z"
-          fill="#FEC84B"
-        />
-        <path
-          d="M28.125 20.9243H19.875C19.425 20.9243 19.0625 21.2868 19.0625 21.7368C19.0625 22.1868 19.425 22.5493 19.875 22.5493H28.125C28.575 22.5493 28.9375 22.1868 28.9375 21.7368C28.9375 21.2868 28.575 20.9243 28.125 20.9243Z"
-          fill="#fff5d6"
-        />
-        <path
-          d="M28.125 24.1743H19.875C19.425 24.1743 19.0625 24.5368 19.0625 24.9868C19.0625 25.4368 19.425 25.7993 19.875 25.7993H28.125C28.575 25.7993 28.9375 25.4368 28.9375 24.9868C28.9375 24.5368 28.575 24.1743 28.125 24.1743Z"
-          fill="#fff5d6"
-        />
-      </svg>
+      <div className="flex size-12 items-center justify-center rounded-full bg-[#E8F6FF]">
+        <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0.603027" width="48" height="48" rx="24" fill="#E8F6FF" />
+          <rect x="0.25" y="0.853027" width="47.5" height="47.5" rx="23.75" stroke="#0EA6E9" strokeOpacity="0.1" strokeWidth="0.5" />
+          <path d="M32 20.053V27.053C32 29.853 29.8 32.053 27 32.053H21C18.2 32.053 16 29.853 16 27.053V20.053C16 17.253 18.2 15.053 21 15.053H27C29.8 15.053 32 17.253 32 20.053Z" fill="#0EA6E9" fillOpacity="0.15" />
+          <path d="M22.5 21.553L24 23.053L25.5 21.553" stroke="#0EA6E9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M24 23.053V25.553" stroke="#0EA6E9" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </div>
     ),
   },
+];
+
+const EMPLOYEE_CHALLENGES = [
+  "Constant pressure, long hours, and blurred boundaries between work and home",
+  "Trouble switching off at night and arriving at work already tired",
+  "Worry, low mood, and stress that build up quietly over time",
+];
+
+const ORGANIZATION_IMPACTS = [
+  "More sick days and unplanned absences",
+  "Lower focus and slower decision-making",
+  "Higher churn, especially in high-pressure roles",
 ];
 
 // Single responsive landing built from the desktop version and adapted down to mobile
@@ -301,74 +448,164 @@ export default function Landing() {
         </div>
       </div>
 
-      {/* Features */}
+    {/* Challenges & impact section */}
+    <SectionContainer
+      variant="white"
+      withDashedWrapper
+      dashedWrapperClassName="flex flex-col gap-16 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
+    >
+      <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
+        <p className="text-[36px] leading-[44px] font-semibold tracking-[-0.02em] text-[#101828] md:text-[48px] md:leading-[60px]">
+          When minds struggle, work struggles
+        </p>
+      </div>
+
+      <div className="flex flex-col gap-10 px-3 lg:px-6 xl:flex-row xl:items-start xl:gap-16">
+        <div className="flex flex-col gap-8 xl:w-1/3">
+          <p className="text-[20px] leading-[30px] font-medium tracking-[-0.01em] text-[#1D2939]">What your people are facing</p>
+          <div className="flex flex-col gap-10">
+            {EMPLOYEE_CHALLENGES.map((item, index) => (
+              <div key={item} className="flex flex-col gap-2 text-left">
+                <p className="text-[12px] leading-[20px] tracking-[-0.01em] uppercase text-[#7C7C7C]">
+                  {String(index + 1).padStart(2, "0")}.
+                </p>
+                <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#1D2939]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="order-first mb-6 h-[260px] overflow-hidden rounded-[20px] xl:order-none xl:mb-0 xl:h-full xl:w-1/3">
+          <Image
+            src="/struggles-worker.jpg"
+            alt="Stressed employee"
+            width={376}
+            height={450}
+            className="h-full w-full rounded-[20px] object-cover"
+          />
+        </div>
+
+        <div className="flex flex-col gap-8 xl:w-1/3">
+          <p className="text-[20px] leading-[30px] font-medium tracking-[-0.01em] text-[#1D2939]">What it means for your organization</p>
+          <div className="flex flex-col gap-6">
+            {ORGANIZATION_IMPACTS.map((item, index) => (
+              <div key={item} className="flex flex-col gap-2 text-left">
+                <p className="text-[12px] leading-[20px] tracking-[-0.01em] uppercase text-[#7C7C7C]">
+                  {String(index + 1).padStart(2, "0")}.
+                </p>
+                <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#1D2939]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center gap-3 px-3 text-center lg:px-6">
+        <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
+          Nara focuses on everyday mental health so your people can stay well, not just “cope”.
+        </p>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-[16px] font-medium text-[#015033] transition hover:text-[#013d26]"
+        >
+          Learn more
+          <ArrowRight size="20" color="#015033" />
+        </button>
+      </div>
+    </SectionContainer>
+
+      {/* Offerings */}
       <SectionContainer
         id="features"
-        variant="white"
+        variant="gray"
         withDashedWrapper
-        dashedWrapperClassName="flex flex-col gap-8 lg:py-24 py-14 w-full"
+        dashedWrapperClassName="flex flex-col gap-10 lg:py-24 py-14 w-full max-w-[1440px] mx-auto"
       >
-        <div className="lg:px-6 px-3 max-w-[1440px] mx-auto">
-          <div className="flex flex-col gap-6 lg:gap-8 text-center items-center">
-            <p className="text-[#015033] text-sm">OFFERINGS</p>
-            <p
-              className="mx-auto flex w-full max-w-[335px] items-center justify-center text-center text-[30px] leading-[38px] font-semibold text-[#101828] tracking-[-0.02em] lg:max-w-[685px] lg:text-[48px] lg:leading-[60px] lg:text-[#070611]"
-            >
+        <div className="lg:px-6 px-3 w-full">
+          <div className="flex flex-col gap-4 text-center items-center">
+            <p className="text-[#015033] text-sm tracking-[0.2em]">OFFERINGS</p>
+            <p className="mx-auto flex w-full max-w-[720px] items-center justify-center text-center text-[32px] leading-[40px] font-semibold text-[#101828] tracking-[-0.02em] lg:text-[48px] lg:leading-[60px]">
               What employees get with Nara
             </p>
-            <p className="text-base text-[#736F67] leading-[24px] mb-4 max-w-3xl">
+            <p className="text-base text-[#475467] leading-[24px] max-w-[620px]">
               Care that is easy to reach, clinically grounded, and built for busy workdays.
-            </p>
-          </div>
-
-          <motion.div
-            className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            {ORGANIZATION_OFFERINGS.map((offering, index) => (
-              <motion.div
-                key={offering.title}
-                className="flex flex-col gap-4 rounded-[16px] border border-[#EDF9F5] bg-white p-6 text-left shadow-sm hover:shadow-md transition-shadow duration-200"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-50px" }}
-              >
-                <div className="size-12 rounded-full flex items-center justify-start">{offering.icon}</div>
-                <div className="flex flex-col gap-2">
-                  <p className="text-[#353535] text-xl font-medium">{offering.title}</p>
-                  <p className="text-[#736F67] text-base leading-6">{offering.description}</p>
+                  </p>
                 </div>
+
+                <motion.div 
+            className="grid w-full grid-cols-1 gap-y-10 gap-x-8 md:grid-cols-2 lg:grid-cols-3"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-60px" }}
+                >
+            {NARA_OFFERINGS.map((offering, index) => (
+                  <motion.div 
+                key={offering.title}
+                className="flex flex-col gap-3 text-left"
+                initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.05 * index, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-60px" }}
+              >
+                <div className="flex items-center gap-3">
+                  {offering.icon}
+                  <div className="flex items-center gap-2">
+                    <p className="text-[18px] font-semibold text-[#101828]">{offering.title}</p>
+                    {offering.badge ? (
+                      <span className="rounded-full bg-[#F2F4F7] px-3 py-1 text-xs font-medium uppercase tracking-wide text-[#475467]">
+                        {offering.badge}
+                      </span>
+                    ) : null}
+                    </div>
+                    </div>
+                <p className="text-[15px] leading-[22px] text-[#475467] max-w-[340px]">{offering.description}</p>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* CTAs */}
-          <motion.div
-            className="flex w-full flex-col items-center gap-[12px] md:flex-row md:justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <a
-              href="javascript:void(0)"
-              className="w-full md:w-auto rounded-[4px] bg-[#015033] hover:bg-[#013d26] hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-white transition-all duration-200 ease-out"
-            >
-              Get started - for free
-            </a>
-            <a
-              href="javascript:void(0)"
-              className="w-full md:w-auto rounded-[4px] hover:bg-gray-50 hover:scale-[1.02] hover:shadow-sm px-5 py-3 text-center text-[16px] text-[#015033] transition-all duration-200 ease-out"
-              style={{ borderColor: "#015033", borderWidth: 1 }}
-            >
-              Book a demo
-            </a>
-          </motion.div>
+                  </motion.div>
         </div>
+      </SectionContainer>
+
+      <SectionContainer
+        variant="gray"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-10 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
+      >
+        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
+          <p className="text-[32px] leading-[40px] font-semibold tracking-[-0.02em] text-[#101828] md:text-[48px] md:leading-[60px]">
+            You open the door.
+            <br />
+            Nara does the daily work.
+          </p>
+          <p className="mx-auto max-w-[428px] text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
+            Your role is to give people access, set expectations, and understand what is changing. Nara supports the rest.
+          </p>
+                    </div>
+
+        <div className="grid w-full grid-cols-1 gap-4 px-3 lg:grid-cols-3 lg:px-6">
+          {NARA_STEPS.map((step) => (
+            <div key={step.label} className="flex flex-col gap-3">
+              <div className="px-8">
+                <div className="inline-flex items-center rounded-t-[8px] bg-[#01BC77] px-2 py-1 text-[12px] font-medium tracking-[-0.01em] text-white">
+                  {step.label}
+                    </div>
+                    </div>
+              <div className="rounded-[20px] border border-[#EDF9F5] bg-white p-8 shadow-[0px_1px_2px_rgba(198,236,223,0.1)]">
+                <p className="text-[24px] leading-[32px] font-medium text-[#222222]">{step.title}</p>
+                <p className="mt-3 text-[14px] leading-[20px] tracking-[-0.01em] text-[#475467]">{step.description}</p>
+                    </div>
+                    </div>
+          ))}
+                    </div>
+
+        <div className="flex items-center justify-center px-3 lg:px-6">
+          <a
+            href="javascript:void(0)"
+            className="inline-flex items-center justify-center rounded-[4px] border border-[#015033] px-5 py-3 text-[16px] font-medium text-[#015033] transition hover:bg-[#F4FBF9]"
+          >
+            Book Your Demo
+          </a>
+                    </div>
       </SectionContainer>
 
       <SectionContainer
@@ -390,7 +627,7 @@ export default function Landing() {
               >
                 <ArrowLeft size="20" color="#98A2B3" />
               </button>
-            </div>
+                    </div>
             <div className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2">
               <button
                 type="button"
@@ -400,14 +637,14 @@ export default function Landing() {
               >
                 <ArrowRight size="20" color="#98A2B3" />
               </button>
-            </div>
+                    </div>
 
             {/* Rating */}
             <div className="mb-6 flex items-center justify-center gap-1">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Star1 key={index} size="24" color="#FEC84B" variant="Bold" />
               ))}
-            </div>
+                    </div>
 
             <p className="mx-auto text-[20px] leading-[30px] font-medium text-[#1D2939] md:text-[30px] md:leading-[38px] lg:max-w-4xl">
               {currentTestimonial.quote}
@@ -421,12 +658,12 @@ export default function Landing() {
                   fill
                   className="rounded-full object-cover"
                 />
-              </div>
+                    </div>
               <div>
                 <p className="text-[16px] font-medium leading-[24px] text-[#101828]">{currentTestimonial.author}</p>
                 <p className="text-[14px] leading-[20px] text-[#667085]">{currentTestimonial.role}</p>
-              </div>
-            </div>
+                    </div>
+                    </div>
 
             {/* Mobile arrows */}
             <div className="mt-8 flex items-center justify-center gap-4 md:hidden">
@@ -446,8 +683,8 @@ export default function Landing() {
               >
                 <ArrowRight size="20" color="#98A2B3" />
               </button>
-            </div>
-            </div>
+                    </div>
+          </div>
         </div>
       </SectionContainer>
 
@@ -459,34 +696,90 @@ export default function Landing() {
         <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
           <p className="text-[32px] leading-[40px] font-semibold tracking-[-0.02em] text-[#101828] lg:text-[48px] lg:leading-[60px]">
             The Nara difference
-          </p>
-        </div>
-        <motion.div
+                  </p>
+                </div>
+              <motion.div 
           className="grid w-full grid-cols-1 gap-4 px-3 lg:px-6 lg:grid-cols-3"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
+              >
           {NARA_DIFFERENCE_STATS.map((stat, index) => (
-            <motion.div
+                  <motion.div 
               key={stat.value}
               className="flex h-full min-h-[360px] flex-col justify-between gap-4 rounded-[20px] border border-[#EAECF0] bg-[#F9FAFB] p-8 shadow-[0px_1px_2px_rgba(16,24,40,0.04)]"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * (index + 1), ease: "easeOut" }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
+                    viewport={{ once: true, margin: "-50px" }}
+                  >
               <div className="flex size-10 items-center justify-center rounded-full bg-white text-[#101828] shadow-[0px_1px_2px_rgba(16,24,40,0.06)] mx-auto">
                 {stat.icon}
-              </div>
+                    </div>
               <div className="mx-auto mt-2 flex w-full max-w-[341px] flex-col gap-2 text-center">
                 <p className="text-[48px] leading-[60px] font-semibold tracking-[-0.03em] text-[#101828]">{stat.value}</p>
                 <p className="text-[16px] leading-[24px] tracking-[-0.01em] text-[#667085]">{stat.description}</p>
-              </div>
-            </motion.div>
+                    </div>
+                  </motion.div>
           ))}
         </motion.div>
+      </SectionContainer>
+
+      <SectionContainer
+        variant="sky"
+        withDashedWrapper
+        dashedWrapperClassName="flex flex-col gap-12 lg:py-[96px] py-[64px] w-full max-w-[1440px] mx-auto"
+      >
+        <div className="flex flex-col items-center text-center gap-4 px-3 lg:px-6">
+          <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#1A7283]">OUTCOMES</p>
+          <div className="flex flex-col gap-4">
+            <p className="text-[36px] leading-[44px] font-semibold tracking-[-0.02em] text-[#101828] md:text-[48px] md:leading-[60px]">
+              The outcomes Nara works towards
+            </p>
+            <p className="mx-auto max-w-[600px] text-[16px] leading-[24px] tracking-[-0.01em] text-[#475467]">
+              Nara combines science-backed tools with gentle guidance so employees can shift how they feel, one small step at a time.
+            </p>
+          </div>
+                    </div>
+
+        <div className="flex w-full overflow-x-auto px-3 lg:px-6">
+          <div className="flex w-full min-w-full flex-col gap-6 xl:flex-row xl:gap-4">
+            <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:flex xl:flex-row xl:gap-4">
+              {OUTCOME_CARDS.map((card) => (
+                <div
+                  key={card.title}
+                  className="flex h-full min-h-[320px] flex-col justify-between gap-4 rounded-[20px] border border-[rgba(89,213,251,0.3)] bg-white p-7 shadow-[0px_1px_2px_rgba(16,24,40,0.05)] xl:min-h-[360px]"
+                >
+                  <div className="flex size-10 items-center justify-center">{card.icon}</div>
+                  <div className="flex flex-col gap-4 text-left">
+                    <p className="text-[22px] leading-[30px] font-semibold text-[#101828] md:text-[24px] md:leading-[32px]">
+                      {card.title}
+                    </p>
+                    <p className="text-[14px] leading-[20px] tracking-[-0.01em] text-[#667085]">{card.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-full items-center justify-start gap-3 px-3 lg:px-6">
+          <button
+            type="button"
+            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
+            aria-label="Previous outcome"
+          >
+            <ArrowLeft size="20" color="#98A2B3" />
+          </button>
+          <button
+            type="button"
+            className="flex size-12 items-center justify-center rounded-full border border-[#EDF9F5] bg-white shadow-[0px_1px_2px_rgba(198,236,223,0.1)]"
+            aria-label="Next outcome"
+          >
+            <ArrowRight size="20" color="#98A2B3" />
+          </button>
+        </div>
       </SectionContainer>
 
       <SectionContainer
@@ -509,7 +802,7 @@ export default function Landing() {
                 <div className="flex flex-col gap-5">
                   <p className="text-[30px] font-semibold leading-[38px] text-[#1D2939]">{card.audience}</p>
                   <p className="text-[18px] leading-[28px] text-[#475467] tracking-[-0.01em]">{card.title}</p>
-                </div>
+                    </div>
                 <div className="mt-auto flex flex-col gap-5">
                   <p className="text-[18px] leading-[28px] text-[#475467] tracking-[-0.01em]">{card.description}</p>
                   <button
@@ -519,10 +812,10 @@ export default function Landing() {
                     {card.ctaLabel}
                     <ArrowRight size="20" color="#015033" />
                   </button>
-                </div>
-              </div>
+                    </div>
+                    </div>
             ))}
-          </div>
+            </div>
         </div>
       </SectionContainer>
 
