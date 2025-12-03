@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import classNames from "classnames";
 import React from "react";
 
 export type SectionVariant = "white" | "gray" | "mint" | "transparent";
@@ -52,9 +52,9 @@ export default function SectionContainer({
   dashedWrapperClassName,
   dashedWrapperStyle,
 }: SectionContainerProps) {
-  const outerClasses = clsx("relative z-10 px-1 lg:px-4 lg:py-0", outerClassName);
+  const outerClasses = classNames("relative z-10 px-1 lg:px-4 lg:py-0", outerClassName);
   const sectionClasses = sectionClassName ?? "py-4 lg:py-4";
-  const containerClasses = clsx(
+  const containerClasses = classNames(
     "rounded-[24px] lg:rounded-[32px] lg:px-[80px] px-3 border-[0.5px]",
     SECTION_VARIANT_STYLES[variant].containerClass,
     containerClassName
@@ -65,7 +65,7 @@ export default function SectionContainer({
   } as React.CSSProperties;
 
   const content = withDashedWrapper ? (
-    <div className={clsx("custom-dashed-border", dashedWrapperClassName)} style={dashedWrapperInlineStyle}>
+    <div className={classNames("custom-dashed-border", dashedWrapperClassName)} style={dashedWrapperInlineStyle}>
       {children}
     </div>
   ) : (
