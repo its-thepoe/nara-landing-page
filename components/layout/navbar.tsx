@@ -37,6 +37,18 @@ export default function Navbar({
   secondaryCtaHref = "#book-demo"
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  // Detect scroll to animate desktop background in/out
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 16);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleAnchorClick = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -67,8 +79,14 @@ export default function Navbar({
   return (
     <>
       {/* Fixed navbar with white background */}
-      <nav className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm">
-        <div className="mx-auto flex h-[72px] max-w-screen-xl items-center justify-between px-3 md:h-20 md:px-6">
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 bg-white shadow-sm transition-[background-color,box-shadow,backdrop-filter] duration-300 ease-out ${
+          hasScrolled
+            ? "md:bg-white/95 md:shadow-[0_10px_30px_rgba(16,24,40,0.08)] md:backdrop-blur-md"
+            : "md:bg-white/0 md:shadow-none"
+        }`}
+      >
+        <div className="mx-auto flex h-[72px] w-full max-w-[1440px] items-center justify-between px-4 md:h-20 md:px-6 lg:px-10">
           {/* Logo */}
           <Link href="#" className="flex items-center" aria-label="Nara home">
             <Image src={IMG_LOGO} alt="Nara" width={100} height={42} className="h-[42px] w-auto" />
