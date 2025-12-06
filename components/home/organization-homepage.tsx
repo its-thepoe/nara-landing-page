@@ -197,8 +197,8 @@ const NARA_DIFFERENCE_STATS: NaraDifferenceStat[] = [
     ),
   },
   {
-    value: "60%",
-    description: "HR teams gain clearer insight into engagement and can show leaders how wellbeing support is being used.",
+    value: "74%",
+    description: "Employees say they are more likely to stay with an employer that provides Nara’s mental well-being support.",
     icon: (
      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.983 3.33594H13.0163C6.94967 3.33594 3.33301 6.9526 3.33301 13.0193V26.9693C3.33301 33.0526 6.94967 36.6693 13.0163 36.6693H26.9663C33.033 36.6693 36.6497 33.0526 36.6497 26.9859V13.0193C36.6663 6.9526 33.0497 3.33594 26.983 3.33594ZM28.033 18.0359C27.5497 18.5193 26.7497 18.5193 26.2663 18.0359L21.2497 13.0193V30.0026C21.2497 30.6859 20.683 31.2526 19.9997 31.2526C19.3163 31.2526 18.7497 30.6859 18.7497 30.0026V13.0193L13.733 18.0359C13.2497 18.5193 12.4497 18.5193 11.9663 18.0359C11.7163 17.7859 11.5997 17.4693 11.5997 17.1526C11.5997 16.8359 11.733 16.5026 11.9663 16.2693L19.1163 9.11927C19.3497 8.88594 19.6663 8.7526 19.9997 8.7526C20.333 8.7526 20.6497 8.88594 20.883 9.11927L28.033 16.2693C28.5163 16.7526 28.5163 17.5359 28.033 18.0359Z" fill="#344054"/>
@@ -512,7 +512,7 @@ export default function Landing() {
               return (
                 <motion.div
                   key={stat.value}
-                  className="flex flex-col gap-4 rounded-[20px] border border-[#EAECF0] bg-[#F9FAFB] p-6 shadow-[0px_1px_2px_rgba(16,24,40,0.04)]"
+                  className="flex min-h-[300px] flex-col justify-between gap-4 rounded-[20px] border border-[#EAECF0] bg-[#F9FAFB] p-6 shadow-[0px_1px_2px_rgba(16,24,40,0.04)] lg:min-h-[360px]"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * (index + 1), ease: "easeOut" }}
@@ -521,7 +521,7 @@ export default function Landing() {
                   <div className="flex size-10 items-center justify-center rounded-full text-[#101828]">
                     {stat.icon}
                   </div>
-                  <div className="mt-2 flex w-full max-w-[341px] flex-col gap-2 text-left">
+                  <div className="mt-2 flex w-full flex-col gap-2 text-left">
                     <p className="text-[48px] leading-[60px] font-medium tracking-[-0.03em] text-[#101828]">
                       {numericValue}
                       {hasPercent && <span className="text-[#98A2B3]">%</span>}
