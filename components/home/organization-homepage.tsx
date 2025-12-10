@@ -398,9 +398,8 @@ export default function Landing() {
                 <div className="flex flex-col items-center justify-center lg:flex-row lg:items-center lg:justify-between lg:gap-12">
                   <div className="flex flex-col items-start text-left lg:w-1/2">
                     <p className="text-[#101828] font-semibold text-[36px] leading-[44px] lg:text-[60px] lg:leading-[72px]">
-                      Support your people’s
-                      <br className="lg:flex hidden" />
-                      minds, every day
+                      <span className="inline lg:block">Support your people’s</span>{" "}
+                      <span className="inline lg:block">minds, every day</span>
                     </p>
                     <p className="mt-4 text-[16px] leading-[24px] font-normal text-[#475467] lg:text-xl lg:leading-[30px]">
                       Nara helps your employees manage stress, sleep better and stay present at work with therapy, meditation, AI-assisted support and self-care in one place.
